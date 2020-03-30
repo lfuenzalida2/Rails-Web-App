@@ -1,1 +1,0 @@
-# grupo39-proyecto
