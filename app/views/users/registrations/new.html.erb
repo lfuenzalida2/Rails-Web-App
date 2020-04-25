@@ -26,10 +26,9 @@
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 
-  <!-- fix this into a drop down menu -->
   <div class="field">
     <%= f.label :gender %><br />
-    <%= f.text_field :gender, autofocus: true, autocomplete: "gender" %>
+    <%= select_tag("gender", options_from_collection_for_select(Gender.all, :name, :name)) %>
   </div>
 
   <div class="field">
@@ -43,20 +42,25 @@
   </div>
 
   <div class="field">
-    <%= f.label :description %><br />
-    <%= f.text_area :description, autofocus: true, autocomplete: "description" %>
+    <%= f.label :region %><br />
+    <%= select_tag("region", options_from_collection_for_select(Region.all, :name, :name))%>
   </div>
 
-  <!-- fix this into a drop down menu -->
+
   <div class="field">
     <%= f.label :interests %><br />
-    <%= f.text_field :interests, autofocus: true, autocomplete: "interests" %>
+    <%= select_tag("interest", options_from_collection_for_select(Interest.all, :name, :name)) %>
   </div>
 
-  <!-- fix this into a drop down menu -->
+
   <div class="field">
     <%= f.label :sexual_orientation %><br />
-    <%= f.text_field :sexual_orientation, autofocus: true, autocomplete: "sexual_orientation" %>
+    <%= select_tag("sexual_orientation", options_from_collection_for_select(Orientation.all, :name, :name)) %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_area :description, autofocus: true, autocomplete: "description" %>
   </div>
 
   <div class="field">

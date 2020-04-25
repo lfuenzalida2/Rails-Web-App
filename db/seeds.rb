@@ -1,7 +1,25 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+Region.create(name:'I Tarapaca')
+Region.create(name:'II Antofagasta')
+Region.create(name:'III Atacama')
+Region.create(name:'IV Coquimbo')
+Region.create(name:'V Valparaiso')
+Region.create(name:'VI Libertador General Bernardo O\'Higgins')
+Region.create(name:'VII Maule')
+Region.create(name:'VIII Biobio')
+Region.create(name:'IX Araucania')
+Region.create(name:'X Los Lagos')
+Region.create(name:'XI Aysén del General Carlos Ibañez del Campo')
+Region.create(name:'XII Magallanes y Antártica Chilena')
+Region.create(name:'Region Metropolitana de Santiago')
+Region.create(name:'XIV Los Rios')
+Region.create(name:'XV Arica y Parinacota')
+Region.create(name:'XVI Ñuble')
+
+Interest.create(name:"Hombres")
+Interest.create(name:"Mujeres")
+
+Orientation.create(name:"Hombres")
+Orientation.create(name:"Mujeres")
+
+Gender.create(name:"Hombre")
+Gender.create(name:"Mujer")
