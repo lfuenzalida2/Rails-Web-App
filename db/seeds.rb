@@ -23,3 +23,5 @@ Orientation.create(name:"Mujeres")
 
 Gender.create(name:"Hombre")
 Gender.create(name:"Mujer")
+
+Admin.create(id_user:1, admin:true)
