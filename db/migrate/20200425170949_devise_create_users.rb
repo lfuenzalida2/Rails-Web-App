@@ -14,6 +14,18 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       ## Rememberable
       t.datetime :remember_created_at
 
+      ## Extra params
+
+      # t.string  :name             
+      # t.string  :gender          
+      # t.string  :region          
+      # t.date    :birthday       
+      # t.integer :number           
+      # t.text    :description     
+      # t.string  :sexual_orientation
+      # t.string  :interests       
+      # t.string  :photos           
+
       ## Trackable
       # t.integer  :sign_in_count, default: 0, null: false
       # t.datetime :current_sign_in_at
