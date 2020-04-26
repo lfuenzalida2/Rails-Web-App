@@ -28,6 +28,7 @@ gem 'devise', '~> 4.7', '>= 4.7.1'
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
+gem 'rut_validator'
 
 #New Gem
 
