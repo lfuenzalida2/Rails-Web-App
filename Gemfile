@@ -29,6 +29,10 @@ gem 'devise', '~> 4.7', '>= 4.7.1'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
+#New Gem
+
+gem 'carrierwave', '~> 2.0'
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
