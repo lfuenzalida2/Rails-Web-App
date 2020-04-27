@@ -17382,3 +17382,571 @@ Processing by UsersController#show as HTML
 Completed 200 OK in 217ms (Views: 199.1ms | ActiveRecord: 2.0ms)
 
 
+Started GET "/" for ::1 at 2020-04-27 12:25:37 -0400
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/lukas/.rvm/gems/ruby-2.6.5/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.2.4.2) lib/active_record/migration.rb:579:in `check_pending!'
+activerecord (5.2.4.2) lib/active_record/migration.rb:556:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.4) lib/puma/configuration.rb:227:in `call'
+puma (3.12.4) lib/puma/server.rb:675:in `handle_request'
+puma (3.12.4) lib/puma/server.rb:476:in `process_client'
+puma (3.12.4) lib/puma/server.rb:334:in `block in run'
+puma (3.12.4) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7864839756650184315)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to DeviseCreateDuenoUsers (20200426231717)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (27.4ms)[0m  [1m[35mCREATE TABLE "dueno_users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "name" character varying, "rut" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20200426231717_devise_create_dueno_users.rb:5
+  [1m[35m (5.1ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_dueno_users_on_email" ON "dueno_users"  ("email")[0m
+  ↳ db/migrate/20200426231717_devise_create_dueno_users.rb:44
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_dueno_users_on_reset_password_token" ON "dueno_users"  ("reset_password_token")[0m
+  ↳ db/migrate/20200426231717_devise_create_dueno_users.rb:45
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200426231717"]]
+  ↳ bin/rails:9
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (1.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(7864839756650184315)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/" for ::1 at 2020-04-27 12:26:00 -0400
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/lukas/.rvm/gems/ruby-2.6.5/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (297.5ms)
+Completed 200 OK in 358ms (Views: 349.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-04-27 12:26:05 -0400
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (1.5ms)
+  Rendered users/sessions/new.html.erb within layouts/application (22.5ms)
+Completed 200 OK in 93ms (Views: 55.5ms | ActiveRecord: 6.7ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-04-27 12:26:06 -0400
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /home/lukas/.rvm/gems/ruby-2.6.5/gems/devise-4.7.1/app/views/devise/shared/_error_messages.html.erb (0.4ms)
+  [1m[36mGender Load (1.4ms)[0m  [1m[34mSELECT "genders".* FROM "genders"[0m
+  ↳ app/views/users/registrations/new.html.erb:37
+  [1m[36mRegion Load (1.2ms)[0m  [1m[34mSELECT "regions".* FROM "regions"[0m
+  ↳ app/views/users/registrations/new.html.erb:54
+  [1m[36mInterest Load (1.3ms)[0m  [1m[34mSELECT "interests".* FROM "interests"[0m
+  ↳ app/views/users/registrations/new.html.erb:61
+  [1m[36mOrientation Load (1.3ms)[0m  [1m[34mSELECT "orientations".* FROM "orientations"[0m
+  ↳ app/views/users/registrations/new.html.erb:68
+  Rendered users/shared/_links.html.erb (1.3ms)
+  Rendered users/registrations/new.html.erb within layouts/application (64.3ms)
+Completed 200 OK in 88ms (Views: 62.5ms | ActiveRecord: 24.1ms)
+
+
+Started POST "/users" for ::1 at 2020-04-27 12:26:24 -0400
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uCINUVmlpFoYcP6K9vq0C6/3TeQBjtBWxgbJVe4SOId60kso0UIIi+J2ibE3PDqmtAQp9c6A0wFp+IS74dr+ww==", "user"=>{"name"=>"Lukas Fuenzalida", "email"=>"lfuenzalida2@uc.cl", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "gender"=>"aa", "birthday"=>"11", "number"=>"312312", "region"=>"RM", "interests"=>"SADFSD", "sexual_orientation"=>"JBJ", "description"=>"JHK", "photos"=>"dsad"}, "rut"=>{"{:autofocus=>true, :autocomplete=>\"rut\"}"=>"21312312"}, "commit"=>"Sign up"}
+Unpermitted parameter: :birthday
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/lukas/.rvm/gems/ruby-2.6.5/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (1.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "lfuenzalida2@uc.cl"], ["LIMIT", 1]]
+  ↳ /home/lukas/.rvm/gems/ruby-2.6.5/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Create (1.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "name", "gender", "region", "number", "description", "sexual_orientation", "interests", "photos", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["email", "lfuenzalida2@uc.cl"], ["encrypted_password", "$2a$11$/0LuiXqekZNwp7HbKSCKF.EMR0enUHvSxE1QfE6gGkbYDPM73BuTS"], ["name", "Lukas Fuenzalida"], ["gender", "aa"], ["region", "RM"], ["number", 312312], ["description", "JHK"], ["sexual_orientation", "JBJ"], ["interests", "SADFSD"], ["photos", "dsad"], ["created_at", "2020-04-27 16:26:24.801487"], ["updated_at", "2020-04-27 16:26:24.801487"]]
+  ↳ /home/lukas/.rvm/gems/ruby-2.6.5/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/lukas/.rvm/gems/ruby-2.6.5/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 166ms (ActiveRecord: 3.4ms)
+
+
+Started GET "/" for ::1 at 2020-04-27 12:26:24 -0400
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (5.7ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:14
+Completed 200 OK in 28ms (Views: 26.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users" for ::1 at 2020-04-27 12:26:26 -0400
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:16
+  Rendered users/index.html.erb within layouts/application (16.6ms)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 1.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `rut' for #<User:0x00007f157184bf88>
+Did you mean?  run):
+    17:         <tr>
+    18:             <td><%= user.id %></td>
+    19:             <td><%= user.name %></td>
+    20:             <td><%= user.rut %></td>
+    21:             <td><%= user.email %></td>
+    22:             <td><%= link_to 'Ver mas', user_path(user.id) %></td>
+    23:             <% if current_user %>
+  
+app/views/users/index.html.erb:20:in `block in _app_views_users_index_html_erb___3607776571814536732_69865037710940'
+app/views/users/index.html.erb:16:in `_app_views_users_index_html_erb___3607776571814536732_69865037710940'
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (112.3ms)[0m  [1m[35mDROP DATABASE IF EXISTS "myapp_development"[0m
+  ↳ bin/rails:9
+  [1m[35m (105.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS "myapp_test"[0m
+  ↳ bin/rails:9
+  [1m[35m (537.8ms)[0m  [1m[35mCREATE DATABASE "myapp_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (404.4ms)[0m  [1m[35mCREATE DATABASE "myapp_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (9.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (6.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7864839756650184315)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to DeviseCreateUsers (20200425170949)
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (6.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "rut" character varying, "name" character varying, "gender" character varying, "region" character varying, "birthday" character varying, "number" integer, "description" text, "sexual_orientation" character varying, "interests" character varying, "photos" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20200425170949_devise_create_users.rb:5
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  ↳ db/migrate/20200425170949_devise_create_users.rb:52
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  ↳ db/migrate/20200425170949_devise_create_users.rb:53
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200425170949"]]
+  ↳ bin/rails:9
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateRegions (20200425212443)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (11.7ms)[0m  [1m[35mCREATE TABLE "regions" ("id" bigserial primary key, "name" character varying)[0m
+  ↳ db/migrate/20200425212443_create_regions.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200425212443"]]
+  ↳ bin/rails:9
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateInterests (20200425225544)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (5.4ms)[0m  [1m[35mCREATE TABLE "interests" ("id" bigserial primary key, "name" character varying)[0m
+  ↳ db/migrate/20200425225544_create_interests.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200425225544"]]
+  ↳ bin/rails:9
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateOrientations (20200425231155)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (5.7ms)[0m  [1m[35mCREATE TABLE "orientations" ("id" bigserial primary key, "name" character varying)[0m
+  ↳ db/migrate/20200425231155_create_orientations.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200425231155"]]
+  ↳ bin/rails:9
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateGenders (20200425231413)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (5.3ms)[0m  [1m[35mCREATE TABLE "genders" ("id" bigserial primary key, "name" character varying)[0m
+  ↳ db/migrate/20200425231413_create_genders.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200425231413"]]
+  ↳ bin/rails:9
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateAdmins (20200426185011)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (3.8ms)[0m  [1m[35mCREATE TABLE "admins" ("id" bigserial primary key, "run" integer, "admin" boolean)[0m
+  ↳ db/migrate/20200426185011_create_admins.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200426185011"]]
+  ↳ bin/rails:9
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to DeviseCreateDuenoUsers (20200426231717)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (5.6ms)[0m  [1m[35mCREATE TABLE "dueno_users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "name" character varying, "rut" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20200426231717_devise_create_dueno_users.rb:5
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_dueno_users_on_email" ON "dueno_users"  ("email")[0m
+  ↳ db/migrate/20200426231717_devise_create_dueno_users.rb:44
+  [1m[35m (3.5ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_dueno_users_on_reset_password_token" ON "dueno_users"  ("reset_password_token")[0m
+  ↳ db/migrate/20200426231717_devise_create_dueno_users.rb:45
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200426231717"]]
+  ↳ bin/rails:9
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-04-27 16:28:29.342219"], ["updated_at", "2020-04-27 16:28:29.342219"]]
+  ↳ bin/rails:9
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(7864839756650184315)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:1
+  [1m[36mRegion Create (0.4ms)[0m  [1m[32mINSERT INTO "regions" ("name") VALUES ($1) RETURNING "id"[0m  [["name", "I Tarapaca"]]
+  ↳ db/seeds.rb:1
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:1
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:2
+  [1m[36mRegion Create (0.2ms)[0m  [1m[32mINSERT INTO "regions" ("name") VALUES ($1) RETURNING "id"[0m  [["name", "II Antofagasta"]]
+  ↳ db/seeds.rb:2
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:2
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:3
+  [1m[36mRegion Create (0.3ms)[0m  [1m[32mINSERT INTO "regions" ("name") VALUES ($1) RETURNING "id"[0m  [["name", "III Atacama"]]
+  ↳ db/seeds.rb:3
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:4
+  [1m[36mRegion Create (0.2ms)[0m  [1m[32mINSERT INTO "regions" ("name") VALUES ($1) RETURNING "id"[0m  [["name", "IV Coquimbo"]]
+  ↳ db/seeds.rb:4
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:4
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:5
+  [1m[36mRegion Create (0.3ms)[0m  [1m[32mINSERT INTO "regions" ("name") VALUES ($1) RETURNING "id"[0m  [["name", "V Valparaiso"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:6
+  [1m[36mRegion Create (0.2ms)[0m  [1m[32mINSERT INTO "regions" ("name") VALUES ($1) RETURNING "id"[0m  [["name", "VI Libertador General Bernardo O'Higgins"]]
+  ↳ db/seeds.rb:6
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:6
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:7
+  [1m[36mRegion Create (0.3ms)[0m  [1m[32mINSERT INTO "regions" ("name") VALUES ($1) RETURNING "id"[0m  [["name", "VII Maule"]]
+  ↳ db/seeds.rb:7
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:7
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:8
+  [1m[36mRegion Create (0.2ms)[0m  [1m[32mINSERT INTO "regions" ("name") VALUES ($1) RETURNING "id"[0m  [["name", "VIII Biobio"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mRegion Create (0.3ms)[0m  [1m[32mINSERT INTO "regions" ("name") VALUES ($1) RETURNING "id"[0m  [["name", "IX Araucania"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mRegion Create (0.2ms)[0m  [1m[32mINSERT INTO "regions" ("name") VALUES ($1) RETURNING "id"[0m  [["name", "X Los Lagos"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mRegion Create (0.2ms)[0m  [1m[32mINSERT INTO "regions" ("name") VALUES ($1) RETURNING "id"[0m  [["name", "XI Aysén del General Carlos Ibañez del Campo"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mRegion Create (0.2ms)[0m  [1m[32mINSERT INTO "regions" ("name") VALUES ($1) RETURNING "id"[0m  [["name", "XII Magallanes y Antártica Chilena"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mRegion Create (0.8ms)[0m  [1m[32mINSERT INTO "regions" ("name") VALUES ($1) RETURNING "id"[0m  [["name", "Region Metropolitana de Santiago"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mRegion Create (0.2ms)[0m  [1m[32mINSERT INTO "regions" ("name") VALUES ($1) RETURNING "id"[0m  [["name", "XIV Los Rios"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mRegion Create (0.2ms)[0m  [1m[32mINSERT INTO "regions" ("name") VALUES ($1) RETURNING "id"[0m  [["name", "XV Arica y Parinacota"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:16
+  [1m[36mRegion Create (0.2ms)[0m  [1m[32mINSERT INTO "regions" ("name") VALUES ($1) RETURNING "id"[0m  [["name", "XVI Ñuble"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:18
+  [1m[36mInterest Create (0.4ms)[0m  [1m[32mINSERT INTO "interests" ("name") VALUES ($1) RETURNING "id"[0m  [["name", "Hombres"]]
+  ↳ db/seeds.rb:18
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:19
+  [1m[36mInterest Create (0.2ms)[0m  [1m[32mINSERT INTO "interests" ("name") VALUES ($1) RETURNING "id"[0m  [["name", "Mujeres"]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:19
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:21
+  [1m[36mOrientation Create (0.4ms)[0m  [1m[32mINSERT INTO "orientations" ("name") VALUES ($1) RETURNING "id"[0m  [["name", "Hombres"]]
+  ↳ db/seeds.rb:21
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:22
+  [1m[36mOrientation Create (0.2ms)[0m  [1m[32mINSERT INTO "orientations" ("name") VALUES ($1) RETURNING "id"[0m  [["name", "Mujeres"]]
+  ↳ db/seeds.rb:22
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:22
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:24
+  [1m[36mGender Create (0.4ms)[0m  [1m[32mINSERT INTO "genders" ("name") VALUES ($1) RETURNING "id"[0m  [["name", "Hombre"]]
+  ↳ db/seeds.rb:24
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:24
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:25
+  [1m[36mGender Create (0.2ms)[0m  [1m[32mINSERT INTO "genders" ("name") VALUES ($1) RETURNING "id"[0m  [["name", "Mujer"]]
+  ↳ db/seeds.rb:25
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:25
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:27
+  [1m[36mAdmin Create (0.6ms)[0m  [1m[32mINSERT INTO "admins" ("run", "admin") VALUES ($1, $2) RETURNING "id"[0m  [["run", 1], ["admin", true]]
+  ↳ db/seeds.rb:27
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:27
+Started GET "/" for ::1 at 2020-04-27 12:28:44 -0400
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/lukas/.rvm/gems/ruby-2.6.5/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (335.8ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:14
+Completed 200 OK in 408ms (Views: 374.6ms | ActiveRecord: 10.4ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-04-27 12:28:46 -0400
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /home/lukas/.rvm/gems/ruby-2.6.5/gems/devise-4.7.1/app/views/devise/shared/_error_messages.html.erb (0.8ms)
+  [1m[36mGender Load (0.5ms)[0m  [1m[34mSELECT "genders".* FROM "genders"[0m
+  ↳ app/views/users/registrations/new.html.erb:37
+  [1m[36mRegion Load (0.9ms)[0m  [1m[34mSELECT "regions".* FROM "regions"[0m
+  ↳ app/views/users/registrations/new.html.erb:54
+  [1m[36mInterest Load (0.5ms)[0m  [1m[34mSELECT "interests".* FROM "interests"[0m
+  ↳ app/views/users/registrations/new.html.erb:61
+  [1m[36mOrientation Load (0.9ms)[0m  [1m[34mSELECT "orientations".* FROM "orientations"[0m
+  ↳ app/views/users/registrations/new.html.erb:68
+  Rendered users/shared/_links.html.erb (2.0ms)
+  Rendered users/registrations/new.html.erb within layouts/application (91.9ms)
+Completed 200 OK in 150ms (Views: 107.2ms | ActiveRecord: 19.7ms)
+
+
+Started POST "/users" for ::1 at 2020-04-27 12:28:52 -0400
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5Q22Y88SZkHSufvIWDwze+4djBXQYELkGCBtpYDNn2Qn/fAaR/XKkCi/jPOZ+r3W9e7oBB9uQbO33iBLjwVZIA==", "user"=>{"name"=>"Lukas Fuenzalida", "email"=>"lfuenzalida2@uc.cl", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "gender"=>"", "birthday"=>"", "number"=>"", "region"=>"RM", "interests"=>"", "sexual_orientation"=>"", "description"=>"", "photos"=>""}, "rut"=>{"{:autofocus=>true, :autocomplete=>\"rut\"}"=>"12312312"}, "commit"=>"Sign up"}
+Unpermitted parameter: :birthday
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/lukas/.rvm/gems/ruby-2.6.5/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "lfuenzalida2@uc.cl"], ["LIMIT", 1]]
+  ↳ /home/lukas/.rvm/gems/ruby-2.6.5/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Create (1.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "name", "gender", "region", "description", "sexual_orientation", "interests", "photos", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["email", "lfuenzalida2@uc.cl"], ["encrypted_password", "$2a$11$JeGAwTKtKnLtTtGS.F0LieDmjjwW/c1jhzajuL/M1K4Lzwfg.XFke"], ["name", "Lukas Fuenzalida"], ["gender", ""], ["region", "RM"], ["description", ""], ["sexual_orientation", ""], ["interests", ""], ["photos", ""], ["created_at", "2020-04-27 16:28:53.053193"], ["updated_at", "2020-04-27 16:28:53.053193"]]
+  ↳ /home/lukas/.rvm/gems/ruby-2.6.5/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/lukas/.rvm/gems/ruby-2.6.5/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 151ms (ActiveRecord: 3.2ms)
+
+
+Started GET "/" for ::1 at 2020-04-27 12:28:53 -0400
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (9.1ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:14
+Completed 200 OK in 44ms (Views: 40.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users" for ::1 at 2020-04-27 12:28:54 -0400
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:16
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:23
+  Rendered users/index.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 33ms (Views: 29.2ms | ActiveRecord: 2.3ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2020-04-27 12:33:57 -0400
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/lukas/.rvm/gems/ruby-2.6.5/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by Users::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"dTLG476b9r0BjfUEMe6WyxFolhl8Xkptbx3m1rkk1ogT1KCXxB2ci7PpH72i+Nl9FT/4FOgF0FdLglXPCcM/5A=="}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/lukas/.rvm/gems/ruby-2.6.5/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/lukas/.rvm/gems/ruby-2.6.5/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/lukas/.rvm/gems/ruby-2.6.5/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 41ms (ActiveRecord: 5.6ms)
+
+
+Started GET "/" for ::1 at 2020-04-27 12:33:57 -0400
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (268.9ms)
+Completed 200 OK in 303ms (Views: 301.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-04-27 12:33:59 -0400
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /home/lukas/.rvm/gems/ruby-2.6.5/gems/devise-4.7.1/app/views/devise/shared/_error_messages.html.erb (0.7ms)
+  [1m[36mGender Load (0.4ms)[0m  [1m[34mSELECT "genders".* FROM "genders"[0m
+  ↳ app/views/users/registrations/new.html.erb:37
+  [1m[36mRegion Load (0.3ms)[0m  [1m[34mSELECT "regions".* FROM "regions"[0m
+  ↳ app/views/users/registrations/new.html.erb:54
+  [1m[36mInterest Load (0.3ms)[0m  [1m[34mSELECT "interests".* FROM "interests"[0m
+  ↳ app/views/users/registrations/new.html.erb:61
+  [1m[36mOrientation Load (2.2ms)[0m  [1m[34mSELECT "orientations".* FROM "orientations"[0m
+  ↳ app/views/users/registrations/new.html.erb:68
+  Rendered users/shared/_links.html.erb (1.6ms)
+  Rendered users/registrations/new.html.erb within layouts/application (58.9ms)
+Completed 200 OK in 81ms (Views: 64.3ms | ActiveRecord: 16.1ms)
+
+
+Started POST "/users" for ::1 at 2020-04-27 12:34:06 -0400
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kSxomPUPHNrft1Aves5eSKweo283zqX4KeFrnjMIbDk9ZzAkAc9vYXnrBttxg3lbzX6b2Qd6qZ2UyQKjU0ZyGQ==", "user"=>{"name"=>"Lukas Fuenzalida", "rut"=>"123123123", "email"=>"lfuenzalida2@uc.cl", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "gender"=>"", "birthday"=>"", "number"=>"", "region"=>"RM", "interests"=>"", "sexual_orientation"=>"", "description"=>"", "photos"=>""}, "commit"=>"Sign up"}
+Unpermitted parameter: :birthday
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/lukas/.rvm/gems/ruby-2.6.5/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "lfuenzalida2@uc.cl"], ["LIMIT", 1]]
+  ↳ /home/lukas/.rvm/gems/ruby-2.6.5/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ /home/lukas/.rvm/gems/ruby-2.6.5/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /home/lukas/.rvm/gems/ruby-2.6.5/gems/devise-4.7.1/app/views/devise/shared/_error_messages.html.erb (1.5ms)
+  [1m[36mGender Load (0.3ms)[0m  [1m[34mSELECT "genders".* FROM "genders"[0m
+  ↳ app/views/users/registrations/new.html.erb:37
+  [1m[36mRegion Load (0.4ms)[0m  [1m[34mSELECT "regions".* FROM "regions"[0m
+  ↳ app/views/users/registrations/new.html.erb:54
+  [1m[36mInterest Load (0.4ms)[0m  [1m[34mSELECT "interests".* FROM "interests"[0m
+  ↳ app/views/users/registrations/new.html.erb:61
+  [1m[36mOrientation Load (0.2ms)[0m  [1m[34mSELECT "orientations".* FROM "orientations"[0m
+  ↳ app/views/users/registrations/new.html.erb:68
+  Rendered users/shared/_links.html.erb (1.1ms)
+  Rendered users/registrations/new.html.erb within layouts/application (16.8ms)
+Completed 200 OK in 186ms (Views: 35.6ms | ActiveRecord: 2.3ms)
+
+
+Started POST "/users" for ::1 at 2020-04-27 12:34:17 -0400
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Dnn5v0tLsQ6p0BbivyhvMPvOTDXdTnfT61mMG7hvDPQqdRlLgDa1948xxKmEYuALwgRyud70qTrOkluVnnvjmg==", "user"=>{"name"=>"Lukas Fuenzalida", "rut"=>"123123123", "email"=>"lukasafa@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "gender"=>"", "birthday"=>"", "number"=>"", "region"=>"RM", "interests"=>"", "sexual_orientation"=>"", "description"=>"", "photos"=>""}, "commit"=>"Sign up"}
+Unpermitted parameter: :birthday
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/lukas/.rvm/gems/ruby-2.6.5/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "lukasafa@gmail.com"], ["LIMIT", 1]]
+  ↳ /home/lukas/.rvm/gems/ruby-2.6.5/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "rut", "name", "gender", "region", "description", "sexual_orientation", "interests", "photos", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["email", "lukasafa@gmail.com"], ["encrypted_password", "$2a$11$oTHY6C/meNI7XKZY1G.oBuLfgnXnOLdRZYcafJuc8b7pO08wakTiq"], ["rut", "123123123"], ["name", "Lukas Fuenzalida"], ["gender", ""], ["region", "RM"], ["description", ""], ["sexual_orientation", ""], ["interests", ""], ["photos", ""], ["created_at", "2020-04-27 16:34:17.692750"], ["updated_at", "2020-04-27 16:34:17.692750"]]
+  ↳ /home/lukas/.rvm/gems/ruby-2.6.5/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/lukas/.rvm/gems/ruby-2.6.5/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 146ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/" for ::1 at 2020-04-27 12:34:17 -0400
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (9.2ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:14
+Completed 200 OK in 83ms (Views: 81.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users" for ::1 at 2020-04-27 12:34:19 -0400
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:16
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:23
+  Rendered users/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 29ms (Views: 26.6ms | ActiveRecord: 0.9ms)
+
+
