@@ -2,7 +2,7 @@
 
 class DeviseCreateUsers < ActiveRecord::Migration[5.2]
   def change
-    create_table :users, id:false, primary_key:run do |t|
+    create_table :users do |t|
       ## Database authenticatable
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
@@ -16,16 +16,16 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
 
       ## Extra params
 
-      t.string  :run
-      t.string  :name             
-      t.string  :gender          
-      t.string  :region          
-      t.string  :birthday       
-      t.integer :number           
-      t.text    :description     
+      t.string  :rut
+      t.string  :name
+      t.string  :gender
+      t.string  :region
+      t.string  :birthday
+      t.integer :number
+      t.text    :description
       t.string  :sexual_orientation
-      t.string  :interests       
-      t.string  :photos           
+      t.string  :interests
+      t.string  :photos
 
       ## Trackable
       # t.integer  :sign_in_count, default: 0, null: false

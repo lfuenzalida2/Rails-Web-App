@@ -12,7 +12,7 @@ class User < ApplicationRecord
   # validates :sexual_orientation, presence: true
   # validates :interests, presence: true
   # validates :photos, presence: true
-  
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 end

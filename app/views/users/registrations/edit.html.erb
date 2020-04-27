@@ -9,6 +9,11 @@
   </div>
 
   <div class="field">
+    <%= f.label :rut%><br />
+    <%= text_field :rut, autofocus: true, autocomplete: "rut" %>
+  </div>
+
+  <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
@@ -24,6 +29,11 @@
   <div class="field">
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+    <%= f.password_field :current_password, autocomplete: "current-password" %>
   </div>
 
   <div class="field">
