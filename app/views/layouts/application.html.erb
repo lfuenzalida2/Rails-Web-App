@@ -10,6 +10,28 @@
   </head>
 
   <body>
+  <header style="background: green; padding: 0; margin: 0;">
+    <% if current_user %>
+      <p> You're logged in <%= current_user.name %> </p>
+      <%= link_to "Close Session", destroy_user_session_path, method: :delete %>
+
+    <% elsif current_dueno_user %>
+      <p> You're logged in <%= current_dueno_user.name %> </p>
+      <%= link_to "Close Session", destroy_dueno_user_session_path, method: :delete %>
+
+    <% else %>
+    Usuario:
+      <%= link_to "Log In", new_user_session_path %>
+      <%= link_to "Register", new_user_registration_path %>
+    | Dueño de Local:
+      <%= link_to "Log In", new_dueno_user_session_path %>
+      <%= link_to "Register", new_dueno_user_registration_path %>
+
+    <% end %>
+    |
+    <%=link_to  "Home", root_path %>
+  </header>
+
     <%= yield %>
   </body>
 </html>
