@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Locales</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Dirección</th>
+      <th>Tipo</th>
+      <th>Nº Citas</th>
+      <th colspan="4"> Acciones </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @locals.each do |local| %>
+      <tr>
+        <td><%= local.nombre %></td>
+        <td><%= local.direccion %></td>
+        <td><%= local.tipo %></td>
+        <td><%= local.n_citas %></td>
+        <td><%= link_to  'Ver detalles', local_path(local.id) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Crear Local', locals_new_path %>
