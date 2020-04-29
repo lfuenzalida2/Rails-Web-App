@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @local.nombre %>
+</p>
+
+<p>
+  <strong>Dirección:</strong>
+  <%= @local.direccion %>
+</p>
+
+<p>
+  <strong>Tipo:</strong>
+  <%= @local.tipo %>
+</p>
+
+<p>
+  <strong>Número de citas:</strong>
+  <%= @local.n_citas %>
+</p>
+
+<%= link_to 'Lista de Locales', locals_path %>
+<%= link_to 'Editar Local', local_edit_path(@local.id) %>
+<%= link_to 'Eliminar Local', local_delete_path(@local.id), method: :delete, data: { confirm: 'Estás seguro?' } %>

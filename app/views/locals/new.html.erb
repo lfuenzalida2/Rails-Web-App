@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+<h1>Nuevo Local</h1>
+
+<%= form_with(model: @local, method: :post) do |form|%>
+    <div class='field'> 
+        <%= form.label :nombre %>
+        <%= form.text_field :nombre %>
+    </div>
+
+    <div class='field'> 
+        <%= form.label :tipo %>
+        <%= form.text_field :tipo %>
+    </div>
+
+    <div class='field'> 
+        <%= form.label :direccion %>
+        <%= form.text_field :direccion %>
+    </div>
+
+    <div class='field'> 
+        <%= form.label :n_citas %>
+        <%= form.hidden_field :n_citas, :value => 0 %>
+    </div>
+
+    <div class="actions">
+        <%= form.submit %>
+    </div>
+<% end %>
+
+<%= link_to 'Lista de Locales', locals_path %>

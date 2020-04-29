@@ -2,10 +2,11 @@
 
 
 <table>
-    <thead> 
+    <thead>
         <tr>
             <th>Id</th>
             <th>name</th>
+            <th>rut</th>
             <th>email</th>
             <th>Show</th>
             <th>Edit</th>
@@ -16,6 +17,7 @@
         <tr>
             <td><%= user.id %></td>
             <td><%= user.name %></td>
+            <td><%= user.rut %></td>
             <td><%= user.email %></td>
             <td><%= link_to 'Ver mas', user_path(user.id) %></td>
             <% if current_user %>
