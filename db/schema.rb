@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2020_04_27_003212) do
   enable_extension "plpgsql"
 
   create_table "admins", force: :cascade do |t|
-    t.integer "run"
+    t.integer "rut"
     t.boolean "admin"
   end
 
