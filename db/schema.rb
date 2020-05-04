@@ -11,6 +11,7 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema.define(version: 2020_04_27_003212) do
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -32,7 +33,7 @@ ActiveRecord::Schema.define(version: 2020_04_27_003212) do
   end
 
   create_table "admins", force: :cascade do |t|
-    t.integer "run"
+    t.integer "rut"
     t.boolean "admin"
   end
 
@@ -58,12 +59,29 @@ ActiveRecord::Schema.define(version: 2020_04_27_003212) do
     t.string "name"
   end
 
+  create_table "locals", force: :cascade do |t|
+    t.string "nombre"
+    t.string "direccion"
+    t.string "tipo"
+    t.integer "n_citas"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "orientations", force: :cascade do |t|
     t.string "name"
   end
 
   create_table "regions", force: :cascade do |t|
     t.string "name"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.integer "id_local"
+    t.text "review"
+    t.integer "rating"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

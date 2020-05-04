@@ -15,8 +15,10 @@ Region.create(name:'XIV Los Rios')
 Region.create(name:'XV Arica y Parinacota')
 Region.create(name:'XVI Ñuble')
 
-Interest.create(name:"Hombres")
-Interest.create(name:"Mujeres")
+Interest.create(name:"Deporte")
+Interest.create(name:"Musica")
+Interest.create(name:"Danza")
+Interest.create(name:"Cocina")
 
 Orientation.create(name:"Hombres")
 Orientation.create(name:"Mujeres")
@@ -24,4 +26,4 @@ Orientation.create(name:"Mujeres")
 Gender.create(name:"Hombre")
 Gender.create(name:"Mujer")
 
-Admin.create(run:1, admin:true)
+Admin.create(rut:1, admin:true)
