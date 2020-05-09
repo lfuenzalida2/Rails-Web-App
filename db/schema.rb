@@ -15,6 +15,23 @@ ActiveRecord::Schema.define(version: 2020_04_27_003212) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "locals", force: :cascade do |t|
+    t.string "nombre"
+    t.string "direccion"
+    t.string "tipo"
+    t.integer "n_citas"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.integer "id_local"
+    t.text "review"
+    t.integer "rating"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "admins", force: :cascade do |t|
     t.integer "rut"
     t.boolean "admin"
