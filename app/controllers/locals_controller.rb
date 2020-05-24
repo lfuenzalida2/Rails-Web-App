@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class LocalsController < ApplicationController
   def index
     @locals = Local.all
@@ -17,11 +19,11 @@ class LocalsController < ApplicationController
 
     if @local.save
       redirect_to locals_new_path, notice: 'El local ha sido creado exitosamente'
-    else 
+    else
       redirect_to locals_new_path, notice: 'Ha ocurrido un error al crear el local'
-    end   
+    end
   end
-  
+
   def edit
     @local = Local.find(params[:id])
   end
@@ -36,7 +38,7 @@ class LocalsController < ApplicationController
       redirect_to local_path(@local.id), notice: 'Ha ocurrido un error al editar el local'
     end
   end
-  
+
   def destroy
     @local = Local.find(params[:id])
     @local.destroy

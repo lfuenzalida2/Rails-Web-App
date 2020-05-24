@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class DuenoUsersController < ApplicationController
   def index
     @dueno_users = DuenoUser.all
@@ -6,5 +8,4 @@ class DuenoUsersController < ApplicationController
   def show
     @dueno_user = DuenoUser.find(params[:id])
   end
-
 end
