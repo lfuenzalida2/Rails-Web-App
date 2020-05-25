@@ -1,29 +1,25 @@
 <p id="notice"><%= notice %></p>
-<h1>Editar Local</h1>
+<h1>Edit Local</h1>
 
+<div class="jumbotron">
 <%= form_with(model: @local, method: :patch) do |form|%>
     <div class='field'> 
-        <%= form.label :nombre %>
+        <%= form.label :Name %>
         <%= form.text_field :nombre %>
     </div>
 
     <div class='field'> 
-        <%= form.label :tipo %>
+        <%= form.label :Type %>
         <%= form.text_field :tipo %>
     </div>
 
     <div class='field'> 
-        <%= form.label :direccion %>
+        <%= form.label :Direction %>
         <%= form.text_field :direccion %>
-    </div>
-
-    <div class='field'> 
-        <%= form.label :n_citas %>
-        <%= form.number_field :n_citas %>
     </div>
 
     <div class="actions">
         <%= form.submit %>
     </div>
 <% end %>
-
+</div>
