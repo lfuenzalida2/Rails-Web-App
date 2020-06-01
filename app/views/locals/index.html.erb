@@ -1,15 +1,16 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Locales</h1>
+<h1>Locals</h1>
 
+<div class="jumbotron">
 <table>
   <thead>
     <tr>
-      <th>Nombre</th>
-      <th>Dirección</th>
-      <th>Tipo</th>
-      <th>Nº Citas</th>
-      <th colspan="4"> Acciones </th>
+      <th>Name</th>
+      <th>Direction</th>
+      <th>Type</th>
+      <th>Nº Dates</th>
+      <th colspan="4"> Actions </th>
     </tr>
   </thead>
 
@@ -19,8 +20,12 @@
         <td><%= local.nombre %></td>
         <td><%= local.direccion %></td>
         <td><%= local.tipo %></td>
-        <td><%= local.n_citas %></td>
-        <td><%= link_to  'Ver detalles', local_path(local.id) %></td>
+        <% if local.n_citas %>
+          <td><%= local.n_citas %></td>
+        <% else%>
+          <td>0</td>
+        <% end %>
+        <td><%= link_to  'See Details', local_path(local.id) %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +33,5 @@
 
 <br>
 
-<%= link_to 'Crear Local', locals_new_path %>
+<%= link_to 'Create Local', locals_new_path, class: "btn btn-primary" %>
+</div>

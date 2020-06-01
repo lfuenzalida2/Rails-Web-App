@@ -3,3 +3,15 @@ Style/Encoding:
 
 Layout/LineLength:
   Max: 99
+
+AllCops:
+  Includes:
+    - Rakefile
+    - config.ru
+    - Gemfile
+    - app/**/**
+  Excludes:
+    - config/**
+    - script/**
+    - bin/**
+    - app/assets/config/manifest.js

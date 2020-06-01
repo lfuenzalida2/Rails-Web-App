@@ -1,13 +1,14 @@
-<h1>Hello World!</h1>
+<div class="jumbotron">
+    <%= image_tag("brand/fire2.png", size: '100x100') %>
+    <h1>Welcome to DCCitas</h1>
+    <p>
+        This is a website where you can find the love of your life (or even a one night stand), 
+        so we encourage you to join session and follow the steps to get the party started!
+    </p>
+</div>
 
-<<%= link_to  "Show Registered Users", users_path %>>
-<<%= link_to  "Show Registered DuenoUsers", dueno_users_path %>>
+<div class="container">
+    <%= link_to  "Show Registered Users", users_path, class: "btn btn-primary" %>
 
-<p>Un par de Gifs pa que nos riamos, Goce</p>
-<%= image_tag("Gifs/giphy.gif") %>
-<%= image_tag("Gifs/giphy1.gif") %>
-<%= image_tag("Gifs/giphy2.gif") %>
-<%= image_tag("Gifs/giphy3.gif") %>
-<%= image_tag("Gifs/giphy (3).gif") %>
-<%= image_tag("Gifs/giphy (4).gif") %>
-<%= image_tag("Gifs/giphy (5).gif") %>
+    <%= link_to  "Show Registered Owner Users", dueno_users_path, class: "btn btn-primary" %>
+</div>
