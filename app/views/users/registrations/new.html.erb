@@ -34,7 +34,7 @@
 
     <div class="field">
       <%= f.label :gender %><br />
-      <%= select_tag :gender, options_for_select(User.genders) %>
+      <%= f.select :gender, User.genders.keys.to_a %>
     </div>
 
     <div class="field">
@@ -50,17 +50,17 @@
 
     <div class="field">
       <%= f.label :region %><br />
-      <%= select_tag :region, options_for_select(User.regions) %>
+      <%= f.select :region, User.regions.keys.to_a %>
     </div>
 
     <div class="field">
       <%= f.label :interests %><br />
-      <%= select_tag :interest, options_for_select(User.interests) %>
+      <%= f.select :interests, User.interests.keys.to_a %>
     </div>
 
     <div class="field">
       <%= f.label :sexual_orientation %><br />
-      <%= select_tag :sexual_orientation, options_for_select(User.sexual_orientations) %>
+      <%= f.select :sexual_orientation, User.sexual_orientations.keys.to_a %>
     </div>
 
     <div class="field">
@@ -72,8 +72,6 @@
       <%= f.label :photos %><br />
       <%= f.text_field :photos, autofocus: true, autocomplete: "photos" %>
     </div>
-
-
 
     <div class="actions">
       <%= f.submit "Sign up", class: "btn btn-primary" %>

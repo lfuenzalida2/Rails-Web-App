@@ -39,8 +39,7 @@
 
     <div class="field">
       <%= f.label :gender %><br />
-      <%= f.text_field :gender, autofocus: true, autocomplete: "gender" %>
-      <!-- <%= select_tag("gender", options_from_collection_for_select(Gender.all, :name, :name)) %> -->
+      <%= select_tag :gender, options_for_select(User.genders) %>
     </div>
 
     <div class="field">
@@ -56,22 +55,17 @@
 
     <div class="field">
       <%= f.label :region %><br />
-      <%= f.text_field :region, autofocus: true, autocomplete: "region" %>
-      <!-- <%= select_tag("region", options_from_collection_for_select(Region.all, :name, :name))%> -->
+      <%= select_tag :region, options_for_select(User.regions) %>
     </div>
-
 
     <div class="field">
       <%= f.label :interests %><br />
-      <%= f.text_field :interests, autofocus: true, autocomplete: "interests" %>
-      <!-- <%= select_tag("interests", options_from_collection_for_select(Interest.all, :name, :name)) %> -->
+      <%= select_tag :Interest, options_for_select(User.interests) %>
     </div>
-
 
     <div class="field">
       <%= f.label :sexual_orientation %><br />
-      <%= f.text_field :sexual_orientation, autofocus: true, autocomplete: "sexual_orientation" %>
-      <!-- <%= select_tag("sexual_orientation", options_from_collection_for_select(Orientation.all, :name, :name)) %> -->
+      <%= select_tag :sexual_orientation, options_for_select(User.sexual_orientations) %>
     </div>
 
     <div class="field">
