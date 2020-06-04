@@ -42,7 +42,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_sign_up_params
-    devise_parameter_sanitizer.permit(:sign_up, keys: %i[name rut gender region age number description sexual_orientation interests photos])
+    p 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'
+    value = params['user']['gender']
+    devise_parameter_sanitizer.permit(:sign_up, keys: %i[name rut gender region birthday number description sexual_orientation interests photos])
   end
 
   # If you have extra params to permit, append them to the sanitizer.
