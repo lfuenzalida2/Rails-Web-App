@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  get 'show_match/My_match'
+  get 'show_posible_match/Find_love'
   # CRUD's Routes
   # CREATE
   get 'locals/new', to: 'locals#new'
