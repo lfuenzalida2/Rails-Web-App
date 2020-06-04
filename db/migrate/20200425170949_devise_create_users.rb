@@ -15,13 +15,13 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
 
       t.string  :rut
       t.string  :name
-      t.integer  :gender
-      t.integer  :region
+      t.integer :gender
+      t.integer :region
       t.string  :birthday
       t.integer :number
       t.text    :description
-      t.integer  :sexual_orientation
-      t.integer  :interests
+      t.integer :sexual_orientation
+      t.integer :interests
       t.string  :photos
       t.boolean :admin, null:false, default: false
 

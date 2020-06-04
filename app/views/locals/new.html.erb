@@ -10,7 +10,7 @@
 
     <div class='field'> 
         <%= form.label :Type %>
-        <%= form.text_field :tipo %>
+        <%= form.select :tipo, Local.tipos.keys.to_a %>
     </div>
 
     <div class='field'> 

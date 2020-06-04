@@ -32,8 +32,8 @@ ActiveRecord::Schema.define(version: 2020_04_27_003212) do
   create_table "locals", force: :cascade do |t|
     t.string "nombre"
     t.string "direccion"
-    t.string "tipo"
-    t.integer "n_citas"
+    t.integer "tipo"
+    t.integer "n_citas", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
