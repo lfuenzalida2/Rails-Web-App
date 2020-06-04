@@ -34,14 +34,13 @@
 
     <div class="field">
       <%= f.label :gender %><br />
-      <%= f.text_field :gender, autofocus: true, autocomplete: "gender" %>
-      <!-- <%= select_tag("gender", options_from_collection_for_select(Gender.all, :name, :name)) %> -->
+      <%= f.select :gender, User.genders.keys.to_a %>
     </div>
 
     <div class="field">
       <%= f.label :birthday %><br />
       <%= f.text_field :birthday, autofocus: true, autocomplete: "birthday" %>
-      <!-- <%= f.date_field :birthday, autofocus: true, autocomplete: "birthday" %> -->
+      <!--  f.date_field :birthday, autofocus: true, autocomplete: "birthday"  -->
     </div>
 
     <div class="field">
@@ -51,22 +50,17 @@
 
     <div class="field">
       <%= f.label :region %><br />
-      <%= f.text_field :region, autofocus: true, autocomplete: "region" %>
-      <!-- <%= select_tag("region", options_from_collection_for_select(Region.all, :name, :name))%> -->
+      <%= f.select :region, User.regions.keys.to_a %>
     </div>
-
 
     <div class="field">
       <%= f.label :interests %><br />
-      <%= f.text_field :interests, autofocus: true, autocomplete: "interests" %>
-      <!-- <%= select_tag("interests", options_from_collection_for_select(Interest.all, :name, :name)) %> -->
+      <%= f.select :interests, User.interests.keys.to_a %>
     </div>
-
 
     <div class="field">
       <%= f.label :sexual_orientation %><br />
-      <%= f.text_field :sexual_orientation, autofocus: true, autocomplete: "sexual_orientation" %>
-      <!-- <%= select_tag("sexual_orientation", options_from_collection_for_select(Orientation.all, :name, :name)) %> -->
+      <%= f.select :sexual_orientation, User.sexual_orientations.keys.to_a %>
     </div>
 
     <div class="field">
@@ -78,8 +72,6 @@
       <%= f.label :photos %><br />
       <%= f.text_field :photos, autofocus: true, autocomplete: "photos" %>
     </div>
-
-
 
     <div class="actions">
       <%= f.submit "Sign up", class: "btn btn-primary" %>
