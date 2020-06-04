@@ -45,7 +45,7 @@
     <div class="field">
       <%= f.label :birthday %><br />
       <%= f.text_field :birthday, autofocus: true, autocomplete: "birthday" %>
-      <!-- <%= f.date_field :birthday, autofocus: true, autocomplete: "birthday" %> -->
+      <!--  f.date_field :birthday, autofocus: true, autocomplete: "birthday"  -->
     </div>
 
     <div class="field">
@@ -60,6 +60,7 @@
 
     <div class="field">
       <%= f.label :interests %><br />
+
       <%= select_tag :Interest, options_for_select(User.interests) %>
     </div>
 
