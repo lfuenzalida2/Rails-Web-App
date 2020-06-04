@@ -11,7 +11,7 @@ class User < ApplicationRecord
   # validates :photos, presence: true
 
   enum gender: [:male, :female, :all], _prefix: 'gender'
-  enum interests: [:male, :female, :all], _prefix: 'interests'
+  enum interests: [:deporte, :musica, :arte, :ciencias, :comer, :literatura, :teatro], _prefix: 'interests'
   enum sexual_orientation: [:male, :female, :all], _prefix: 'sexual_orientation'
   enum region: [:I, :II, :III, :IV, :V, :VI, :VII, :VIII, :IX, :X, :XI, :XII, :Metropolitana, :XIV, :XV, :XVI], _prefix: 'region'
   

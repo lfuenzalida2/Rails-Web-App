@@ -35,7 +35,6 @@
     <div class="field">
       <%= f.label :gender %><br />
       <%= select_tag :gender, options_for_select(User.genders) %>
-      <!--  select_tag("gender", options_from_collection_for_select(Gender.all, :name, :name))  -->
     </div>
 
     <div class="field">
@@ -52,21 +51,16 @@
     <div class="field">
       <%= f.label :region %><br />
       <%= select_tag :region, options_for_select(User.regions) %>
-      <!--  select_tag("region", options_from_collection_for_select(Region.all, :name, :name)) -->
     </div>
-
 
     <div class="field">
       <%= f.label :interests %><br />
       <%= select_tag :interest, options_for_select(User.interests) %>
-      <!-- select_tag("interests", options_from_collection_for_select(Interest.all, :name, :name)) -->
     </div>
-
 
     <div class="field">
       <%= f.label :sexual_orientation %><br />
       <%= select_tag :sexual_orientation, options_for_select(User.sexual_orientations) %>
-      <!--  select_tag("sexual_orientation", options_from_collection_for_select(Orientation.all, :name, :name)) -->
     </div>
 
     <div class="field">
