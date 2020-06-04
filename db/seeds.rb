@@ -25,7 +25,9 @@ Interest.create(name: 'Cocina')
 Orientation.create(name: 'Hombres')
 Orientation.create(name: 'Mujeres')
 
+
 Gender.create(name: 'Hombre')
 Gender.create(name: 'Mujer')
 
 Admin.create(rut: 1, admin: true)
+
