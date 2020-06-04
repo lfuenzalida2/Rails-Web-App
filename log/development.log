@@ -3049,3 +3049,516 @@ Migrating to CreateReviews (20200427003212)
   ↳ bin/rails:9
   [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ bin/rails:9
+Started GET "/users" for ::1 at 2020-06-04 14:29:07 -0400
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/lukas/.rvm/gems/ruby-2.6.5/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.2.4.3) lib/active_record/migration.rb:579:in `check_pending!'
+activerecord (5.2.4.3) lib/active_record/migration.rb:556:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/users/sign_up" for ::1 at 2020-06-04 14:29:17 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/lukas/.rvm/gems/ruby-2.6.5/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.2.4.3) lib/active_record/migration.rb:579:in `check_pending!'
+activerecord (5.2.4.3) lib/active_record/migration.rb:556:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7864839756650184315)[0m
+  ↳ bin/rails:11
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:11
+Migrating to DropTableGender (20200604182730)
+  [1m[35m (1.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:11
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200604182730"]]
+  ↳ bin/rails:11
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:11
+Migrating to DropTableRegion (20200604182740)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:11
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200604182740"]]
+  ↳ bin/rails:11
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:11
+Migrating to DropTableInterest (20200604182753)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:11
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200604182753"]]
+  ↳ bin/rails:11
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:11
+Migrating to DropTableOrientation (20200604182807)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:11
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200604182807"]]
+  ↳ bin/rails:11
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:11
+  [1m[36mActiveRecord::InternalMetadata Load (1.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:11
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:11
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:11
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(7864839756650184315)[0m
+  ↳ bin/rails:11
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:11
+Started GET "/users/sign_up" for ::1 at 2020-06-04 14:29:41 -0400
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/lukas/.rvm/gems/ruby-2.6.5/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /home/lukas/.rvm/gems/ruby-2.6.5/gems/devise-4.7.1/app/views/devise/shared/_error_messages.html.erb (0.8ms)
+  Rendered users/registrations/new.html.erb within layouts/application (77.8ms)
+Completed 500 Internal Server Error in 156ms (ActiveRecord: 10.0ms)
+
+
+  
+ActionView::Template::Error (uninitialized constant ActionView::CompiledTemplates::Gender):
+    35:     <div class="field">
+    36:       <%= f.label :gender %><br />
+    37:       <%= f.text_field :gender, autofocus: true, autocomplete: "gender" %>
+    38:       <!-- <%= select_tag("gender", options_from_collection_for_select(Gender.all, :name, :name)) %> -->
+    39:     </div>
+    40: 
+    41:     <div class="field">
+  
+app/views/users/registrations/new.html.erb:38:in `block in _app_views_users_registrations_new_html_erb__2904915381547145362_47116243229280'
+app/views/users/registrations/new.html.erb:4:in `_app_views_users_registrations_new_html_erb__2904915381547145362_47116243229280'
+Started GET "/users/sign_up" for ::1 at 2020-06-04 14:31:22 -0400
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /home/lukas/.rvm/gems/ruby-2.6.5/gems/devise-4.7.1/app/views/devise/shared/_error_messages.html.erb (0.8ms)
+  Rendered users/registrations/new.html.erb within layouts/application (50.8ms)
+Completed 500 Internal Server Error in 55ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (uninitialized constant ActionView::CompiledTemplates::Region):
+    52:     <div class="field">
+    53:       <%= f.label :region %><br />
+    54:       <%= f.text_field :region, autofocus: true, autocomplete: "region" %>
+    55:       <!-- <%= select_tag("region", options_from_collection_for_select(Region.all, :name, :name))%> -->
+    56:     </div>
+    57: 
+    58: 
+  
+app/views/users/registrations/new.html.erb:55:in `block in _app_views_users_registrations_new_html_erb__2904915381547145362_47116238735060'
+app/views/users/registrations/new.html.erb:4:in `_app_views_users_registrations_new_html_erb__2904915381547145362_47116238735060'
+Started GET "/users/sign_up" for ::1 at 2020-06-04 14:34:40 -0400
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /home/lukas/.rvm/gems/ruby-2.6.5/gems/devise-4.7.1/app/views/devise/shared/_error_messages.html.erb (0.8ms)
+  Rendered users/registrations/new.html.erb within layouts/application (30.1ms)
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `gender' for #<Class:0x000055b435cbcdb8>
+Did you mean?  genders):
+    35:     <div class="field">
+    36:       <%= f.label :gender %><br />
+    37:       <%= f.text_field :gender, autofocus: true, autocomplete: "gender" %>
+    38:       <%= select_tag("gender", options_from_collection_for_select(User.gender)) %>
+    39:       <!--  select_tag("gender", options_from_collection_for_select(Gender.all, :name, :name))  -->
+    40:     </div>
+    41: 
+  
+app/views/users/registrations/new.html.erb:38:in `block in _app_views_users_registrations_new_html_erb__2904915381547145362_47116245274660'
+app/views/users/registrations/new.html.erb:4:in `_app_views_users_registrations_new_html_erb__2904915381547145362_47116245274660'
+Started GET "/users/sign_up" for ::1 at 2020-06-04 14:34:49 -0400
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /home/lukas/.rvm/gems/ruby-2.6.5/gems/devise-4.7.1/app/views/devise/shared/_error_messages.html.erb (0.7ms)
+  Rendered users/registrations/new.html.erb within layouts/application (8.8ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 1, expected 3..4)):
+    35:     <div class="field">
+    36:       <%= f.label :gender %><br />
+    37:       <%= f.text_field :gender, autofocus: true, autocomplete: "gender" %>
+    38:       <%= select_tag("gender", options_from_collection_for_select(User.genders)) %>
+    39:       <!--  select_tag("gender", options_from_collection_for_select(Gender.all, :name, :name))  -->
+    40:     </div>
+    41: 
+  
+app/views/users/registrations/new.html.erb:38:in `block in _app_views_users_registrations_new_html_erb__2904915381547145362_47116242000340'
+app/views/users/registrations/new.html.erb:4:in `_app_views_users_registrations_new_html_erb__2904915381547145362_47116242000340'
+Started GET "/users/sign_up" for ::1 at 2020-06-04 14:34:58 -0400
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /home/lukas/.rvm/gems/ruby-2.6.5/gems/devise-4.7.1/app/views/devise/shared/_error_messages.html.erb (0.7ms)
+  Rendered users/registrations/new.html.erb within layouts/application (1141.0ms)
+Completed 500 Internal Server Error in 1145ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `name' for #<#<Class:0x000055b435dfd060>:0x00007fdb64879258>):
+    35:     <div class="field">
+    36:       <%= f.label :gender %><br />
+    37:       <%= f.text_field :gender, autofocus: true, autocomplete: "gender" %>
+    38:       <%= select_tag("gender", options_from_collection_for_select(User.genders, name)) %>
+    39:       <!--  select_tag("gender", options_from_collection_for_select(Gender.all, :name, :name))  -->
+    40:     </div>
+    41: 
+  
+app/views/users/registrations/new.html.erb:38:in `block in _app_views_users_registrations_new_html_erb__2904915381547145362_70290130599780'
+app/views/users/registrations/new.html.erb:4:in `_app_views_users_registrations_new_html_erb__2904915381547145362_70290130599780'
+Started GET "/users/sign_up" for ::1 at 2020-06-04 14:35:05 -0400
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /home/lukas/.rvm/gems/ruby-2.6.5/gems/devise-4.7.1/app/views/devise/shared/_error_messages.html.erb (0.8ms)
+  Rendered users/registrations/new.html.erb within layouts/application (1073.5ms)
+Completed 500 Internal Server Error in 1078ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `name' for #<#<Class:0x000055b435dfd060>:0x000055b4364ecad8>):
+    35:     <div class="field">
+    36:       <%= f.label :gender %><br />
+    37:       <%= f.text_field :gender, autofocus: true, autocomplete: "gender" %>
+    38:       <%= select_tag("gender", options_from_collection_for_select(User.genders, name, name)) %>
+    39:       <!--  select_tag("gender", options_from_collection_for_select(Gender.all, :name, :name))  -->
+    40:     </div>
+    41: 
+  
+app/views/users/registrations/new.html.erb:38:in `block in _app_views_users_registrations_new_html_erb__2904915381547145362_47116246711240'
+app/views/users/registrations/new.html.erb:4:in `_app_views_users_registrations_new_html_erb__2904915381547145362_47116246711240'
+Started GET "/users/sign_up" for ::1 at 2020-06-04 14:35:13 -0400
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /home/lukas/.rvm/gems/ruby-2.6.5/gems/devise-4.7.1/app/views/devise/shared/_error_messages.html.erb (0.7ms)
+  Rendered users/registrations/new.html.erb within layouts/application (12.9ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for ["male", 0]:Array):
+    35:     <div class="field">
+    36:       <%= f.label :gender %><br />
+    37:       <%= f.text_field :gender, autofocus: true, autocomplete: "gender" %>
+    38:       <%= select_tag("gender", options_from_collection_for_select(User.genders, :name, :name)) %>
+    39:       <!--  select_tag("gender", options_from_collection_for_select(Gender.all, :name, :name))  -->
+    40:     </div>
+    41: 
+  
+app/views/users/registrations/new.html.erb:38:in `block in _app_views_users_registrations_new_html_erb__2904915381547145362_47116244043840'
+app/views/users/registrations/new.html.erb:4:in `_app_views_users_registrations_new_html_erb__2904915381547145362_47116244043840'
+Started GET "/users/sign_up" for ::1 at 2020-06-04 14:37:10 -0400
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /home/lukas/.rvm/gems/ruby-2.6.5/gems/devise-4.7.1/app/views/devise/shared/_error_messages.html.erb (0.7ms)
+  Rendered users/registrations/new.html.erb within layouts/application (17.1ms)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (2 is not a symbol nor a string):
+    35:     <div class="field">
+    36:       <%= f.label :gender %><br />
+    37:       <%= f.text_field :gender, autofocus: true, autocomplete: "gender" %>
+    38:       <%= select_tag("gender", options_from_collection_for_select(User.genders, 1, 2,3)) %>
+    39:       <!--  select_tag("gender", options_from_collection_for_select(Gender.all, :name, :name))  -->
+    40:     </div>
+    41: 
+  
+app/views/users/registrations/new.html.erb:38:in `block in _app_views_users_registrations_new_html_erb__2904915381547145362_47116242115380'
+app/views/users/registrations/new.html.erb:4:in `_app_views_users_registrations_new_html_erb__2904915381547145362_47116242115380'
+Started GET "/users/sign_up" for ::1 at 2020-06-04 14:37:28 -0400
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /home/lukas/.rvm/gems/ruby-2.6.5/gems/devise-4.7.1/app/views/devise/shared/_error_messages.html.erb (0.7ms)
+  Rendered users/registrations/new.html.erb within layouts/application (12.6ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `1' for ["male", 0]:Array):
+    35:     <div class="field">
+    36:       <%= f.label :gender %><br />
+    37:       <%= f.text_field :gender, autofocus: true, autocomplete: "gender" %>
+    38:       <%= select_tag("gender", options_from_collection_for_select(User.genders, '0', '1', '2')) %>
+    39:       <!--  select_tag("gender", options_from_collection_for_select(Gender.all, :name, :name))  -->
+    40:     </div>
+    41: 
+  
+app/views/users/registrations/new.html.erb:38:in `block in _app_views_users_registrations_new_html_erb__2904915381547145362_47116232009840'
+app/views/users/registrations/new.html.erb:4:in `_app_views_users_registrations_new_html_erb__2904915381547145362_47116232009840'
+Started GET "/users/sign_up" for ::1 at 2020-06-04 14:37:48 -0400
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /home/lukas/.rvm/gems/ruby-2.6.5/gems/devise-4.7.1/app/views/devise/shared/_error_messages.html.erb (0.7ms)
+  Rendered users/registrations/new.html.erb within layouts/application (18.0ms)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `female' for ["male", 0]:Array):
+    35:     <div class="field">
+    36:       <%= f.label :gender %><br />
+    37:       <%= f.text_field :gender, autofocus: true, autocomplete: "gender" %>
+    38:       <%= select_tag("gender", options_from_collection_for_select(User.genders, :male, :female)) %>
+    39:       <!--  select_tag("gender", options_from_collection_for_select(Gender.all, :name, :name))  -->
+    40:     </div>
+    41: 
+  
+app/views/users/registrations/new.html.erb:38:in `block in _app_views_users_registrations_new_html_erb__2904915381547145362_70290130758140'
+app/views/users/registrations/new.html.erb:4:in `_app_views_users_registrations_new_html_erb__2904915381547145362_70290130758140'
+Started GET "/users/sign_up" for ::1 at 2020-06-04 14:38:48 -0400
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /home/lukas/.rvm/gems/ruby-2.6.5/gems/devise-4.7.1/app/views/devise/shared/_error_messages.html.erb (0.8ms)
+  Rendered users/registrations/new.html.erb within layouts/application (1191.7ms)
+Completed 500 Internal Server Error in 1198ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `gender' for #<#<Class:0x000055b435dfd060>:0x00007fdb6483b7a0>
+Did you mean?  render):
+    35:     <div class="field">
+    36:       <%= f.label :gender %><br />
+    37:       <%= f.text_field :gender, autofocus: true, autocomplete: "gender" %>
+    38:       <%= select_tag("gender", options_from_collection_for_select(gender, value, User.genders)) %>
+    39:       <!--  select_tag("gender", options_from_collection_for_select(Gender.all, :name, :name))  -->
+    40:     </div>
+    41: 
+  
+app/views/users/registrations/new.html.erb:38:in `block in _app_views_users_registrations_new_html_erb__2904915381547145362_70290130457220'
+app/views/users/registrations/new.html.erb:4:in `_app_views_users_registrations_new_html_erb__2904915381547145362_70290130457220'
+Started GET "/users/sign_up" for ::1 at 2020-06-04 14:39:14 -0400
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /home/lukas/.rvm/gems/ruby-2.6.5/gems/devise-4.7.1/app/views/devise/shared/_error_messages.html.erb (0.9ms)
+  Rendered users/registrations/new.html.erb within layouts/application (955.1ms)
+Completed 500 Internal Server Error in 962ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `value' for #<#<Class:0x000055b435dfd060>:0x000055b435c21d68>):
+    35:     <div class="field">
+    36:       <%= f.label :gender %><br />
+    37:       <%= f.text_field :gender, autofocus: true, autocomplete: "gender" %>
+    38:       <%= select_tag("gender", options_from_collection_for_select(User.genders, value, User.genders)) %>
+    39:       <!--  select_tag("gender", options_from_collection_for_select(Gender.all, :name, :name))  -->
+    40:     </div>
+    41: 
+  
+app/views/users/registrations/new.html.erb:38:in `block in _app_views_users_registrations_new_html_erb__2904915381547145362_47116242204580'
+app/views/users/registrations/new.html.erb:4:in `_app_views_users_registrations_new_html_erb__2904915381547145362_47116242204580'
+Started GET "/users/sign_up" for ::1 at 2020-06-04 14:39:26 -0400
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /home/lukas/.rvm/gems/ruby-2.6.5/gems/devise-4.7.1/app/views/devise/shared/_error_messages.html.erb (0.7ms)
+  Rendered users/registrations/new.html.erb within layouts/application (6.4ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error ({"male"=>0, "female"=>1, "all"=>2} is not a symbol nor a string):
+    35:     <div class="field">
+    36:       <%= f.label :gender %><br />
+    37:       <%= f.text_field :gender, autofocus: true, autocomplete: "gender" %>
+    38:       <%= select_tag("gender", options_from_collection_for_select(User.genders, 'value', User.genders)) %>
+    39:       <!--  select_tag("gender", options_from_collection_for_select(Gender.all, :name, :name))  -->
+    40:     </div>
+    41: 
+  
+app/views/users/registrations/new.html.erb:38:in `block in _app_views_users_registrations_new_html_erb__2904915381547145362_70290127906040'
+app/views/users/registrations/new.html.erb:4:in `_app_views_users_registrations_new_html_erb__2904915381547145362_70290127906040'
+Started GET "/users/sign_up" for ::1 at 2020-06-04 14:39:52 -0400
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /home/lukas/.rvm/gems/ruby-2.6.5/gems/devise-4.7.1/app/views/devise/shared/_error_messages.html.erb (0.7ms)
+  Rendered users/registrations/new.html.erb within layouts/application (20.0ms)
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `map' for #<Class:0x000055b435cbcdb8>
+Did you mean?  tap):
+    35:     <div class="field">
+    36:       <%= f.label :gender %><br />
+    37:       <%= f.text_field :gender, autofocus: true, autocomplete: "gender" %>
+    38:       <%= select_tag("gender", options_from_collection_for_select(User, 'value', User.genders)) %>
+    39:       <!--  select_tag("gender", options_from_collection_for_select(Gender.all, :name, :name))  -->
+    40:     </div>
+    41: 
+  
+app/views/users/registrations/new.html.erb:38:in `block in _app_views_users_registrations_new_html_erb__2904915381547145362_70290127646080'
+app/views/users/registrations/new.html.erb:4:in `_app_views_users_registrations_new_html_erb__2904915381547145362_70290127646080'
+Started GET "/users/sign_up" for ::1 at 2020-06-04 14:40:29 -0400
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /home/lukas/.rvm/gems/ruby-2.6.5/gems/devise-4.7.1/app/views/devise/shared/_error_messages.html.erb (0.8ms)
+  Rendered users/registrations/new.html.erb within layouts/application (15.9ms)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `id' for {"male"=>0, "female"=>1, "all"=>2}:ActiveSupport::HashWithIndifferentAccess):
+    35:     <div class="field">
+    36:       <%= f.label :gender %><br />
+    37:       <%= f.text_field :gender, autofocus: true, autocomplete: "gender" %>
+    38:       <%= select_tag("gender", options_from_collection_for_select(User, User.genders.id, User.genders)) %>
+    39:       <!--  select_tag("gender", options_from_collection_for_select(Gender.all, :name, :name))  -->
+    40:     </div>
+    41: 
+  
+app/views/users/registrations/new.html.erb:38:in `block in _app_views_users_registrations_new_html_erb__2904915381547145362_70290127222840'
+app/views/users/registrations/new.html.erb:4:in `_app_views_users_registrations_new_html_erb__2904915381547145362_70290127222840'
+Started GET "/users/sign_up" for ::1 at 2020-06-04 14:40:30 -0400
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /home/lukas/.rvm/gems/ruby-2.6.5/gems/devise-4.7.1/app/views/devise/shared/_error_messages.html.erb (0.8ms)
+  Rendered users/registrations/new.html.erb within layouts/application (9.9ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `id' for {"male"=>0, "female"=>1, "all"=>2}:ActiveSupport::HashWithIndifferentAccess):
+    35:     <div class="field">
+    36:       <%= f.label :gender %><br />
+    37:       <%= f.text_field :gender, autofocus: true, autocomplete: "gender" %>
+    38:       <%= select_tag("gender", options_from_collection_for_select(User, User.genders.id, User.genders)) %>
+    39:       <!--  select_tag("gender", options_from_collection_for_select(Gender.all, :name, :name))  -->
+    40:     </div>
+    41: 
+  
+app/views/users/registrations/new.html.erb:38:in `block in _app_views_users_registrations_new_html_erb__2904915381547145362_47116248120200'
+app/views/users/registrations/new.html.erb:4:in `_app_views_users_registrations_new_html_erb__2904915381547145362_47116248120200'
+Started GET "/users/sign_up" for ::1 at 2020-06-04 14:42:05 -0400
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /home/lukas/.rvm/gems/ruby-2.6.5/gems/devise-4.7.1/app/views/devise/shared/_error_messages.html.erb (15.5ms)
+  Rendered users/shared/_links.html.erb (4.2ms)
+  Rendered users/registrations/new.html.erb within layouts/application (52.7ms)
+Completed 200 OK in 2629ms (Views: 2627.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-06-04 14:42:36 -0400
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /home/lukas/.rvm/gems/ruby-2.6.5/gems/devise-4.7.1/app/views/devise/shared/_error_messages.html.erb (0.9ms)
+  Rendered users/shared/_links.html.erb (1.0ms)
+  Rendered users/registrations/new.html.erb within layouts/application (11.6ms)
+Completed 200 OK in 45ms (Views: 43.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-06-04 14:42:57 -0400
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /home/lukas/.rvm/gems/ruby-2.6.5/gems/devise-4.7.1/app/views/devise/shared/_error_messages.html.erb (2.3ms)
+  Rendered users/shared/_links.html.erb (1.0ms)
+  Rendered users/registrations/new.html.erb within layouts/application (20.1ms)
+Completed 200 OK in 58ms (Views: 56.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-06-04 14:43:37 -0400
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /home/lukas/.rvm/gems/ruby-2.6.5/gems/devise-4.7.1/app/views/devise/shared/_error_messages.html.erb (0.8ms)
+  Rendered users/registrations/new.html.erb within layouts/application (91.7ms)
+Completed 500 Internal Server Error in 101ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `orientations' for #<Class:0x000055b435cbcdb8>):
+    65: 
+    66:     <div class="field">
+    67:       <%= f.label :sexual_orientation %><br />
+    68:       <%= select_tag :orientation, options_for_select(User.orientations) %>
+    69:       <!--  select_tag("sexual_orientation", options_from_collection_for_select(Orientation.all, :name, :name)) -->
+    70:     </div>
+    71: 
+  
+app/views/users/registrations/new.html.erb:68:in `block in _app_views_users_registrations_new_html_erb__2904915381547145362_70290135928600'
+app/views/users/registrations/new.html.erb:4:in `_app_views_users_registrations_new_html_erb__2904915381547145362_70290135928600'
+Started GET "/users/sign_up" for ::1 at 2020-06-04 14:43:51 -0400
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /home/lukas/.rvm/gems/ruby-2.6.5/gems/devise-4.7.1/app/views/devise/shared/_error_messages.html.erb (0.7ms)
+  Rendered users/shared/_links.html.erb (1.8ms)
+  Rendered users/registrations/new.html.erb within layouts/application (20.3ms)
+Completed 200 OK in 64ms (Views: 62.8ms | ActiveRecord: 0.0ms)
+
+
