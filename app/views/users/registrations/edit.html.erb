@@ -58,12 +58,11 @@
       <%= select_tag :region, options_for_select(User.regions) %>
     </div>
 
-
     <div class="field">
       <%= f.label :interests %><br />
-      <%= select_tag :interest, options_for_select(User.interests) %>
-    </div>
 
+      <%= select_tag :Interest, options_for_select(User.interests) %>
+    </div>
 
     <div class="field">
       <%= f.label :sexual_orientation %><br />
