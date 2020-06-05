@@ -22,10 +22,12 @@
               DCCitas
             </span>
           </li>
-    
+
+          <% if user_signed_in? || dueno_user_signed_in? %>
           <li class="nav-item">
             <%=link_to  "| Locals", locals_path, class: "nav-link" %>
           </li>
+          <% end %>
         </ul>
         
         <ul class="navbar-nav">

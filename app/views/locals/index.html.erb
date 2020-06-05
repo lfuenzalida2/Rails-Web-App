@@ -20,9 +20,9 @@
         <td><%= local.nombre %></td>
         <td><%= local.direccion %></td>
         <td><%= local.tipo %></td>
-        <% if local.n_citas %>
+        <% if local.n_citas && dueno_user_signed_in? %>
           <td><%= local.n_citas %></td>
-        <% else%>
+        <% else %>
           <td>0</td>
         <% end %>
         <td><%= link_to  'See Details', local_path(local.id) %></td>
@@ -32,6 +32,7 @@
 </table>
 
 <br>
-
-<%= link_to 'Create Local', locals_new_path, class: "btn btn-primary" %>
+<% if dueno_user_signed_in? %>
+  <%= link_to 'Create Local', locals_new_path, class: "btn btn-primary" %>
+<% end %>
 </div>
