@@ -33,7 +33,9 @@ Rails.application.routes.draw do
 
   # Delete
   root 'posts#index'
-  
+  resources :users do
+    resources :reviews
+  end
   resources :dueno_users do  
     resources :locals
   end
