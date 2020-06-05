@@ -34,19 +34,19 @@ ActiveRecord::Schema.define(version: 2020_06_05_061158) do
     t.index ["reset_password_token"], name: "index_dueno_users_on_reset_password_token", unique: true
   end
 
-  create_table "genders", force: :cascade do |t|
-    t.string "name"
-  end
-
-  create_table "interests", force: :cascade do |t|
-    t.string "name"
+  create_table "likes", force: :cascade do |t|
+    t.integer "sender_user"
+    t.integer "receiver_user"
+    t.boolean "match"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "locals", force: :cascade do |t|
     t.string "nombre"
     t.string "direccion"
-    t.string "tipo"
-    t.integer "n_citas"
+    t.integer "tipo"
+    t.integer "n_citas", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "dueno_user_id"
