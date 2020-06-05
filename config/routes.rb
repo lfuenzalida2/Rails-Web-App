@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+
   get 'show_match/My_match'
   get 'show_posible_match/Find_love'
   # CRUD's Routes
@@ -32,4 +33,10 @@ Rails.application.routes.draw do
 
   # Delete
   root 'posts#index'
+  resources :users do
+    resources :reviews
+  end
+  resources :dueno_users do  
+    resources :locals
+  end
 end

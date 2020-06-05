@@ -3,6 +3,8 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  has_many :locals
+  has_one :review
   validates :rut, :rut => true
   validates :name, :presence => true, :format => { :with => /\A[a-z A-Z]+\z/,
                                                 :message => "Only letters allowed"},
