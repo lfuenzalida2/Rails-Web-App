@@ -17,7 +17,7 @@ class LocalsController < ApplicationController
   def create
     local_params = params.require(:local).permit(:nombre, :direccion, :tipo)
     @local = Local.create(local_params)
-
+    p @local
     if @local.save
       redirect_to locals_new_path, notice: 'El local ha sido creado exitosamente'
     else
