@@ -1,31 +1,106 @@
 # frozen_string_literal: true
 
-Region.create(name: 'I Tarapaca')
-Region.create(name: 'II Antofagasta')
-Region.create(name: 'III Atacama')
-Region.create(name: 'IV Coquimbo')
-Region.create(name: 'V Valparaiso')
-Region.create(name: 'VI Libertador General Bernardo O\'Higgins')
-Region.create(name: 'VII Maule')
-Region.create(name: 'VIII Biobio')
-Region.create(name: 'IX Araucania')
-Region.create(name: 'X Los Lagos')
-Region.create(name: 'XI Aysén del General Carlos Ibañez del Campo')
-Region.create(name: 'XII Magallanes y Antártica Chilena')
-Region.create(name: 'Region Metropolitana de Santiago')
-Region.create(name: 'XIV Los Rios')
-Region.create(name: 'XV Arica y Parinacota')
-Region.create(name: 'XVI Ñuble')
+User.create(
+    email: "example1@dccitas.cl",
+    password: "123456",
+    rut:"12312312-3",
+    name:"Pedro Piedra",
+    birthday:"02/05/1997",
+    description:"Un chico alegre",
+    number: 99058260,
+    photos:"none",
+    gender:"male",
+    interests:"musica",
+    sexual_orientation:"female",
+    region: "I")
 
-Interest.create(name: 'Deporte')
-Interest.create(name: 'Musica')
-Interest.create(name: 'Danza')
-Interest.create(name: 'Cocina')
+User.create(
+    email: "example2@dccitas.cl",
+    password: "123456",
+    rut:"14589717-3",
+    name:"Manuel Alberto",
+    birthday:"02/10/1995",
+    description:"Un chico mas alegre",
+    number: 52487860,
+    photos:"none",
+    gender:"male",
+    interests:"teatro",
+    sexual_orientation:"female",
+    region: "X")     
 
-Orientation.create(name: 'Hombres')
-Orientation.create(name: 'Mujeres')
+User.create(
+    email: "example3@dccitas.cl",
+    password: "123456",
+    rut:"5836091-0",
+    name:"Luisa Martines",
+    birthday:"10/05/1998",
+    description:"Un chica muy alegre",
+    number: 36332576,
+    photos:"none",
+    gender:"female",
+    interests:"teatro",
+    sexual_orientation:"female",
+    region: "III")
 
-Gender.create(name: 'Hombre')
-Gender.create(name: 'Mujer')
+DuenoUser.create(
+    email: "duenoexample2@dccitas.cl",
+    password: "123456",
+    rut:"6645166-6",
+    name:"Gloria Carmina")
 
-Admin.create(rut: 1, admin: true)
+DuenoUser.create(
+    email: "duenoexample3@dccitas.cl",
+    password: "123456",
+    rut:"6717405-4",
+    name:"Magnus Midtbo")
+
+DuenoUser.create(
+    email: "duenoexample1@dccitas.cl",
+    password: "123456",
+    rut:"15427936-9",
+    name:"Hillary Clinton")
+
+Local.create(
+    nombre: "Pizza Dil Bambino",
+    tipo: "restaurante",
+    direccion: "Av Italia 2014")
+
+Local.create(
+    nombre: "Cine Hoytz",
+    tipo: "cine",
+    direccion: "Av avenida los trapenses")
+
+Local.create(
+    nombre: "Bar Ianza",
+    tipo: "bar",
+    direccion: "Andres Bello 1313")
+
+Local.create(
+    nombre: "Motel Piramide",
+    tipo: "motel",
+    direccion: "Av Panamericana Km 21")
+
+Review.create(
+    id_local: 1,
+    review: "Muy ricas las pizzas",
+    rating: 5)
+
+Review.create(
+    id_local: 2,
+    review: "Habia una pareja atras mio que no paraba de hacer cosas, deben mejorar la seguridad",
+    rating: 2)
+
+Review.create(
+    id_local: 3,
+    review: "Muy buen bar, los precios no varian mucho con respecto a otros bar",
+    rating: 4)
+
+Review.create(
+    id_local: 4,
+    review: "Pesimo servicio, deberían limpiar las piezas antes de volver a arrendarlas",
+    rating: 1)
+
+Review.create(
+    id_local: 4,
+    review: "Los precios muy buenos",
+    rating: 4)

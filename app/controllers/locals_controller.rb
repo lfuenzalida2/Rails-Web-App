@@ -6,6 +6,7 @@ class LocalsController < ApplicationController
   end
 
   def show
+    p Local.find(params[:id])
     @local = Local.find(params[:id])
   end
 
@@ -14,9 +15,9 @@ class LocalsController < ApplicationController
   end
 
   def create
-    local_params = params.require(:local).permit(:nombre, :direccion, :tipo, :n_citas)
+    local_params = params.require(:local).permit(:nombre, :direccion, :tipo)
     @local = Local.create(local_params)
-
+    p @local
     if @local.save
       redirect_to locals_new_path, notice: 'El local ha sido creado exitosamente'
     else

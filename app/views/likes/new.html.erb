@@ -1,0 +1,63 @@
+<div class="jumbotron">
+    <center>
+    <h1>Find Love</h1>
+        <% if current_user %>
+            <% @liked_users = [current_user.id] %>
+            <% @likers_users = {} %>
+            <% @likes.each do |like| %>
+                <% if like.sender_user == current_user.id %>
+                    <% @liked_users.push(like.receiver_user) %>
+                <% elsif like.receiver_user == current_user.id && like.match == true %>
+                    <% @liked_users.push(like.sender_user) %>
+                <% end %>
+                <% if like.receiver_user == current_user.id && like.match != true %>
+                    <% @likers_users[like.sender_user] = like.id %>
+                <% end %>
+                <% if like.receiver_user == current_user.id && like.match == false %>
+                    <% @liked_users.push(like.sender_user) %>
+                <% end %>
+            <% end %>
+            <% @posible_partners = [] %>
+            <% @users.each do |user| %>
+                <% if user.id == current_user.id %>
+                    <% nil %>
+                <% elsif user.gender == current_user.sexual_orientation || current_user.sexual_orientation == 'all' %>
+                    <% if user.sexual_orientation == current_user.gender || user.sexual_orientation == 'all' %>
+                        <% @posible_partners.push(user.id) %>
+                    <% end %>
+                <% end %>
+            <% end %>
+            <% if @posible_partners.length() == @liked_users.length() - 1 %>
+                <%= image_tag("brand/fire2.png", size: '200x200') %>
+                <p>
+                There are not more people to find. Come back later. 
+                </p>
+            <% else %>
+                <% @users.each do |user| %>
+                    <% if user.id != current_user.id && @liked_users.exclude?(user.id) && @posible_partners.include?(user.id)%>
+                        <table>
+                            <tr>
+                                <td><%= user.photos%></td>
+                                <td><%=  @liked_users%></td>
+                            </tr>
+                            <tr>
+                                <td><%= user.name%></td>
+                            </tr>
+                            <tr>
+                                <td><%= user.description%></td>
+                            </tr>
+                        </table>
+                        <% if @likers_users.key? user.id%>
+                            <%= link_to "Like", likes_update_path(id: @likers_users[user.id], match: true), :method => :patch %>
+                            <%= link_to "Dislike", likes_update_path(id: @likers_users[user.id], match: false), :method => :patch %>    
+                        <% else %>
+                            <%= link_to "Like", likes_new_path(sender_user: current_user.id, receiver_user: user.id), :method => :post %>
+                            <%= link_to "Disike", likes_new_path(sender_user: current_user.id, receiver_user: user.id, match: false), :method => :post %>
+                        <% end %>
+                        <br>
+                    <% end %>
+                <% end %>
+            <% end %>
+        <% end %> 
+    </center>
+</div>

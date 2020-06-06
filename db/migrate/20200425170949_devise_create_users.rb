@@ -18,14 +18,15 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
 
       t.string  :rut
       t.string  :name
-      t.string  :gender
-      t.string  :region
+      t.integer :gender
+      t.integer :region
       t.string  :birthday
       t.integer :number
       t.text    :description
-      t.string  :sexual_orientation
-      t.string  :interests
+      t.integer :sexual_orientation
+      t.integer :interests
       t.string  :photos
+      t.boolean :admin, null:false, default: false
 
       ## Trackable
       # t.integer  :sign_in_count, default: 0, null: false

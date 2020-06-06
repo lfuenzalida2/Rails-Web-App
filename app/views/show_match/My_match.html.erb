@@ -1,0 +1,45 @@
+
+  <% if current_user %>
+    <% @match_ids = [] %>
+    <% @likes.each do |like| %>
+      <% if like.match == true %>
+        <% if like.receiver_user == current_user.id %>
+          <% @match_ids.push(like.sender_user) %>
+        <% elsif like.sender_user == current_user.id%>
+          <% @match_ids.push(like.receiver_user) %>
+        <% end %>
+      <% end %>
+    <% end %>
+    <div class="jumbotron">
+    <center>
+    <% if @match_ids.length() == 0 %>
+          <h1>My Matches</h1>
+          <%= image_tag("brand/fire2.png", size: '200x200') %>
+          <p>
+          You don't have matches yet. 
+          <%= link_to "Find your ideal partner here", likes_new_path, class: "nav-link" %>
+          </p>
+    <% else %>
+      <% @users.each do |user| %>
+        <% if @match_ids.include?(user.id) %>
+          <table>
+            <tr>
+            <td><%= user.photos%></td>
+            </tr>
+            <tr>
+            <td><%= user.name%></td>
+            </tr>
+            <tr>
+            <td><%= user.interests%></td>
+            </tr>
+            <tr>
+            <td><%= user.description%></td>
+            </tr>
+            </table>
+            <br>
+        <% end %>
+      <% end %>
+    <% end %>
+    </center>
+    </div>
+  <% end %>

@@ -1,38 +1,85 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Myapp</title>
+    <title>DCCitas</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+  
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-  <header style="background: green; padding: 0; margin: 0;">
-    <% if current_user %>
-      <p> You're logged in <%= current_user.name %> </p>
-      <%= link_to "Close Session", destroy_user_session_path, method: :delete %>
 
-    <% elsif current_dueno_user %>
-      <p> You're logged in <%= current_dueno_user.name %> </p>
-      <%= link_to "Close Session", destroy_dueno_user_session_path, method: :delete %>
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
+    <div class="collapse navbar-collapse">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a href='/' class="navbar-brand">
+              <%= image_tag("brand/fire2.png", size: '30x30') %>
+            </a>
+            <span class="navbar-text">
+              DCCitas
+            </span>
+          </li>
 
-    <% else %>
-    Usuario:
-      <%= link_to "Log In", new_user_session_path %>
-      <%= link_to "Register", new_user_registration_path %>
-    | Dueño de Local:
-      <%= link_to "Log In", new_dueno_user_session_path %>
-      <%= link_to "Register", new_dueno_user_registration_path %>
-
-    <% end %>
-    |
-    <%=link_to  "Home", root_path %>
-    <%=link_to  "Locals", locals_path %>
-
-  </header>
+          <% if user_signed_in? || dueno_user_signed_in? %>
+          <li class="nav-item">
+            <%=link_to  "| Locals", locals_path, class: "nav-link" %>
+          </li>
+          <% end %>
+        </ul>
+        
+        <ul class="navbar-nav">
+          <% if current_user %>
+            <li class="nav-item">
+              <%= link_to "Start Searching", likes_new_path, class: "nav-link" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "My Matches", show_match_My_match_path, class: "nav-link" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "Edit Profile", edit_user_registration_path, class: "nav-link" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "Close Session", destroy_user_session_path, method: :delete, class: "nav-link" %>
+            </li>
+    
+            <% elsif current_dueno_user %>
+            <li class="nav-item">
+              <%= link_to "Close Session", destroy_dueno_user_session_path, method: :delete, class: "nav-link" %>
+            </li>
+    
+            <% else %>
+            <ul class="navbar-nav">
+              <span class="navbar-text">
+                User:
+              </span>
+              <li class="nav-item">
+                <%= link_to "Log In", new_user_session_path, class: "nav-link" %>
+              </li>
+              <li class="nav-item">
+                <%= link_to "Register", new_user_registration_path, class: "nav-link" %>
+              </li>
+            </ul>
+    
+            <ul class="navbar-nav">
+              <span class="navbar-text">
+                | Local Owner:
+              </span>
+              <li class="nav-item">
+                <%= link_to "Log In", new_dueno_user_session_path, class: "nav-link" %> 
+              </li>
+              <li class="nav-item">
+                <%= link_to "Register", new_dueno_user_registration_path, class: "nav-link" %>
+              </li>
+            </ul>
+            
+            <% end %>
+        </ul>
+    </div>
+  
+  </nav>
 
     <%= yield %>
   </body>

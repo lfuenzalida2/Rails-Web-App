@@ -1,30 +1,27 @@
 <p id="notice"><%= notice %></p>
-<h1>Nuevo Local</h1>
+<h1>New Local</h1>
 
+<div class="jumbotron">
 <%= form_with(model: @local, method: :post) do |form|%>
     <div class='field'> 
-        <%= form.label :nombre %>
+        <%= form.label :Name %>
         <%= form.text_field :nombre %>
     </div>
 
     <div class='field'> 
-        <%= form.label :tipo %>
-        <%= form.text_field :tipo %>
+        <%= form.label :Type %>
+        <%= form.select :tipo, Local.tipos.keys.to_a %>
     </div>
 
     <div class='field'> 
-        <%= form.label :direccion %>
+        <%= form.label :Direction %>
         <%= form.text_field :direccion %>
-    </div>
-
-    <div class='field'> 
-        <%= form.label :n_citas %>
-        <%= form.hidden_field :n_citas, :value => 0 %>
     </div>
 
     <div class="actions">
         <%= form.submit %>
     </div>
 <% end %>
-
-<%= link_to 'Lista de Locales', locals_path %>
+<br>
+<%= link_to 'Locals Lists', locals_path, class: "btn btn-primary" %>
+</div>

@@ -1,27 +1,28 @@
-<h1> This are all the Dueño Users </h1>
+<h1> This are all the Local Owners </h1>
 
-
-<table>
-    <thead>
-        <tr>
-            <th>Id</th>
-            <th>name</th>
-            <th>email</th>
-            <th>rut</th>
-            <th>Edit</th>
-        </tr>
-    </thead>
-    <tbody>
-    <% @dueno_users.each {|dueno_user| %>
-        <tr>
-            <td><%= dueno_user.id %></td>
-            <td><%= dueno_user.name %></td>
-            <td><%= dueno_user.email %></td>
-            <td><%= dueno_user.rut %></td>
-            <% if current_dueno_user %>
-            <td><%= link_to 'Editar', edit_dueno_user_registration_path %></td>
-            <% end %>
-        </tr>
-    </tbody>
-    <% } %>
-</table>
+<div class="jumbotron">
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>name</th>
+                <th>email</th>
+                <th>rut</th>
+                <th>Edit</th>
+            </tr>
+        </thead>
+        <tbody>
+        <% @dueno_users.each {|dueno_user| %>
+            <tr>
+                <td><%= dueno_user.id %></td>
+                <td><%= dueno_user.name %></td>
+                <td><%= dueno_user.email %></td>
+                <td><%= dueno_user.rut %></td>
+                <% if current_dueno_user %>
+                <td><%= link_to 'Editar', edit_dueno_user_registration_path, class: "btn btn-primary" %></td>
+                <% end %>
+            </tr>
+        </tbody>
+        <% } %>
+    </table>
+</div>
