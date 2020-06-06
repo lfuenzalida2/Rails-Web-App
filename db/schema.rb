@@ -15,11 +15,6 @@ ActiveRecord::Schema.define(version: 2020_06_05_061158) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "admins", force: :cascade do |t|
-    t.integer "rut"
-    t.boolean "admin"
-  end
-
   create_table "dueno_users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -53,14 +48,6 @@ ActiveRecord::Schema.define(version: 2020_06_05_061158) do
     t.index ["dueno_user_id"], name: "index_locals_on_dueno_user_id"
   end
 
-  create_table "orientations", force: :cascade do |t|
-    t.string "name"
-  end
-
-  create_table "regions", force: :cascade do |t|
-    t.string "name"
-  end
-
   create_table "reviews", force: :cascade do |t|
     t.integer "id_local"
     t.text "review"
@@ -79,14 +66,15 @@ ActiveRecord::Schema.define(version: 2020_06_05_061158) do
     t.datetime "remember_created_at"
     t.string "rut"
     t.string "name"
-    t.string "gender"
-    t.string "region"
+    t.integer "gender"
+    t.integer "region"
     t.string "birthday"
     t.integer "number"
     t.text "description"
-    t.string "sexual_orientation"
-    t.string "interests"
+    t.integer "sexual_orientation"
+    t.integer "interests"
     t.string "photos"
+    t.boolean "admin", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
