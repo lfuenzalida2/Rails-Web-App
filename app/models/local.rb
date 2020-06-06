@@ -2,7 +2,7 @@
 
 class Local < ApplicationRecord
     belongs_to :dueno_user
-    has_many :users
+    has_many :user
     enum tipo: [:restaurante, :cine, :bar, :motel], _prefix: 'tipo'
     validates :nombre, :presence => true, :format => { :with => /\A[a-zA-Z]+\z/,
                                                 :message => "Only letters allowed"},

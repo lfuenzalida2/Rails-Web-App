@@ -17202,3 +17202,2302 @@ FOREIGN KEY ("user_id")
   ↳ db/seeds.rb:78
   [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
   ↳ db/seeds.rb:78
+  [1m[35m (6.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:11
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:11
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:11
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:11
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:11
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:11
+  [1m[35m (107.0ms)[0m  [1m[35mDROP DATABASE IF EXISTS "myapp_development"[0m
+  ↳ bin/rails:11
+  [1m[35m (106.3ms)[0m  [1m[35mDROP DATABASE IF EXISTS "myapp_test"[0m
+  ↳ bin/rails:11
+  [1m[35m (419.0ms)[0m  [1m[35mCREATE DATABASE "myapp_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:11
+  [1m[35m (451.2ms)[0m  [1m[35mCREATE DATABASE "myapp_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:11
+  [1m[35m (10.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:11
+  [1m[35m (7.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ bin/rails:11
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7864839756650184315)[0m
+  ↳ bin/rails:11
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:11
+Migrating to DeviseCreateUsers (20200425170949)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:11
+  [1m[35m (7.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "rut" character varying, "name" character varying, "gender" integer, "region" integer, "birthday" character varying, "number" integer, "description" text, "sexual_orientation" integer, "interests" integer, "photos" character varying, "admin" boolean DEFAULT FALSE NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20200425170949_devise_create_users.rb:5
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  ↳ db/migrate/20200425170949_devise_create_users.rb:52
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  ↳ db/migrate/20200425170949_devise_create_users.rb:53
+  [1m[36mActiveRecord::SchemaMigration Create (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200425170949"]]
+  ↳ bin/rails:11
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:11
+Migrating to CreateLocals (20200426223137)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:11
+  [1m[35m (6.7ms)[0m  [1m[35mCREATE TABLE "locals" ("id" bigserial primary key, "nombre" character varying, "direccion" character varying, "tipo" integer, "n_citas" integer DEFAULT 0, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20200426223137_create_locals.rb:5
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200426223137"]]
+  ↳ bin/rails:11
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:11
+Migrating to DeviseCreateDuenoUsers (20200426231717)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:11
+  [1m[35m (5.9ms)[0m  [1m[35mCREATE TABLE "dueno_users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "name" character varying, "rut" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20200426231717_devise_create_dueno_users.rb:5
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_dueno_users_on_email" ON "dueno_users"  ("email")[0m
+  ↳ db/migrate/20200426231717_devise_create_dueno_users.rb:43
+  [1m[35m (3.3ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_dueno_users_on_reset_password_token" ON "dueno_users"  ("reset_password_token")[0m
+  ↳ db/migrate/20200426231717_devise_create_dueno_users.rb:44
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200426231717"]]
+  ↳ bin/rails:11
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:11
+Migrating to CreateReviews (20200427003212)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:11
+  [1m[35m (5.5ms)[0m  [1m[35mCREATE TABLE "reviews" ("id" bigserial primary key, "id_local" integer, "review" text, "rating" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20200427003212_create_reviews.rb:5
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200427003212"]]
+  ↳ bin/rails:11
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:11
+Migrating to CreateLikes (20200605035108)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:11
+  [1m[35m (4.4ms)[0m  [1m[35mCREATE TABLE "likes" ("id" bigserial primary key, "sender_user" integer, "receiver_user" integer, "match" boolean, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20200605035108_create_likes.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200605035108"]]
+  ↳ bin/rails:11
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:11
+Migrating to AddDuenoUserToLocals (20200605054621)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:11
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "locals" ADD "dueno_user_id" bigint[0m
+  ↳ db/migrate/20200605054621_add_dueno_user_to_locals.rb:3
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE  INDEX  "index_locals_on_dueno_user_id" ON "locals"  ("dueno_user_id")[0m
+  ↳ db/migrate/20200605054621_add_dueno_user_to_locals.rb:3
+  [1m[35m (1.6ms)[0m  [1m[35mALTER TABLE "locals" ADD CONSTRAINT "fk_rails_55b832814f"
+FOREIGN KEY ("dueno_user_id")
+  REFERENCES "dueno_users" ("id")
+[0m
+  ↳ db/migrate/20200605054621_add_dueno_user_to_locals.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200605054621"]]
+  ↳ bin/rails:11
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:11
+Migrating to AddUserToReviews (20200605061158)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:11
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "reviews" ADD "user_id" bigint[0m
+  ↳ db/migrate/20200605061158_add_user_to_reviews.rb:3
+  [1m[35m (3.5ms)[0m  [1m[35mCREATE  INDEX  "index_reviews_on_user_id" ON "reviews"  ("user_id")[0m
+  ↳ db/migrate/20200605061158_add_user_to_reviews.rb:3
+  [1m[35m (1.3ms)[0m  [1m[35mALTER TABLE "reviews" ADD CONSTRAINT "fk_rails_74a66bd6c5"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  ↳ db/migrate/20200605061158_add_user_to_reviews.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (1.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200605061158"]]
+  ↳ bin/rails:11
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:11
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:11
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:11
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-06-06 01:13:03.661733"], ["updated_at", "2020-06-06 01:13:03.661733"]]
+  ↳ bin/rails:11
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:11
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(7864839756650184315)[0m
+  ↳ bin/rails:11
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:11
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:11
+  [1m[35m (4.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:3
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "example1@dccitas.cl"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:3
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "rut", "name", "gender", "region", "birthday", "number", "description", "sexual_orientation", "interests", "photos", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["email", "example1@dccitas.cl"], ["encrypted_password", "$2a$11$sNWI0GZ8nGVYPBCplpMzLeNQbxiz6zcrrraSXJLGQjLsq6c5gLXwC"], ["rut", "12312312-3"], ["name", "Pedro Piedra"], ["gender", 0], ["region", 0], ["birthday", "02/05/1997"], ["number", 99058260], ["description", "Un chico alegre"], ["sexual_orientation", 1], ["interests", 1], ["photos", "none"], ["created_at", "2020-06-06 01:13:05.885602"], ["updated_at", "2020-06-06 01:13:05.885602"]]
+  ↳ db/seeds.rb:3
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:17
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "example2@dccitas.cl"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:17
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "rut", "name", "gender", "region", "birthday", "number", "description", "sexual_orientation", "interests", "photos", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["email", "example2@dccitas.cl"], ["encrypted_password", "$2a$11$i2SzIy0Tt.l5vPGaNGr3/.HQ56NS98izZQ/Rc4zxVrXFonoB2e0V."], ["rut", "14589717-3"], ["name", "Manuel Alberto"], ["gender", 0], ["region", 9], ["birthday", "02/10/1995"], ["number", 52487860], ["description", "Un chico mas alegre"], ["sexual_orientation", 1], ["interests", 6], ["photos", "none"], ["created_at", "2020-06-06 01:13:06.002006"], ["updated_at", "2020-06-06 01:13:06.002006"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:31
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "example3@dccitas.cl"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:31
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "rut", "name", "gender", "region", "birthday", "number", "description", "sexual_orientation", "interests", "photos", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["email", "example3@dccitas.cl"], ["encrypted_password", "$2a$11$3Xy2k6VSkYZiRpuH.QvvHeAYjMvBsHuLj/iWAtqxhYRNvLTF/9J5S"], ["rut", "5836091-0"], ["name", "Luisa Martines"], ["gender", 1], ["region", 2], ["birthday", "10/05/1998"], ["number", 36332576], ["description", "Un chica muy alegre"], ["sexual_orientation", 1], ["interests", 6], ["photos", "none"], ["created_at", "2020-06-06 01:13:06.115203"], ["updated_at", "2020-06-06 01:13:06.115203"]]
+  ↳ db/seeds.rb:31
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:31
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:45
+  [1m[36mDuenoUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "dueno_users" WHERE "dueno_users"."email" = $1 LIMIT $2[0m  [["email", "duenoexample2@dccitas.cl"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:45
+  [1m[36mDuenoUser Create (0.4ms)[0m  [1m[32mINSERT INTO "dueno_users" ("email", "encrypted_password", "name", "rut", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "duenoexample2@dccitas.cl"], ["encrypted_password", "$2a$11$hBbVTNgALwpvA65hz1bdY.GVDcRyDXIgeuziylegGco/cpneN8uqm"], ["name", "Gloria Carmina"], ["rut", "6645166-6"], ["created_at", "2020-06-06 01:13:06.261319"], ["updated_at", "2020-06-06 01:13:06.261319"]]
+  ↳ db/seeds.rb:45
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:45
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:51
+  [1m[36mDuenoUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "dueno_users" WHERE "dueno_users"."email" = $1 LIMIT $2[0m  [["email", "duenoexample3@dccitas.cl"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:51
+  [1m[36mDuenoUser Create (0.4ms)[0m  [1m[32mINSERT INTO "dueno_users" ("email", "encrypted_password", "name", "rut", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "duenoexample3@dccitas.cl"], ["encrypted_password", "$2a$11$jaI6ZczoyP5nRC0VfOrcOOV0EDVoBrkz/R1IY/MTjowWviFcXpK8C"], ["name", "Magnus Midtbo"], ["rut", "6717405-4"], ["created_at", "2020-06-06 01:13:06.379766"], ["updated_at", "2020-06-06 01:13:06.379766"]]
+  ↳ db/seeds.rb:51
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:51
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:57
+  [1m[36mDuenoUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "dueno_users" WHERE "dueno_users"."email" = $1 LIMIT $2[0m  [["email", "duenoexample1@dccitas.cl"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:57
+  [1m[36mDuenoUser Create (0.3ms)[0m  [1m[32mINSERT INTO "dueno_users" ("email", "encrypted_password", "name", "rut", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "duenoexample1@dccitas.cl"], ["encrypted_password", "$2a$11$v1iRP99V.Qt0fuy0S9OHc.FYmQFvc7S6.TKNGa1PpaxUZw.v.FZc6"], ["name", "Hillary Clinton"], ["rut", "15427936-9"], ["created_at", "2020-06-06 01:13:06.492181"], ["updated_at", "2020-06-06 01:13:06.492181"]]
+  ↳ db/seeds.rb:57
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:57
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:63
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:63
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:68
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:68
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:73
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:73
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:78
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:78
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:11
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:11
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:11
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:11
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:11
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:11
+  [1m[35m (108.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "myapp_development"[0m
+  ↳ bin/rails:11
+  [1m[35m (116.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS "myapp_test"[0m
+  ↳ bin/rails:11
+  [1m[35m (411.0ms)[0m  [1m[35mCREATE DATABASE "myapp_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:11
+  [1m[35m (413.4ms)[0m  [1m[35mCREATE DATABASE "myapp_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:11
+  [1m[35m (9.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:11
+  [1m[35m (6.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ bin/rails:11
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7864839756650184315)[0m
+  ↳ bin/rails:11
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:11
+Migrating to DeviseCreateUsers (20200425170949)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:11
+  [1m[35m (6.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "rut" character varying, "name" character varying, "gender" integer, "region" integer, "birthday" character varying, "number" integer, "description" text, "sexual_orientation" integer, "interests" integer, "photos" character varying, "admin" boolean DEFAULT FALSE NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20200425170949_devise_create_users.rb:5
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  ↳ db/migrate/20200425170949_devise_create_users.rb:52
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  ↳ db/migrate/20200425170949_devise_create_users.rb:53
+  [1m[36mActiveRecord::SchemaMigration Create (1.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200425170949"]]
+  ↳ bin/rails:11
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:11
+Migrating to CreateLocals (20200426223137)
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:11
+  [1m[35m (5.7ms)[0m  [1m[35mCREATE TABLE "locals" ("id" bigserial primary key, "nombre" character varying, "direccion" character varying, "tipo" integer, "n_citas" integer DEFAULT 0, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20200426223137_create_locals.rb:5
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200426223137"]]
+  ↳ bin/rails:11
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:11
+Migrating to DeviseCreateDuenoUsers (20200426231717)
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:11
+  [1m[35m (5.4ms)[0m  [1m[35mCREATE TABLE "dueno_users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "name" character varying, "rut" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20200426231717_devise_create_dueno_users.rb:5
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_dueno_users_on_email" ON "dueno_users"  ("email")[0m
+  ↳ db/migrate/20200426231717_devise_create_dueno_users.rb:43
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_dueno_users_on_reset_password_token" ON "dueno_users"  ("reset_password_token")[0m
+  ↳ db/migrate/20200426231717_devise_create_dueno_users.rb:44
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200426231717"]]
+  ↳ bin/rails:11
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:11
+Migrating to CreateReviews (20200427003212)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:11
+  [1m[35m (5.3ms)[0m  [1m[35mCREATE TABLE "reviews" ("id" bigserial primary key, "id_local" integer, "review" text, "rating" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20200427003212_create_reviews.rb:5
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200427003212"]]
+  ↳ bin/rails:11
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:11
+Migrating to CreateLikes (20200605035108)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:11
+  [1m[35m (3.2ms)[0m  [1m[35mCREATE TABLE "likes" ("id" bigserial primary key, "sender_user" integer, "receiver_user" integer, "match" boolean, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20200605035108_create_likes.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200605035108"]]
+  ↳ bin/rails:11
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:11
+Migrating to AddDuenoUserToLocals (20200605054621)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:11
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "locals" ADD "dueno_user_id" bigint[0m
+  ↳ db/migrate/20200605054621_add_dueno_user_to_locals.rb:3
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE  INDEX  "index_locals_on_dueno_user_id" ON "locals"  ("dueno_user_id")[0m
+  ↳ db/migrate/20200605054621_add_dueno_user_to_locals.rb:3
+  [1m[35m (1.5ms)[0m  [1m[35mALTER TABLE "locals" ADD CONSTRAINT "fk_rails_55b832814f"
+FOREIGN KEY ("dueno_user_id")
+  REFERENCES "dueno_users" ("id")
+[0m
+  ↳ db/migrate/20200605054621_add_dueno_user_to_locals.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200605054621"]]
+  ↳ bin/rails:11
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:11
+Migrating to AddUserToReviews (20200605061158)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:11
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "reviews" ADD "user_id" bigint[0m
+  ↳ db/migrate/20200605061158_add_user_to_reviews.rb:3
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE  INDEX  "index_reviews_on_user_id" ON "reviews"  ("user_id")[0m
+  ↳ db/migrate/20200605061158_add_user_to_reviews.rb:3
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "reviews" ADD CONSTRAINT "fk_rails_74a66bd6c5"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  ↳ db/migrate/20200605061158_add_user_to_reviews.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200605061158"]]
+  ↳ bin/rails:11
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:11
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:11
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-06-06 01:17:00.226165"], ["updated_at", "2020-06-06 01:17:00.226165"]]
+  ↳ bin/rails:11
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:11
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(7864839756650184315)[0m
+  ↳ bin/rails:11
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:11
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:11
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:3
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "example1@dccitas.cl"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:3
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "rut", "name", "gender", "region", "birthday", "number", "description", "sexual_orientation", "interests", "photos", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["email", "example1@dccitas.cl"], ["encrypted_password", "$2a$11$zWA39b6B.L6FG1uPZoNJdeuCLCLlwQ7oAhCvM4DAQzUlfoiZKfIxy"], ["rut", "12312312-3"], ["name", "Pedro Piedra"], ["gender", 0], ["region", 0], ["birthday", "02/05/1997"], ["number", 99058260], ["description", "Un chico alegre"], ["sexual_orientation", 1], ["interests", 1], ["photos", "none"], ["created_at", "2020-06-06 01:17:02.661055"], ["updated_at", "2020-06-06 01:17:02.661055"]]
+  ↳ db/seeds.rb:3
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:17
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "example2@dccitas.cl"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:17
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "rut", "name", "gender", "region", "birthday", "number", "description", "sexual_orientation", "interests", "photos", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["email", "example2@dccitas.cl"], ["encrypted_password", "$2a$11$x3aSmt4/0ucxWSdEGTWQXO5BJwal7TTxAI6Mm22qrrk01TcdjySvS"], ["rut", "14589717-3"], ["name", "Manuel Alberto"], ["gender", 0], ["region", 9], ["birthday", "02/10/1995"], ["number", 52487860], ["description", "Un chico mas alegre"], ["sexual_orientation", 1], ["interests", 6], ["photos", "none"], ["created_at", "2020-06-06 01:17:02.806758"], ["updated_at", "2020-06-06 01:17:02.806758"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:31
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "example3@dccitas.cl"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:31
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "rut", "name", "gender", "region", "birthday", "number", "description", "sexual_orientation", "interests", "photos", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["email", "example3@dccitas.cl"], ["encrypted_password", "$2a$11$LrN3NUct6g5MsCcYHNpxwOoX29OCO.1UkRvhd9zxTYIR0WpS9Qa5W"], ["rut", "5836091-0"], ["name", "Luisa Martines"], ["gender", 1], ["region", 2], ["birthday", "10/05/1998"], ["number", 36332576], ["description", "Un chica muy alegre"], ["sexual_orientation", 1], ["interests", 6], ["photos", "none"], ["created_at", "2020-06-06 01:17:02.936992"], ["updated_at", "2020-06-06 01:17:02.936992"]]
+  ↳ db/seeds.rb:31
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:31
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:45
+  [1m[36mDuenoUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "dueno_users" WHERE "dueno_users"."email" = $1 LIMIT $2[0m  [["email", "duenoexample2@dccitas.cl"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:45
+  [1m[36mDuenoUser Create (0.4ms)[0m  [1m[32mINSERT INTO "dueno_users" ("email", "encrypted_password", "name", "rut", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "duenoexample2@dccitas.cl"], ["encrypted_password", "$2a$11$BJJW1a1aQUirEBUexZci.ODJvv5R4HwBYwPzZuxpFDyR.pCeZAeBK"], ["name", "Gloria Carmina"], ["rut", "6645166-6"], ["created_at", "2020-06-06 01:17:03.065327"], ["updated_at", "2020-06-06 01:17:03.065327"]]
+  ↳ db/seeds.rb:45
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:45
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:51
+  [1m[36mDuenoUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "dueno_users" WHERE "dueno_users"."email" = $1 LIMIT $2[0m  [["email", "duenoexample3@dccitas.cl"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:51
+  [1m[36mDuenoUser Create (0.4ms)[0m  [1m[32mINSERT INTO "dueno_users" ("email", "encrypted_password", "name", "rut", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "duenoexample3@dccitas.cl"], ["encrypted_password", "$2a$11$2joVBVNG2xdisGHfL/n12O6SQe1gUykqnL/LK2.AjOuo/LoqtkVBW"], ["name", "Magnus Midtbo"], ["rut", "6717405-4"], ["created_at", "2020-06-06 01:17:03.186810"], ["updated_at", "2020-06-06 01:17:03.186810"]]
+  ↳ db/seeds.rb:51
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:51
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:57
+  [1m[36mDuenoUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "dueno_users" WHERE "dueno_users"."email" = $1 LIMIT $2[0m  [["email", "duenoexample1@dccitas.cl"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:57
+  [1m[36mDuenoUser Create (0.2ms)[0m  [1m[32mINSERT INTO "dueno_users" ("email", "encrypted_password", "name", "rut", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "duenoexample1@dccitas.cl"], ["encrypted_password", "$2a$11$NjqZt3lOg9uNlPwOpfAEhOVu5KFNQTPEzaPjaovrGlkTV2BJHdb.q"], ["name", "Hillary Clinton"], ["rut", "15427936-9"], ["created_at", "2020-06-06 01:17:03.301061"], ["updated_at", "2020-06-06 01:17:03.301061"]]
+  ↳ db/seeds.rb:57
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:57
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:63
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:63
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:68
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:68
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:73
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:73
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:78
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:78
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:83
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:83
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:11
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:11
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:11
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:11
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:11
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:11
+  [1m[35m (119.8ms)[0m  [1m[35mDROP DATABASE IF EXISTS "myapp_development"[0m
+  ↳ bin/rails:11
+  [1m[35m (134.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "myapp_test"[0m
+  ↳ bin/rails:11
+  [1m[35m (420.1ms)[0m  [1m[35mCREATE DATABASE "myapp_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:11
+  [1m[35m (433.5ms)[0m  [1m[35mCREATE DATABASE "myapp_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:11
+  [1m[35m (14.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:11
+  [1m[35m (6.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ bin/rails:11
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7864839756650184315)[0m
+  ↳ bin/rails:11
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:11
+Migrating to DeviseCreateUsers (20200425170949)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:11
+  [1m[35m (6.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "rut" character varying, "name" character varying, "gender" integer, "region" integer, "birthday" character varying, "number" integer, "description" text, "sexual_orientation" integer, "interests" integer, "photos" character varying, "admin" boolean DEFAULT FALSE NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20200425170949_devise_create_users.rb:5
+  [1m[35m (4.5ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  ↳ db/migrate/20200425170949_devise_create_users.rb:52
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  ↳ db/migrate/20200425170949_devise_create_users.rb:53
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200425170949"]]
+  ↳ bin/rails:11
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:11
+Migrating to CreateLocals (20200426223137)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:11
+  [1m[35m (7.0ms)[0m  [1m[35mCREATE TABLE "locals" ("id" bigserial primary key, "nombre" character varying, "direccion" character varying, "tipo" integer, "n_citas" integer DEFAULT 0, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20200426223137_create_locals.rb:5
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200426223137"]]
+  ↳ bin/rails:11
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:11
+Migrating to DeviseCreateDuenoUsers (20200426231717)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:11
+  [1m[35m (6.0ms)[0m  [1m[35mCREATE TABLE "dueno_users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "name" character varying, "rut" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20200426231717_devise_create_dueno_users.rb:5
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_dueno_users_on_email" ON "dueno_users"  ("email")[0m
+  ↳ db/migrate/20200426231717_devise_create_dueno_users.rb:43
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_dueno_users_on_reset_password_token" ON "dueno_users"  ("reset_password_token")[0m
+  ↳ db/migrate/20200426231717_devise_create_dueno_users.rb:44
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200426231717"]]
+  ↳ bin/rails:11
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:11
+Migrating to CreateReviews (20200427003212)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:11
+  [1m[35m (6.7ms)[0m  [1m[35mCREATE TABLE "reviews" ("id" bigserial primary key, "id_local" integer, "review" text, "rating" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20200427003212_create_reviews.rb:5
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200427003212"]]
+  ↳ bin/rails:11
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:11
+Migrating to CreateLikes (20200605035108)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:11
+  [1m[35m (3.3ms)[0m  [1m[35mCREATE TABLE "likes" ("id" bigserial primary key, "sender_user" integer, "receiver_user" integer, "match" boolean, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20200605035108_create_likes.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200605035108"]]
+  ↳ bin/rails:11
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:11
+Migrating to AddDuenoUserToLocals (20200605054621)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:11
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "locals" ADD "dueno_user_id" bigint[0m
+  ↳ db/migrate/20200605054621_add_dueno_user_to_locals.rb:3
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE  INDEX  "index_locals_on_dueno_user_id" ON "locals"  ("dueno_user_id")[0m
+  ↳ db/migrate/20200605054621_add_dueno_user_to_locals.rb:3
+  [1m[35m (1.4ms)[0m  [1m[35mALTER TABLE "locals" ADD CONSTRAINT "fk_rails_55b832814f"
+FOREIGN KEY ("dueno_user_id")
+  REFERENCES "dueno_users" ("id")
+[0m
+  ↳ db/migrate/20200605054621_add_dueno_user_to_locals.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200605054621"]]
+  ↳ bin/rails:11
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:11
+Migrating to AddUserToReviews (20200605061158)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:11
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "reviews" ADD "user_id" bigint[0m
+  ↳ db/migrate/20200605061158_add_user_to_reviews.rb:3
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE  INDEX  "index_reviews_on_user_id" ON "reviews"  ("user_id")[0m
+  ↳ db/migrate/20200605061158_add_user_to_reviews.rb:3
+  [1m[35m (1.1ms)[0m  [1m[35mALTER TABLE "reviews" ADD CONSTRAINT "fk_rails_74a66bd6c5"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  ↳ db/migrate/20200605061158_add_user_to_reviews.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200605061158"]]
+  ↳ bin/rails:11
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:11
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:11
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-06-06 01:18:59.442934"], ["updated_at", "2020-06-06 01:18:59.442934"]]
+  ↳ bin/rails:11
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:11
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(7864839756650184315)[0m
+  ↳ bin/rails:11
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:11
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:11
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:3
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "example1@dccitas.cl"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:3
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "rut", "name", "gender", "region", "birthday", "number", "description", "sexual_orientation", "interests", "photos", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["email", "example1@dccitas.cl"], ["encrypted_password", "$2a$11$VuXOKgN//D3wk8RjIcf3vOQ4Af6SwzT6LL9CZEAXoRLwOTV6aeKw6"], ["rut", "12312312-3"], ["name", "Pedro Piedra"], ["gender", 0], ["region", 0], ["birthday", "02/05/1997"], ["number", 99058260], ["description", "Un chico alegre"], ["sexual_orientation", 1], ["interests", 1], ["photos", "none"], ["created_at", "2020-06-06 01:19:01.700226"], ["updated_at", "2020-06-06 01:19:01.700226"]]
+  ↳ db/seeds.rb:3
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:17
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "example2@dccitas.cl"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:17
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "rut", "name", "gender", "region", "birthday", "number", "description", "sexual_orientation", "interests", "photos", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["email", "example2@dccitas.cl"], ["encrypted_password", "$2a$11$P52dm2D9uCNalXLP7q3FauUN9wCcoet1RVyad5LDtzXZ8PwRlzgeC"], ["rut", "14589717-3"], ["name", "Manuel Alberto"], ["gender", 0], ["region", 9], ["birthday", "02/10/1995"], ["number", 52487860], ["description", "Un chico mas alegre"], ["sexual_orientation", 1], ["interests", 6], ["photos", "none"], ["created_at", "2020-06-06 01:19:01.818968"], ["updated_at", "2020-06-06 01:19:01.818968"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:31
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "example3@dccitas.cl"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:31
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "rut", "name", "gender", "region", "birthday", "number", "description", "sexual_orientation", "interests", "photos", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["email", "example3@dccitas.cl"], ["encrypted_password", "$2a$11$6bpO4ccE8DKrQVJIgUzRqOC05FpiDGxLzbjgC6ze3VqlYRbYbkCOq"], ["rut", "5836091-0"], ["name", "Luisa Martines"], ["gender", 1], ["region", 2], ["birthday", "10/05/1998"], ["number", 36332576], ["description", "Un chica muy alegre"], ["sexual_orientation", 1], ["interests", 6], ["photos", "none"], ["created_at", "2020-06-06 01:19:01.931334"], ["updated_at", "2020-06-06 01:19:01.931334"]]
+  ↳ db/seeds.rb:31
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:31
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:45
+  [1m[36mDuenoUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "dueno_users" WHERE "dueno_users"."email" = $1 LIMIT $2[0m  [["email", "duenoexample2@dccitas.cl"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:45
+  [1m[36mDuenoUser Create (0.4ms)[0m  [1m[32mINSERT INTO "dueno_users" ("email", "encrypted_password", "name", "rut", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "duenoexample2@dccitas.cl"], ["encrypted_password", "$2a$11$65N3h3IMnnAloi.1BfqzI.JxidNVHrfyWWkMWv4gTxyqoWKSA9zie"], ["name", "Gloria Carmina"], ["rut", "6645166-6"], ["created_at", "2020-06-06 01:19:02.074351"], ["updated_at", "2020-06-06 01:19:02.074351"]]
+  ↳ db/seeds.rb:45
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:45
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:51
+  [1m[36mDuenoUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "dueno_users" WHERE "dueno_users"."email" = $1 LIMIT $2[0m  [["email", "duenoexample3@dccitas.cl"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:51
+  [1m[36mDuenoUser Create (0.3ms)[0m  [1m[32mINSERT INTO "dueno_users" ("email", "encrypted_password", "name", "rut", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "duenoexample3@dccitas.cl"], ["encrypted_password", "$2a$11$fa3RaYmODI6vgIXdP6Sm0eqtUU4nGweut7bHugEATu6tJ7bMZW.V."], ["name", "Magnus Midtbo"], ["rut", "6717405-4"], ["created_at", "2020-06-06 01:19:02.187287"], ["updated_at", "2020-06-06 01:19:02.187287"]]
+  ↳ db/seeds.rb:51
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:51
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:57
+  [1m[36mDuenoUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "dueno_users" WHERE "dueno_users"."email" = $1 LIMIT $2[0m  [["email", "duenoexample1@dccitas.cl"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:57
+  [1m[36mDuenoUser Create (0.3ms)[0m  [1m[32mINSERT INTO "dueno_users" ("email", "encrypted_password", "name", "rut", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "duenoexample1@dccitas.cl"], ["encrypted_password", "$2a$11$pR6zKYyRF1.TuYLIoFQIP.QdlNpwHbQRiwa8C2xSiCN8geRgk4qde"], ["name", "Hillary Clinton"], ["rut", "15427936-9"], ["created_at", "2020-06-06 01:19:02.298599"], ["updated_at", "2020-06-06 01:19:02.298599"]]
+  ↳ db/seeds.rb:57
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:57
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:63
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:63
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:68
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:68
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:73
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:73
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:78
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:78
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:83
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:83
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:88
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:88
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:93
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:93
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:98
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:98
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:103
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:103
+Started GET "/users/sign_in" for ::1 at 2020-06-05 21:19:11 -0400
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/lukas/.rvm/gems/ruby-2.6.5/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (5.3ms)
+  Rendered users/sessions/new.html.erb within layouts/application (29.4ms)
+Completed 200 OK in 386ms (Views: 340.7ms | ActiveRecord: 4.8ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2020-06-05 21:19:24 -0400
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3TTBaJBABYB2StjDMJBaZm60Gt/V2J+fq02EaR/WgPA4fxArz/zTdfzwDvkBV29yrxGMLUAqZ1lBqWmvH9B/iA==", "user"=>{"email"=>"example1@dccitas.cl", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "example1@dccitas.cl"], ["LIMIT", 1]]
+  ↳ /home/lukas/.rvm/gems/ruby-2.6.5/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 126ms (ActiveRecord: 3.1ms)
+
+
+Started GET "/" for ::1 at 2020-06-05 21:19:24 -0400
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (2.2ms)
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 41ms (Views: 37.4ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/locals" for ::1 at 2020-06-05 21:19:27 -0400
+Processing by LocalsController#index as HTML
+  Rendering locals/index.html.erb within layouts/application
+  [1m[36mLocal Load (1.6ms)[0m  [1m[34mSELECT "locals".* FROM "locals"[0m
+  ↳ app/views/locals/index.html.erb:18
+  Rendered locals/index.html.erb within layouts/application (5.7ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 45ms (Views: 35.3ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/" for ::1 at 2020-06-05 21:21:08 -0400
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (1.6ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 70ms (Views: 68.8ms | ActiveRecord: 0.4ms)
+
+
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:11
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:11
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:11
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:11
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:11
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:11
+  [1m[35m (107.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "myapp_development"[0m
+  ↳ bin/rails:11
+  [1m[35m (106.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS "myapp_test"[0m
+  ↳ bin/rails:11
+  [1m[35m (444.9ms)[0m  [1m[35mCREATE DATABASE "myapp_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:11
+  [1m[35m (441.0ms)[0m  [1m[35mCREATE DATABASE "myapp_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:11
+  [1m[35m (7.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:11
+  [1m[35m (5.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ bin/rails:11
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7864839756650184315)[0m
+  ↳ bin/rails:11
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:11
+Migrating to DeviseCreateUsers (20200425170949)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:11
+  [1m[35m (5.7ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "rut" character varying, "name" character varying, "gender" integer, "region" integer, "birthday" character varying, "number" integer, "description" text, "sexual_orientation" integer, "interests" integer, "photos" character varying, "admin" boolean DEFAULT FALSE NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20200425170949_devise_create_users.rb:5
+  [1m[35m (8.8ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  ↳ db/migrate/20200425170949_devise_create_users.rb:52
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  ↳ db/migrate/20200425170949_devise_create_users.rb:53
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200425170949"]]
+  ↳ bin/rails:11
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:11
+Migrating to CreateLocals (20200426223137)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:11
+  [1m[35m (6.0ms)[0m  [1m[35mCREATE TABLE "locals" ("id" bigserial primary key, "nombre" character varying, "direccion" character varying, "tipo" integer, "n_citas" integer DEFAULT 0, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20200426223137_create_locals.rb:5
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200426223137"]]
+  ↳ bin/rails:11
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:11
+Migrating to DeviseCreateDuenoUsers (20200426231717)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:11
+  [1m[35m (6.4ms)[0m  [1m[35mCREATE TABLE "dueno_users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "name" character varying, "rut" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20200426231717_devise_create_dueno_users.rb:5
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_dueno_users_on_email" ON "dueno_users"  ("email")[0m
+  ↳ db/migrate/20200426231717_devise_create_dueno_users.rb:43
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_dueno_users_on_reset_password_token" ON "dueno_users"  ("reset_password_token")[0m
+  ↳ db/migrate/20200426231717_devise_create_dueno_users.rb:44
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200426231717"]]
+  ↳ bin/rails:11
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:11
+Migrating to CreateReviews (20200427003212)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:11
+  [1m[35m (8.3ms)[0m  [1m[35mCREATE TABLE "reviews" ("id" bigserial primary key, "id_local" integer, "review" text, "rating" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20200427003212_create_reviews.rb:5
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200427003212"]]
+  ↳ bin/rails:11
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:11
+Migrating to CreateLikes (20200605035108)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:11
+  [1m[35m (3.1ms)[0m  [1m[35mCREATE TABLE "likes" ("id" bigserial primary key, "sender_user" integer, "receiver_user" integer, "match" boolean, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20200605035108_create_likes.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200605035108"]]
+  ↳ bin/rails:11
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:11
+Migrating to AddDuenoUserToLocals (20200605054621)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:11
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "locals" ADD "dueno_user_id" bigint[0m
+  ↳ db/migrate/20200605054621_add_dueno_user_to_locals.rb:3
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE  INDEX  "index_locals_on_dueno_user_id" ON "locals"  ("dueno_user_id")[0m
+  ↳ db/migrate/20200605054621_add_dueno_user_to_locals.rb:3
+  [1m[35m (1.4ms)[0m  [1m[35mALTER TABLE "locals" ADD CONSTRAINT "fk_rails_55b832814f"
+FOREIGN KEY ("dueno_user_id")
+  REFERENCES "dueno_users" ("id")
+[0m
+  ↳ db/migrate/20200605054621_add_dueno_user_to_locals.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200605054621"]]
+  ↳ bin/rails:11
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:11
+Migrating to AddUserToReviews (20200605061158)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:11
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "reviews" ADD "user_id" bigint[0m
+  ↳ db/migrate/20200605061158_add_user_to_reviews.rb:3
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE  INDEX  "index_reviews_on_user_id" ON "reviews"  ("user_id")[0m
+  ↳ db/migrate/20200605061158_add_user_to_reviews.rb:3
+  [1m[35m (1.3ms)[0m  [1m[35mALTER TABLE "reviews" ADD CONSTRAINT "fk_rails_74a66bd6c5"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  ↳ db/migrate/20200605061158_add_user_to_reviews.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200605061158"]]
+  ↳ bin/rails:11
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:11
+  [1m[36mActiveRecord::InternalMetadata Load (2.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:11
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:11
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-06-06 01:23:36.192544"], ["updated_at", "2020-06-06 01:23:36.192544"]]
+  ↳ bin/rails:11
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:11
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(7864839756650184315)[0m
+  ↳ bin/rails:11
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:11
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:11
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:3
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "example1@dccitas.cl"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:3
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "rut", "name", "gender", "region", "birthday", "number", "description", "sexual_orientation", "interests", "photos", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["email", "example1@dccitas.cl"], ["encrypted_password", "$2a$11$DvxDrKUMEkEeIbTFBqpVieFFkloE0xipM6OVqSLTX/unMSifnOLF."], ["rut", "12312312-3"], ["name", "Pedro Piedra"], ["gender", 0], ["region", 0], ["birthday", "02/05/1997"], ["number", 99058260], ["description", "Un chico alegre"], ["sexual_orientation", 1], ["interests", 1], ["photos", "none"], ["created_at", "2020-06-06 01:23:38.521937"], ["updated_at", "2020-06-06 01:23:38.521937"]]
+  ↳ db/seeds.rb:3
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:17
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "example2@dccitas.cl"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:17
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "rut", "name", "gender", "region", "birthday", "number", "description", "sexual_orientation", "interests", "photos", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["email", "example2@dccitas.cl"], ["encrypted_password", "$2a$11$yrB1MsohFEkly/JltRcC2eVibHakAQw.b13WaHXA77rUf2EtoOfke"], ["rut", "14589717-3"], ["name", "Manuel Alberto"], ["gender", 0], ["region", 9], ["birthday", "02/10/1995"], ["number", 52487860], ["description", "Un chico mas alegre"], ["sexual_orientation", 1], ["interests", 6], ["photos", "none"], ["created_at", "2020-06-06 01:23:38.662852"], ["updated_at", "2020-06-06 01:23:38.662852"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:31
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "example3@dccitas.cl"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:31
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "rut", "name", "gender", "region", "birthday", "number", "description", "sexual_orientation", "interests", "photos", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["email", "example3@dccitas.cl"], ["encrypted_password", "$2a$11$GZTo9SpbrhAHXPJUKuwXy.LxjmmdANFZ78jEUKDXoINIt07u9Eu7G"], ["rut", "5836091-0"], ["name", "Luisa Martines"], ["gender", 1], ["region", 2], ["birthday", "10/05/1998"], ["number", 36332576], ["description", "Un chica muy alegre"], ["sexual_orientation", 1], ["interests", 6], ["photos", "none"], ["created_at", "2020-06-06 01:23:38.784791"], ["updated_at", "2020-06-06 01:23:38.784791"]]
+  ↳ db/seeds.rb:31
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:31
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:45
+  [1m[36mDuenoUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "dueno_users" WHERE "dueno_users"."email" = $1 LIMIT $2[0m  [["email", "duenoexample2@dccitas.cl"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:45
+  [1m[36mDuenoUser Create (0.4ms)[0m  [1m[32mINSERT INTO "dueno_users" ("email", "encrypted_password", "name", "rut", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "duenoexample2@dccitas.cl"], ["encrypted_password", "$2a$11$S23IJWvfUTJoZMjaDKvx9emJyYSXvvqNVfQ6qvR0OHVxUGrxfGyPu"], ["name", "Gloria Carmina"], ["rut", "6645166-6"], ["created_at", "2020-06-06 01:23:38.942007"], ["updated_at", "2020-06-06 01:23:38.942007"]]
+  ↳ db/seeds.rb:45
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:45
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:51
+  [1m[36mDuenoUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "dueno_users" WHERE "dueno_users"."email" = $1 LIMIT $2[0m  [["email", "duenoexample3@dccitas.cl"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:51
+  [1m[36mDuenoUser Create (0.4ms)[0m  [1m[32mINSERT INTO "dueno_users" ("email", "encrypted_password", "name", "rut", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "duenoexample3@dccitas.cl"], ["encrypted_password", "$2a$11$7Idv..62YQSwmq92lW5PPOt0WtxhfEZcYZ1d/V.NOyfXPM/23gHpq"], ["name", "Magnus Midtbo"], ["rut", "6717405-4"], ["created_at", "2020-06-06 01:23:39.061773"], ["updated_at", "2020-06-06 01:23:39.061773"]]
+  ↳ db/seeds.rb:51
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:51
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:57
+  [1m[36mDuenoUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "dueno_users" WHERE "dueno_users"."email" = $1 LIMIT $2[0m  [["email", "duenoexample1@dccitas.cl"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:57
+  [1m[36mDuenoUser Create (0.2ms)[0m  [1m[32mINSERT INTO "dueno_users" ("email", "encrypted_password", "name", "rut", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "duenoexample1@dccitas.cl"], ["encrypted_password", "$2a$11$gwzhnffBMaWagTtR7HAbFOMKbCfFs19PY11T04pvi806OpUkTcf2W"], ["name", "Hillary Clinton"], ["rut", "15427936-9"], ["created_at", "2020-06-06 01:23:39.187905"], ["updated_at", "2020-06-06 01:23:39.187905"]]
+  ↳ db/seeds.rb:57
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:57
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:63
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:63
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:68
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:68
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:73
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:73
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:78
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:78
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:83
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:83
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:89
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:89
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:95
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:95
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:101
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:101
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:107
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:107
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:11
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:11
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:11
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:11
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:11
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:11
+  [1m[35m (123.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS "myapp_development"[0m
+  ↳ bin/rails:11
+  [1m[35m (110.8ms)[0m  [1m[35mDROP DATABASE IF EXISTS "myapp_test"[0m
+  ↳ bin/rails:11
+  [1m[35m (414.8ms)[0m  [1m[35mCREATE DATABASE "myapp_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:11
+  [1m[35m (409.8ms)[0m  [1m[35mCREATE DATABASE "myapp_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:11
+  [1m[35m (6.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:11
+  [1m[35m (5.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ bin/rails:11
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7864839756650184315)[0m
+  ↳ bin/rails:11
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:11
+Migrating to DeviseCreateUsers (20200425170949)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:11
+  [1m[35m (21.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "rut" character varying, "name" character varying, "gender" integer, "region" integer, "birthday" character varying, "number" integer, "description" text, "sexual_orientation" integer, "interests" integer, "photos" character varying, "admin" boolean DEFAULT FALSE NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20200425170949_devise_create_users.rb:5
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  ↳ db/migrate/20200425170949_devise_create_users.rb:52
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  ↳ db/migrate/20200425170949_devise_create_users.rb:53
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200425170949"]]
+  ↳ bin/rails:11
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:11
+Migrating to CreateLocals (20200426223137)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:11
+  [1m[35m (5.5ms)[0m  [1m[35mCREATE TABLE "locals" ("id" bigserial primary key, "nombre" character varying, "direccion" character varying, "tipo" integer, "n_citas" integer DEFAULT 0, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20200426223137_create_locals.rb:5
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200426223137"]]
+  ↳ bin/rails:11
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:11
+Migrating to DeviseCreateDuenoUsers (20200426231717)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:11
+  [1m[35m (7.3ms)[0m  [1m[35mCREATE TABLE "dueno_users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "name" character varying, "rut" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20200426231717_devise_create_dueno_users.rb:5
+  [1m[35m (2.8ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_dueno_users_on_email" ON "dueno_users"  ("email")[0m
+  ↳ db/migrate/20200426231717_devise_create_dueno_users.rb:43
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_dueno_users_on_reset_password_token" ON "dueno_users"  ("reset_password_token")[0m
+  ↳ db/migrate/20200426231717_devise_create_dueno_users.rb:44
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200426231717"]]
+  ↳ bin/rails:11
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:11
+Migrating to CreateReviews (20200427003212)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:11
+  [1m[35m (5.2ms)[0m  [1m[35mCREATE TABLE "reviews" ("id" bigserial primary key, "id_local" integer, "review" text, "rating" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20200427003212_create_reviews.rb:5
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200427003212"]]
+  ↳ bin/rails:11
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:11
+Migrating to CreateLikes (20200605035108)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:11
+  [1m[35m (3.0ms)[0m  [1m[35mCREATE TABLE "likes" ("id" bigserial primary key, "sender_user" integer, "receiver_user" integer, "match" boolean, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20200605035108_create_likes.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200605035108"]]
+  ↳ bin/rails:11
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:11
+Migrating to AddDuenoUserToLocals (20200605054621)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:11
+  [1m[35m (1.2ms)[0m  [1m[35mALTER TABLE "locals" ADD "dueno_user_id" bigint[0m
+  ↳ db/migrate/20200605054621_add_dueno_user_to_locals.rb:3
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE  INDEX  "index_locals_on_dueno_user_id" ON "locals"  ("dueno_user_id")[0m
+  ↳ db/migrate/20200605054621_add_dueno_user_to_locals.rb:3
+  [1m[35m (1.4ms)[0m  [1m[35mALTER TABLE "locals" ADD CONSTRAINT "fk_rails_55b832814f"
+FOREIGN KEY ("dueno_user_id")
+  REFERENCES "dueno_users" ("id")
+[0m
+  ↳ db/migrate/20200605054621_add_dueno_user_to_locals.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200605054621"]]
+  ↳ bin/rails:11
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:11
+Migrating to AddUserToReviews (20200605061158)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:11
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "reviews" ADD "user_id" bigint[0m
+  ↳ db/migrate/20200605061158_add_user_to_reviews.rb:3
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE  INDEX  "index_reviews_on_user_id" ON "reviews"  ("user_id")[0m
+  ↳ db/migrate/20200605061158_add_user_to_reviews.rb:3
+  [1m[35m (1.1ms)[0m  [1m[35mALTER TABLE "reviews" ADD CONSTRAINT "fk_rails_74a66bd6c5"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  ↳ db/migrate/20200605061158_add_user_to_reviews.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200605061158"]]
+  ↳ bin/rails:11
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:11
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:11
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:11
+  [1m[36mActiveRecord::InternalMetadata Create (0.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-06-06 01:24:44.398373"], ["updated_at", "2020-06-06 01:24:44.398373"]]
+  ↳ bin/rails:11
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:11
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(7864839756650184315)[0m
+  ↳ bin/rails:11
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:11
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:11
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:3
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "example1@dccitas.cl"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:3
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "rut", "name", "gender", "region", "birthday", "number", "description", "sexual_orientation", "interests", "photos", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["email", "example1@dccitas.cl"], ["encrypted_password", "$2a$11$g3Cy1bw1QcZNObXyC2kI0es4dGr.wwtZ18Cw3DfQLAbBupOugLtq2"], ["rut", "12312312-3"], ["name", "Pedro Piedra"], ["gender", 0], ["region", 0], ["birthday", "02/05/1997"], ["number", 99058260], ["description", "Un chico alegre"], ["sexual_orientation", 1], ["interests", 1], ["photos", "none"], ["created_at", "2020-06-06 01:24:46.682294"], ["updated_at", "2020-06-06 01:24:46.682294"]]
+  ↳ db/seeds.rb:3
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:17
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "example2@dccitas.cl"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:17
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "rut", "name", "gender", "region", "birthday", "number", "description", "sexual_orientation", "interests", "photos", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["email", "example2@dccitas.cl"], ["encrypted_password", "$2a$11$/yhudsKZGJAtejqLLrGyA.KgC4vAvzN2KtJdEokhFVTqb9ct60aUa"], ["rut", "14589717-3"], ["name", "Manuel Alberto"], ["gender", 0], ["region", 9], ["birthday", "02/10/1995"], ["number", 52487860], ["description", "Un chico mas alegre"], ["sexual_orientation", 1], ["interests", 6], ["photos", "none"], ["created_at", "2020-06-06 01:24:46.831836"], ["updated_at", "2020-06-06 01:24:46.831836"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:31
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "example3@dccitas.cl"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:31
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "rut", "name", "gender", "region", "birthday", "number", "description", "sexual_orientation", "interests", "photos", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["email", "example3@dccitas.cl"], ["encrypted_password", "$2a$11$ugppdaqbTs0CpLaG6OLsfOe4Mlbeye5K3DEFSYW/PiAtifet4JTdm"], ["rut", "5836091-0"], ["name", "Luisa Martines"], ["gender", 1], ["region", 2], ["birthday", "10/05/1998"], ["number", 36332576], ["description", "Un chica muy alegre"], ["sexual_orientation", 1], ["interests", 6], ["photos", "none"], ["created_at", "2020-06-06 01:24:46.949763"], ["updated_at", "2020-06-06 01:24:46.949763"]]
+  ↳ db/seeds.rb:31
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:31
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:45
+  [1m[36mDuenoUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "dueno_users" WHERE "dueno_users"."email" = $1 LIMIT $2[0m  [["email", "duenoexample2@dccitas.cl"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:45
+  [1m[36mDuenoUser Create (0.6ms)[0m  [1m[32mINSERT INTO "dueno_users" ("email", "encrypted_password", "name", "rut", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "duenoexample2@dccitas.cl"], ["encrypted_password", "$2a$11$4qS0QIA4PRhBtC.WXgFY9.R53syFsR43TeW5onYhHzRH0YwAl1yE2"], ["name", "Gloria Carmina"], ["rut", "6645166-6"], ["created_at", "2020-06-06 01:24:47.088039"], ["updated_at", "2020-06-06 01:24:47.088039"]]
+  ↳ db/seeds.rb:45
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:45
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:51
+  [1m[36mDuenoUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "dueno_users" WHERE "dueno_users"."email" = $1 LIMIT $2[0m  [["email", "duenoexample3@dccitas.cl"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:51
+  [1m[36mDuenoUser Create (0.2ms)[0m  [1m[32mINSERT INTO "dueno_users" ("email", "encrypted_password", "name", "rut", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "duenoexample3@dccitas.cl"], ["encrypted_password", "$2a$11$pZj/cyrhMzS0ajN8v/RLw.PSMvueV4Y2Cy6WOa/dRtHOi3LShnBgC"], ["name", "Magnus Midtbo"], ["rut", "6717405-4"], ["created_at", "2020-06-06 01:24:47.204755"], ["updated_at", "2020-06-06 01:24:47.204755"]]
+  ↳ db/seeds.rb:51
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:51
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:57
+  [1m[36mDuenoUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "dueno_users" WHERE "dueno_users"."email" = $1 LIMIT $2[0m  [["email", "duenoexample1@dccitas.cl"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:57
+  [1m[36mDuenoUser Create (0.2ms)[0m  [1m[32mINSERT INTO "dueno_users" ("email", "encrypted_password", "name", "rut", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "duenoexample1@dccitas.cl"], ["encrypted_password", "$2a$11$0WSLaXdNcGKMBB6KWd1Oou6FTPKuSMx0q.lsxXi1XcVCktmk.72Wq"], ["name", "Hillary Clinton"], ["rut", "15427936-9"], ["created_at", "2020-06-06 01:24:47.332454"], ["updated_at", "2020-06-06 01:24:47.332454"]]
+  ↳ db/seeds.rb:57
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:57
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:63
+  [1m[36mDuenoUser Load (0.2ms)[0m  [1m[34mSELECT  "dueno_users".* FROM "dueno_users" WHERE "dueno_users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:63
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:63
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:69
+  [1m[36mDuenoUser Load (0.2ms)[0m  [1m[34mSELECT  "dueno_users".* FROM "dueno_users" WHERE "dueno_users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:69
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:69
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:75
+  [1m[36mDuenoUser Load (0.2ms)[0m  [1m[34mSELECT  "dueno_users".* FROM "dueno_users" WHERE "dueno_users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:75
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:75
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:81
+  [1m[36mDuenoUser Load (0.3ms)[0m  [1m[34mSELECT  "dueno_users".* FROM "dueno_users" WHERE "dueno_users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:81
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:81
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:87
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:87
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:93
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:93
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:99
+  [1m[35m (0.7ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:99
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:105
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:105
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:111
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:111
+Started GET "/" for ::1 at 2020-06-05 21:24:49 -0400
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/lukas/.rvm/gems/ruby-2.6.5/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (296.1ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 389ms (Views: 374.2ms | ActiveRecord: 7.3ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-06-05 21:24:51 -0400
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (1.5ms)
+  Rendered users/sessions/new.html.erb within layouts/application (11.1ms)
+Completed 200 OK in 50ms (Views: 48.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2020-06-05 21:24:52 -0400
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"k0RKyKCm6J3ItyL59WewLHDv6DRpUy/DhVGziUNrC67vDR3JO8qBW+11gkszgjKs4nYmC3n9OKk9l9gL+qqRqw==", "user"=>{"email"=>"example1@dccitas.cl", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "example1@dccitas.cl"], ["LIMIT", 1]]
+  ↳ /home/lukas/.rvm/gems/ruby-2.6.5/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 124ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2020-06-05 21:24:52 -0400
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (2.2ms)
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 43ms (Views: 40.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/locals" for ::1 at 2020-06-05 21:24:53 -0400
+Processing by LocalsController#index as HTML
+  Rendering locals/index.html.erb within layouts/application
+  [1m[36mLocal Load (0.4ms)[0m  [1m[34mSELECT "locals".* FROM "locals"[0m
+  ↳ app/views/locals/index.html.erb:18
+  Rendered locals/index.html.erb within layouts/application (4.6ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 85ms (Views: 78.0ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/locals" for ::1 at 2020-06-05 21:26:02 -0400
+Processing by LocalsController#index as HTML
+  Rendering locals/index.html.erb within layouts/application
+  [1m[36mLocal Load (0.9ms)[0m  [1m[34mSELECT "locals".* FROM "locals"[0m
+  ↳ app/views/locals/index.html.erb:18
+  Rendered locals/index.html.erb within layouts/application (2.5ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 36ms (Views: 33.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/locals" for ::1 at 2020-06-05 21:26:03 -0400
+Processing by LocalsController#index as HTML
+  Rendering locals/index.html.erb within layouts/application
+  [1m[36mLocal Load (0.4ms)[0m  [1m[34mSELECT "locals".* FROM "locals"[0m
+  ↳ app/views/locals/index.html.erb:18
+  Rendered locals/index.html.erb within layouts/application (1.9ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 41ms (Views: 39.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/locals" for ::1 at 2020-06-05 21:26:04 -0400
+Processing by LocalsController#index as HTML
+  Rendering locals/index.html.erb within layouts/application
+  [1m[36mLocal Load (0.2ms)[0m  [1m[34mSELECT "locals".* FROM "locals"[0m
+  ↳ app/views/locals/index.html.erb:18
+  Rendered locals/index.html.erb within layouts/application (1.8ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 40ms (Views: 38.6ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2020-06-05 21:26:05 -0400
+Processing by Users::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"OFpaqzKM8oo5BvWBgHNedoLkGp0z/eFUuz2rHsw0ULyF/cIMz2JQ4CXrg9Ml+Ao8yhCeFXWtwy65burkK06Qqw=="}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/lukas/.rvm/gems/ruby-2.6.5/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (3.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/lukas/.rvm/gems/ruby-2.6.5/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/lukas/.rvm/gems/ruby-2.6.5/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 24ms (ActiveRecord: 3.7ms)
+
+
+Started GET "/" for ::1 at 2020-06-05 21:26:05 -0400
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 48ms (Views: 46.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/dueno_users/sign_in" for ::1 at 2020-06-05 21:26:09 -0400
+Processing by DuenoUsers::SessionsController#new as HTML
+  Rendering dueno_users/sessions/new.html.erb within layouts/application
+  Rendered dueno_users/shared/_links.html.erb (2.0ms)
+  Rendered dueno_users/sessions/new.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 80ms (Views: 59.9ms | ActiveRecord: 3.6ms)
+
+
+Started POST "/dueno_users/sign_in" for ::1 at 2020-06-05 21:26:23 -0400
+Processing by DuenoUsers::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NHGesjtg+nVc5Iy2KaOpNGP6C0d8axnEUy1csxEOTwgbGBQ4xRQyMXOUdfbmLVxmDeHan7CfeKlFTymgedGtgQ==", "dueno_user"=>{"email"=>"duenoexample1@dccitas.cl", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mDuenoUser Load (0.4ms)[0m  [1m[34mSELECT  "dueno_users".* FROM "dueno_users" WHERE "dueno_users"."email" = $1 ORDER BY "dueno_users"."id" ASC LIMIT $2[0m  [["email", "duenoexample1@dccitas.cl"], ["LIMIT", 1]]
+  ↳ /home/lukas/.rvm/gems/ruby-2.6.5/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 129ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2020-06-05 21:26:23 -0400
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (2.3ms)
+  [1m[36mDuenoUser Load (0.3ms)[0m  [1m[34mSELECT  "dueno_users".* FROM "dueno_users" WHERE "dueno_users"."id" = $1 ORDER BY "dueno_users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 73ms (Views: 71.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/locals" for ::1 at 2020-06-05 21:26:25 -0400
+Processing by LocalsController#index as HTML
+  Rendering locals/index.html.erb within layouts/application
+  [1m[36mLocal Load (0.3ms)[0m  [1m[34mSELECT "locals".* FROM "locals"[0m
+  ↳ app/views/locals/index.html.erb:18
+  [1m[36mDuenoUser Load (1.6ms)[0m  [1m[34mSELECT  "dueno_users".* FROM "dueno_users" WHERE "dueno_users"."id" = $1 ORDER BY "dueno_users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/locals/index.html.erb:35
+  Rendered locals/index.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 39ms (Views: 36.0ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/locals/new" for ::1 at 2020-06-05 21:26:26 -0400
+Processing by LocalsController#new as HTML
+  Rendering locals/new.html.erb within layouts/application
+  Rendered locals/new.html.erb within layouts/application (5.5ms)
+  [1m[36mDuenoUser Load (0.3ms)[0m  [1m[34mSELECT  "dueno_users".* FROM "dueno_users" WHERE "dueno_users"."id" = $1 ORDER BY "dueno_users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 45ms (Views: 33.8ms | ActiveRecord: 2.3ms)
+
+
+Started POST "/locals" for ::1 at 2020-06-05 21:26:28 -0400
+Processing by LocalsController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"L3JrcEE9cr8FklarT9M98fMktccWMB7inc9jHsu0Sc2GYVEoxMOrLRcVqUvY0QnbGOUfWpT7L5Pz7CZZSJuq8A==", "local"=>{"nombre"=>"eqwe", "tipo"=>"restaurante", "direccion"=>"qwewq"}, "commit"=>"Create Local"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/locals_controller.rb:19
+  [1m[35m (1.9ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/locals_controller.rb:19
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/locals_controller.rb:21
+  [1m[35m (1.9ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/locals_controller.rb:21
+Redirected to http://localhost:3000/locals/new
+Completed 200 OK in 12ms (ActiveRecord: 4.2ms)
+
+
+Started GET "/locals/new" for ::1 at 2020-06-05 21:26:28 -0400
+Processing by LocalsController#new as HTML
+  Rendering locals/new.html.erb within layouts/application
+  Rendered locals/new.html.erb within layouts/application (4.7ms)
+  [1m[36mDuenoUser Load (2.9ms)[0m  [1m[34mSELECT  "dueno_users".* FROM "dueno_users" WHERE "dueno_users"."id" = $1 ORDER BY "dueno_users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 48ms (Views: 44.0ms | ActiveRecord: 2.9ms)
+
+
+Started POST "/locals" for ::1 at 2020-06-05 21:30:40 -0400
+Processing by LocalsController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0behLymp/vTgXwypQtg5tSdRQdiHQJ6DB65FXnBJ1cB4pJt3rFcnZvLY80nV2g2fzJDrRQWLr/JpjQAZ82Y2/Q==", "local"=>{"nombre"=>"saddas", "tipo"=>"restaurante", "direccion"=>"asdasd"}, "commit"=>"Create Local"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/locals_controller.rb:20
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/locals_controller.rb:20
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/locals_controller.rb:21
+  [1m[35m (0.8ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/locals_controller.rb:21
+Redirected to http://localhost:3000/locals/new
+Completed 200 OK in 31ms (ActiveRecord: 5.4ms)
+
+
+Started GET "/locals/new" for ::1 at 2020-06-05 21:30:40 -0400
+Processing by LocalsController#new as HTML
+  Rendering locals/new.html.erb within layouts/application
+  Rendered locals/new.html.erb within layouts/application (281.1ms)
+Completed 500 Internal Server Error in 286ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `hidden' for #<ActionView::Helpers::FormBuilder:0x00007f2010184458>):
+    19:     </div>
+    20: 
+    21:     <div class='field'> 
+    22:         <%= form.hidden :dueno_user_id %>
+    23:     </div>
+    24: 
+    25:     <div class="actions">
+  
+app/views/locals/new.html.erb:22:in `block in _app_views_locals_new_html_erb__4461633555616928047_69887842835240'
+app/views/locals/new.html.erb:5:in `_app_views_locals_new_html_erb__4461633555616928047_69887842835240'
+Started GET "/locals" for ::1 at 2020-06-05 21:30:56 -0400
+Processing by LocalsController#index as HTML
+  Rendering locals/index.html.erb within layouts/application
+  [1m[36mLocal Load (0.2ms)[0m  [1m[34mSELECT "locals".* FROM "locals"[0m
+  ↳ app/views/locals/index.html.erb:18
+  [1m[36mDuenoUser Load (1.6ms)[0m  [1m[34mSELECT  "dueno_users".* FROM "dueno_users" WHERE "dueno_users"."id" = $1 ORDER BY "dueno_users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/locals/index.html.erb:35
+  Rendered locals/index.html.erb within layouts/application (28.2ms)
+Completed 200 OK in 100ms (Views: 92.0ms | ActiveRecord: 6.5ms)
+
+
+Started GET "/locals" for ::1 at 2020-06-05 21:30:56 -0400
+Processing by LocalsController#index as HTML
+  Rendering locals/index.html.erb within layouts/application
+  [1m[36mLocal Load (0.2ms)[0m  [1m[34mSELECT "locals".* FROM "locals"[0m
+  ↳ app/views/locals/index.html.erb:18
+  [1m[36mDuenoUser Load (1.9ms)[0m  [1m[34mSELECT  "dueno_users".* FROM "dueno_users" WHERE "dueno_users"."id" = $1 ORDER BY "dueno_users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/locals/index.html.erb:35
+  Rendered locals/index.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 48ms (Views: 45.1ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/locals/new" for ::1 at 2020-06-05 21:30:57 -0400
+Processing by LocalsController#new as HTML
+  Rendering locals/new.html.erb within layouts/application
+  Rendered locals/new.html.erb within layouts/application (3.2ms)
+  [1m[36mDuenoUser Load (2.5ms)[0m  [1m[34mSELECT  "dueno_users".* FROM "dueno_users" WHERE "dueno_users"."id" = $1 ORDER BY "dueno_users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 48ms (Views: 44.5ms | ActiveRecord: 2.5ms)
+
+
+Started POST "/locals" for ::1 at 2020-06-05 21:30:59 -0400
+Processing by LocalsController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TnffM9+3rfYoLjSPfaSSwCclok+mRimdhNv8992WT7XnZOVrWkl0ZDqpy2/qpqbqzOQI0iSNGOzq+LmwXrmsiA==", "local"=>{"nombre"=>"asdsa", "tipo"=>"restaurante", "direccion"=>"asdasd"}, "commit"=>"Create Local"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/locals_controller.rb:20
+  [1m[35m (1.0ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/locals_controller.rb:20
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/locals_controller.rb:21
+  [1m[35m (1.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/locals_controller.rb:21
+Redirected to http://localhost:3000/locals/new
+Completed 200 OK in 8ms (ActiveRecord: 2.9ms)
+
+
+Started GET "/locals/new" for ::1 at 2020-06-05 21:30:59 -0400
+Processing by LocalsController#new as HTML
+  Rendering locals/new.html.erb within layouts/application
+  Rendered locals/new.html.erb within layouts/application (2.6ms)
+  [1m[36mDuenoUser Load (0.9ms)[0m  [1m[34mSELECT  "dueno_users".* FROM "dueno_users" WHERE "dueno_users"."id" = $1 ORDER BY "dueno_users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 57ms (Views: 55.2ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/locals" for ::1 at 2020-06-05 21:31:21 -0400
+Processing by LocalsController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VwuFAyLaARtg0alk/AMEtFh/Lig+6fUKwjoyGOwXPK7+GL9bpyTYiXJWVoRrATCes76EtbwixHusGXdfbzjfkw==", "local"=>{"nombre"=>"dsadas", "tipo"=>"restaurante", "direccion"=>"asdasd"}, "commit"=>"Create Local"}
+  [1m[35m (2.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/locals_controller.rb:21
+  [1m[35m (5.7ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/locals_controller.rb:21
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/locals_controller.rb:22
+  [1m[35m (1.0ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/locals_controller.rb:22
+Redirected to http://localhost:3000/locals/new
+Completed 200 OK in 54ms (ActiveRecord: 13.8ms)
+
+
+Started GET "/locals/new" for ::1 at 2020-06-05 21:31:21 -0400
+Processing by LocalsController#new as HTML
+  Rendering locals/new.html.erb within layouts/application
+  Rendered locals/new.html.erb within layouts/application (6.7ms)
+  [1m[36mDuenoUser Load (1.0ms)[0m  [1m[34mSELECT  "dueno_users".* FROM "dueno_users" WHERE "dueno_users"."id" = $1 ORDER BY "dueno_users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 121ms (Views: 112.0ms | ActiveRecord: 7.2ms)
+
+
+Started POST "/locals" for ::1 at 2020-06-05 21:31:37 -0400
+Processing by LocalsController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"S3WCLv8VBk6J2PAT3BL7BgmA9J7CCmlhEAiKpkCphebiZrh2euvf3JtfD/NLEM8s4kFeA0DBWBB+K8/hw4Zm2w==", "local"=>{"nombre"=>"sadasd", "tipo"=>"restaurante", "direccion"=>"asdasd"}, "commit"=>"Create Local"}
+  [1m[36mDuenoUser Load (0.2ms)[0m  [1m[34mSELECT  "dueno_users".* FROM "dueno_users" WHERE "dueno_users"."id" = $1 ORDER BY "dueno_users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/locals_controller.rb:17
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/locals_controller.rb:21
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/locals_controller.rb:21
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/locals_controller.rb:22
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/locals_controller.rb:22
+Redirected to http://localhost:3000/locals/new
+Completed 200 OK in 39ms (ActiveRecord: 7.3ms)
+
+
+Started GET "/locals/new" for ::1 at 2020-06-05 21:31:37 -0400
+Processing by LocalsController#new as HTML
+  Rendering locals/new.html.erb within layouts/application
+  Rendered locals/new.html.erb within layouts/application (3.1ms)
+  [1m[36mDuenoUser Load (0.2ms)[0m  [1m[34mSELECT  "dueno_users".* FROM "dueno_users" WHERE "dueno_users"."id" = $1 ORDER BY "dueno_users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 42ms (Views: 40.5ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/locals" for ::1 at 2020-06-05 21:31:50 -0400
+Processing by LocalsController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UzHpShlQ1CUZscTk431kVfRZwDDkR5DbMy8vwMkKpnX6ItMSnK4Ntws2OwR0f1B/H5hqrWaMoapdDGqHSiVFSA==", "local"=>{"nombre"=>"asdad", "tipo"=>"restaurante", "direccion"=>"asdasd"}, "commit"=>"Create Local"}
+  [1m[36mDuenoUser Load (0.2ms)[0m  [1m[34mSELECT  "dueno_users".* FROM "dueno_users" WHERE "dueno_users"."id" = $1 ORDER BY "dueno_users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/locals_controller.rb:17
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/locals_controller.rb:21
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/locals_controller.rb:21
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/locals_controller.rb:22
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/locals_controller.rb:22
+Redirected to http://localhost:3000/locals/new
+Completed 200 OK in 60ms (ActiveRecord: 7.6ms)
+
+
+Started GET "/locals/new" for ::1 at 2020-06-05 21:31:50 -0400
+Processing by LocalsController#new as HTML
+  Rendering locals/new.html.erb within layouts/application
+  Rendered locals/new.html.erb within layouts/application (3.0ms)
+  [1m[36mDuenoUser Load (0.2ms)[0m  [1m[34mSELECT  "dueno_users".* FROM "dueno_users" WHERE "dueno_users"."id" = $1 ORDER BY "dueno_users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 36ms (Views: 34.3ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/locals" for ::1 at 2020-06-05 21:32:19 -0400
+Processing by LocalsController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Tu5TbcSSDTFwQCvGIDd3eeWPy7w6j4JnTWL4k5fX9q/n/Wk1QWzUo2LH1Ca3NUNTDk5hIbhEsxYjQb3UFPgVkg==", "local"=>{"nombre"=>"dasd", "tipo"=>"restaurante", "direccion"=>"asdasd"}, "commit"=>"Create Local"}
+  [1m[36mDuenoUser Load (0.2ms)[0m  [1m[34mSELECT  "dueno_users".* FROM "dueno_users" WHERE "dueno_users"."id" = $1 ORDER BY "dueno_users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/locals_controller.rb:17
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/locals_controller.rb:21
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/locals_controller.rb:21
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/locals_controller.rb:22
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/locals_controller.rb:22
+Redirected to http://localhost:3000/locals/new
+Completed 200 OK in 37ms (ActiveRecord: 7.2ms)
+
+
+Started GET "/locals/new" for ::1 at 2020-06-05 21:32:20 -0400
+Processing by LocalsController#new as HTML
+  Rendering locals/new.html.erb within layouts/application
+  Rendered locals/new.html.erb within layouts/application (2.9ms)
+  [1m[36mDuenoUser Load (0.2ms)[0m  [1m[34mSELECT  "dueno_users".* FROM "dueno_users" WHERE "dueno_users"."id" = $1 ORDER BY "dueno_users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 48ms (Views: 45.3ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/locals" for ::1 at 2020-06-05 21:32:20 -0400
+Processing by LocalsController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4QREjh8xnZtAcRVVJR4Uz0Qs/QcYzne0H8kUF9PfzPZIF37Wms9ECVL26rWyHCDlr+1XmpoFRsVx6lFQUPAvyw==", "local"=>{"nombre"=>"", "tipo"=>"restaurante", "direccion"=>""}, "commit"=>"Create Local"}
+  [1m[36mDuenoUser Load (0.3ms)[0m  [1m[34mSELECT  "dueno_users".* FROM "dueno_users" WHERE "dueno_users"."id" = $1 ORDER BY "dueno_users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/locals_controller.rb:17
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/locals_controller.rb:21
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/locals_controller.rb:21
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/locals_controller.rb:22
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/locals_controller.rb:22
+Redirected to http://localhost:3000/locals/new
+Completed 200 OK in 12ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/locals/new" for ::1 at 2020-06-05 21:32:20 -0400
+Processing by LocalsController#new as HTML
+  Rendering locals/new.html.erb within layouts/application
+  Rendered locals/new.html.erb within layouts/application (3.9ms)
+  [1m[36mDuenoUser Load (0.2ms)[0m  [1m[34mSELECT  "dueno_users".* FROM "dueno_users" WHERE "dueno_users"."id" = $1 ORDER BY "dueno_users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 36ms (Views: 34.9ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/locals" for ::1 at 2020-06-05 21:32:30 -0400
+Processing by LocalsController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"I387aaDw5DbzFDaWQZs6KNYoXeU35gZkJko4JWf+WbOKbAExJQ49pOGTyXbWmQ4CPen3eLUtNxVIaX1i5NG6jg==", "local"=>{"nombre"=>"", "tipo"=>"restaurante", "direccion"=>""}, "commit"=>"Create Local"}
+  [1m[36mDuenoUser Load (0.4ms)[0m  [1m[34mSELECT  "dueno_users".* FROM "dueno_users" WHERE "dueno_users"."id" = $1 ORDER BY "dueno_users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/locals_controller.rb:17
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/locals_controller.rb:21
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/locals_controller.rb:21
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/locals_controller.rb:22
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/locals_controller.rb:22
+Redirected to http://localhost:3000/locals/new
+Completed 200 OK in 11ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/locals/new" for ::1 at 2020-06-05 21:32:30 -0400
+Processing by LocalsController#new as HTML
+  Rendering locals/new.html.erb within layouts/application
+  Rendered locals/new.html.erb within layouts/application (3.1ms)
+  [1m[36mDuenoUser Load (0.2ms)[0m  [1m[34mSELECT  "dueno_users".* FROM "dueno_users" WHERE "dueno_users"."id" = $1 ORDER BY "dueno_users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 38ms (Views: 36.4ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/locals" for ::1 at 2020-06-05 21:32:46 -0400
+Processing by LocalsController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XrQkODiaVwVy+lJjp9862z8uEnkYRTv0hJUnuizVOTX3px5gvWSOl2B9rYMw3Q7x1O+45JqOCoXqtmL9r/raCA==", "local"=>{"nombre"=>"", "tipo"=>"restaurante", "direccion"=>""}, "commit"=>"Create Local"}
+  [1m[36mDuenoUser Load (0.2ms)[0m  [1m[34mSELECT  "dueno_users".* FROM "dueno_users" WHERE "dueno_users"."id" = $1 ORDER BY "dueno_users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/locals_controller.rb:17
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/locals_controller.rb:21
+  [1m[35m (2.0ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/locals_controller.rb:21
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/locals_controller.rb:22
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/locals_controller.rb:22
+Redirected to http://localhost:3000/locals/new
+Completed 200 OK in 12ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/locals/new" for ::1 at 2020-06-05 21:32:46 -0400
+Processing by LocalsController#new as HTML
+  Rendering locals/new.html.erb within layouts/application
+  Rendered locals/new.html.erb within layouts/application (3.1ms)
+  [1m[36mDuenoUser Load (0.2ms)[0m  [1m[34mSELECT  "dueno_users".* FROM "dueno_users" WHERE "dueno_users"."id" = $1 ORDER BY "dueno_users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 41ms (Views: 39.9ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/locals" for ::1 at 2020-06-05 21:33:32 -0400
+Processing by LocalsController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"y7+dk/mbFtpkwZIuGussdw/O7yV1+6hmdymhTD5elVBirKfLfGXPSHZGbc6N6Rhd5A9FuPcwmRcZCuQLvXF2bQ==", "local"=>{"nombre"=>"", "tipo"=>"restaurante", "direccion"=>""}, "commit"=>"Create Local"}
+  [1m[36mDuenoUser Load (0.1ms)[0m  [1m[34mSELECT  "dueno_users".* FROM "dueno_users" WHERE "dueno_users"."id" = $1 ORDER BY "dueno_users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/locals_controller.rb:17
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/locals_controller.rb:22
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/locals_controller.rb:22
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/locals_controller.rb:23
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/locals_controller.rb:23
+Redirected to http://localhost:3000/locals/new
+Completed 200 OK in 46ms (ActiveRecord: 8.6ms)
+
+
+Started GET "/locals/new" for ::1 at 2020-06-05 21:33:32 -0400
+Processing by LocalsController#new as HTML
+  Rendering locals/new.html.erb within layouts/application
+  Rendered locals/new.html.erb within layouts/application (5.7ms)
+  [1m[36mDuenoUser Load (0.2ms)[0m  [1m[34mSELECT  "dueno_users".* FROM "dueno_users" WHERE "dueno_users"."id" = $1 ORDER BY "dueno_users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 58ms (Views: 56.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/locals" for ::1 at 2020-06-05 21:34:03 -0400
+Processing by LocalsController#index as HTML
+  Rendering locals/index.html.erb within layouts/application
+  [1m[36mLocal Load (0.2ms)[0m  [1m[34mSELECT "locals".* FROM "locals"[0m
+  ↳ app/views/locals/index.html.erb:18
+  [1m[36mDuenoUser Load (6.2ms)[0m  [1m[34mSELECT  "dueno_users".* FROM "dueno_users" WHERE "dueno_users"."id" = $1 ORDER BY "dueno_users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/locals/index.html.erb:35
+  Rendered locals/index.html.erb within layouts/application (29.2ms)
+Completed 200 OK in 66ms (Views: 48.9ms | ActiveRecord: 11.6ms)
+
+
+Started GET "/locals/new" for ::1 at 2020-06-05 21:34:05 -0400
+Processing by LocalsController#new as HTML
+  Rendering locals/new.html.erb within layouts/application
+  Rendered locals/new.html.erb within layouts/application (5.8ms)
+  [1m[36mDuenoUser Load (0.2ms)[0m  [1m[34mSELECT  "dueno_users".* FROM "dueno_users" WHERE "dueno_users"."id" = $1 ORDER BY "dueno_users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 72ms (Views: 56.6ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/locals" for ::1 at 2020-06-05 21:34:08 -0400
+Processing by LocalsController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Lm05c7rPMuDlOW+dabP+wIFucKCIqSPqvrh7TlHBTQ+HfgMrPzHrcve+kH3+scrqaq/aPQpiEpvQmz4J0u6uMg==", "local"=>{"nombre"=>"dsad", "tipo"=>"restaurante", "direccion"=>"asdas"}, "commit"=>"Create Local"}
+  [1m[36mDuenoUser Load (0.3ms)[0m  [1m[34mSELECT  "dueno_users".* FROM "dueno_users" WHERE "dueno_users"."id" = $1 ORDER BY "dueno_users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/locals_controller.rb:17
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/locals_controller.rb:22
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/locals_controller.rb:22
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/locals_controller.rb:23
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/locals_controller.rb:23
+Redirected to http://localhost:3000/locals/new
+Completed 200 OK in 14ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/locals/new" for ::1 at 2020-06-05 21:34:08 -0400
+Processing by LocalsController#new as HTML
+  Rendering locals/new.html.erb within layouts/application
+  Rendered locals/new.html.erb within layouts/application (4.1ms)
+  [1m[36mDuenoUser Load (0.3ms)[0m  [1m[34mSELECT  "dueno_users".* FROM "dueno_users" WHERE "dueno_users"."id" = $1 ORDER BY "dueno_users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 74ms (Views: 72.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/locals" for ::1 at 2020-06-05 21:34:54 -0400
+Processing by LocalsController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nQ73Uf3we8Ivm4wYFDOqzQKV/YaLSQJXhufo1fWrrZo0Hc0JeA6iUD0cc/iDMZ7n6VRXGwmCMyboxK2SdoROpw==", "local"=>{"nombre"=>"asdas", "tipo"=>"restaurante", "direccion"=>"asdasd"}, "commit"=>"Create Local"}
+  [1m[36mDuenoUser Load (0.2ms)[0m  [1m[34mSELECT  "dueno_users".* FROM "dueno_users" WHERE "dueno_users"."id" = $1 ORDER BY "dueno_users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/locals_controller.rb:17
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 3.7ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 4, expected 1)):
+  
+app/controllers/locals_controller.rb:20:in `create'
+Started GET "/locals" for ::1 at 2020-06-05 21:35:19 -0400
+Processing by LocalsController#index as HTML
+  Rendering locals/index.html.erb within layouts/application
+  [1m[36mLocal Load (0.3ms)[0m  [1m[34mSELECT "locals".* FROM "locals"[0m
+  ↳ app/views/locals/index.html.erb:18
+  [1m[36mDuenoUser Load (0.1ms)[0m  [1m[34mSELECT  "dueno_users".* FROM "dueno_users" WHERE "dueno_users"."id" = $1 ORDER BY "dueno_users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/locals/index.html.erb:35
+  Rendered locals/index.html.erb within layouts/application (24.8ms)
+Completed 200 OK in 65ms (Views: 51.2ms | ActiveRecord: 8.4ms)
+
+
+Started GET "/locals/new" for ::1 at 2020-06-05 21:35:23 -0400
+Processing by LocalsController#new as HTML
+  Rendering locals/new.html.erb within layouts/application
+  Rendered locals/new.html.erb within layouts/application (3.0ms)
+  [1m[36mDuenoUser Load (3.4ms)[0m  [1m[34mSELECT  "dueno_users".* FROM "dueno_users" WHERE "dueno_users"."id" = $1 ORDER BY "dueno_users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 78ms (Views: 58.7ms | ActiveRecord: 5.3ms)
+
+
+Started POST "/locals" for ::1 at 2020-06-05 21:35:25 -0400
+Processing by LocalsController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gSgS8ZGH0x2dRVxl1/6kJfR467GCiQ51WQm16PwzbkQoOyipFHkKj4/Co4VA/JAPH7lBLABCPwQ3KvCvfxyNeQ==", "local"=>{"nombre"=>"asdas", "tipo"=>"restaurante", "direccion"=>"asdasd"}, "commit"=>"Create Local"}
+  [1m[36mDuenoUser Load (0.2ms)[0m  [1m[34mSELECT  "dueno_users".* FROM "dueno_users" WHERE "dueno_users"."id" = $1 ORDER BY "dueno_users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/locals_controller.rb:17
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/locals_controller.rb:22
+  [1m[35m (1.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/locals_controller.rb:22
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/locals_controller.rb:23
+  [1m[35m (1.9ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/locals_controller.rb:23
+Redirected to http://localhost:3000/locals/new
+Completed 200 OK in 11ms (ActiveRecord: 3.6ms)
+
+
+Started GET "/locals/new" for ::1 at 2020-06-05 21:35:25 -0400
+Processing by LocalsController#new as HTML
+  Rendering locals/new.html.erb within layouts/application
+  Rendered locals/new.html.erb within layouts/application (2.7ms)
+  [1m[36mDuenoUser Load (0.3ms)[0m  [1m[34mSELECT  "dueno_users".* FROM "dueno_users" WHERE "dueno_users"."id" = $1 ORDER BY "dueno_users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 60ms (Views: 58.7ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/locals" for ::1 at 2020-06-05 21:35:35 -0400
+Processing by LocalsController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"r4/ceV6UxqBbNt5SUKy8bks4VHK2J0HyMkF6vhKZ9SUGnOYh22ofMkmxIbLHrohEoPn+7zTscINcYj/5kbYWGA==", "local"=>{"nombre"=>"dasdasd", "tipo"=>"restaurante", "direccion"=>"asdasd"}, "commit"=>"Create Local"}
+  [1m[36mDuenoUser Load (4.4ms)[0m  [1m[34mSELECT  "dueno_users".* FROM "dueno_users" WHERE "dueno_users"."id" = $1 ORDER BY "dueno_users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/locals_controller.rb:17
+Completed 500 Internal Server Error in 337ms (ActiveRecord: 8.1ms)
+
+
+  
+NameError (undefined local variable or method `local' for #<LocalsController:0x00007f2005e72df0>
+Did you mean?  locale
+               locale=):
+  
+app/controllers/locals_controller.rb:19:in `create'
+Started POST "/locals" for ::1 at 2020-06-05 21:35:52 -0400
+Processing by LocalsController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"r4/ceV6UxqBbNt5SUKy8bks4VHK2J0HyMkF6vhKZ9SUGnOYh22ofMkmxIbLHrohEoPn+7zTscINcYj/5kbYWGA==", "local"=>{"nombre"=>"dasdasd", "tipo"=>"restaurante", "direccion"=>"asdasd"}, "commit"=>"Create Local"}
+  [1m[36mDuenoUser Load (0.2ms)[0m  [1m[34mSELECT  "dueno_users".* FROM "dueno_users" WHERE "dueno_users"."id" = $1 ORDER BY "dueno_users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/locals_controller.rb:17
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/locals_controller.rb:22
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/locals_controller.rb:22
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/locals_controller.rb:23
+  [1m[35m (0.7ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/locals_controller.rb:23
+Redirected to http://localhost:3000/locals/new
+Completed 200 OK in 56ms (ActiveRecord: 9.1ms)
+
+
+Started GET "/locals/new" for ::1 at 2020-06-05 21:35:52 -0400
+Processing by LocalsController#new as HTML
+  Rendering locals/new.html.erb within layouts/application
+  Rendered locals/new.html.erb within layouts/application (7.4ms)
+  [1m[36mDuenoUser Load (0.3ms)[0m  [1m[34mSELECT  "dueno_users".* FROM "dueno_users" WHERE "dueno_users"."id" = $1 ORDER BY "dueno_users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 97ms (Views: 94.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/locals/new" for ::1 at 2020-06-05 21:36:28 -0400
+Processing by LocalsController#new as HTML
+  Rendering locals/new.html.erb within layouts/application
+  Rendered locals/new.html.erb within layouts/application (10.9ms)
+  [1m[36mDuenoUser Load (0.7ms)[0m  [1m[34mSELECT  "dueno_users".* FROM "dueno_users" WHERE "dueno_users"."id" = $1 ORDER BY "dueno_users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 65ms (Views: 62.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/locals/new" for ::1 at 2020-06-05 21:36:57 -0400
+Processing by LocalsController#new as HTML
+  Rendering locals/new.html.erb within layouts/application
+  [1m[36mDuenoUser Load (0.2ms)[0m  [1m[34mSELECT  "dueno_users".* FROM "dueno_users" WHERE "dueno_users"."id" = $1 ORDER BY "dueno_users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/locals/new.html.erb:23
+  Rendered locals/new.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 65ms (Views: 63.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/locals/new" for ::1 at 2020-06-05 21:37:05 -0400
+Processing by LocalsController#new as HTML
+  Rendering locals/new.html.erb within layouts/application
+  [1m[36mDuenoUser Load (0.3ms)[0m  [1m[34mSELECT  "dueno_users".* FROM "dueno_users" WHERE "dueno_users"."id" = $1 ORDER BY "dueno_users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/locals/new.html.erb:23
+  Rendered locals/new.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 54ms (Views: 52.4ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/locals" for ::1 at 2020-06-05 21:37:09 -0400
+Processing by LocalsController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WZdOuRBhpbkpxCDmbN2SCVpCpvKGnXIUVjKvcUrK9mOG5gB2F/V9/P3ycHHq+FwRv/xGlfaPy+BtaDR4/PHpnw==", "local"=>{"nombre"=>"dasdas", "tipo"=>"restaurante", "direccion"=>"asdasd"}, "commit"=>"Create Local"}
+  [1m[36mDuenoUser Load (0.2ms)[0m  [1m[34mSELECT  "dueno_users".* FROM "dueno_users" WHERE "dueno_users"."id" = $1 ORDER BY "dueno_users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/locals_controller.rb:17
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/locals_controller.rb:22
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/locals_controller.rb:22
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/locals_controller.rb:23
+  [1m[35m (1.5ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/locals_controller.rb:23
+Redirected to http://localhost:3000/locals/new
+Completed 200 OK in 7ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/locals/new" for ::1 at 2020-06-05 21:37:09 -0400
+Processing by LocalsController#new as HTML
+  Rendering locals/new.html.erb within layouts/application
+  [1m[36mDuenoUser Load (2.1ms)[0m  [1m[34mSELECT  "dueno_users".* FROM "dueno_users" WHERE "dueno_users"."id" = $1 ORDER BY "dueno_users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/locals/new.html.erb:23
+  Rendered locals/new.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 50ms (Views: 46.5ms | ActiveRecord: 2.1ms)
+
+
+Started POST "/locals" for ::1 at 2020-06-05 21:37:21 -0400
+Processing by LocalsController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LLxYO0qyDdOZlB8eLi/9w/VJ7GztXYiaL8Wj/RJm8RSFr2Jjz0zUQYsT4P65LcnpHohG8W+WuetB5ua6kUkSKQ==", "local"=>{"nombre"=>"asdas", "tipo"=>"restaurante", "direccion"=>"asdasd"}, "commit"=>"Create Local"}
+  [1m[36mDuenoUser Load (0.3ms)[0m  [1m[34mSELECT  "dueno_users".* FROM "dueno_users" WHERE "dueno_users"."id" = $1 ORDER BY "dueno_users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/locals_controller.rb:17
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/locals_controller.rb:22
+  [1m[35m (1.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/locals_controller.rb:22
+  [1m[35m (4.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/locals_controller.rb:23
+  [1m[35m (0.7ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/locals_controller.rb:23
+Redirected to http://localhost:3000/locals/new
+Completed 200 OK in 12ms (ActiveRecord: 6.4ms)
+
+
+Started GET "/locals/new" for ::1 at 2020-06-05 21:37:21 -0400
+Processing by LocalsController#new as HTML
+  Rendering locals/new.html.erb within layouts/application
+  [1m[36mDuenoUser Load (3.0ms)[0m  [1m[34mSELECT  "dueno_users".* FROM "dueno_users" WHERE "dueno_users"."id" = $1 ORDER BY "dueno_users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/locals/new.html.erb:23
+  Rendered locals/new.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 62ms (Views: 57.8ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/locals/new" for ::1 at 2020-06-05 21:37:49 -0400
+Processing by LocalsController#new as HTML
+  Rendering locals/new.html.erb within layouts/application
+  Rendered locals/new.html.erb within layouts/application (303.0ms)
+Completed 500 Internal Server Error in 306ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `hidden' for #<ActionView::Helpers::FormBuilder:0x00007f20101eb068>):
+    19:     </div>
+    20: 
+    21:     <div class='field'> 
+    22:         <%= form.hidden :dueno_user_id %>
+    23:         <%= current_dueno_user.id %>
+    24:     </div>
+    25: 
+  
+app/views/locals/new.html.erb:22:in `block in _app_views_locals_new_html_erb__4461633555616928047_69887843019840'
+app/views/locals/new.html.erb:5:in `_app_views_locals_new_html_erb__4461633555616928047_69887843019840'
+Started GET "/locals/new" for ::1 at 2020-06-05 21:38:15 -0400
+Processing by LocalsController#new as HTML
+  Rendering locals/new.html.erb within layouts/application
+  [1m[36mDuenoUser Load (2.1ms)[0m  [1m[34mSELECT  "dueno_users".* FROM "dueno_users" WHERE "dueno_users"."id" = $1 ORDER BY "dueno_users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/locals/new.html.erb:23
+  Rendered locals/new.html.erb within layouts/application (33.0ms)
+Completed 200 OK in 82ms (Views: 78.5ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/locals/new" for ::1 at 2020-06-05 21:38:45 -0400
+Processing by LocalsController#new as HTML
+  Rendering locals/new.html.erb within layouts/application
+  [1m[36mDuenoUser Load (1.0ms)[0m  [1m[34mSELECT  "dueno_users".* FROM "dueno_users" WHERE "dueno_users"."id" = $1 ORDER BY "dueno_users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/locals/new.html.erb:23
+  Rendered locals/new.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 88ms (Views: 85.5ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/locals" for ::1 at 2020-06-05 21:38:58 -0400
+Processing by LocalsController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OaZwVKL9Y2W8yZGJXIscL7wJxH+3i+PMkh8qGn4h+ITm1z6bpWm7IGj/wR7artI3WbckGMeZWjipRbETyBrneA==", "local"=>{"nombre"=>"asdasd", "tipo"=>"restaurante", "direccion"=>"asdasd", "dueno_user_id"=>""}, "commit"=>"Create Local"}
+  [1m[36mDuenoUser Load (0.2ms)[0m  [1m[34mSELECT  "dueno_users".* FROM "dueno_users" WHERE "dueno_users"."id" = $1 ORDER BY "dueno_users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/locals_controller.rb:17
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/locals_controller.rb:22
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/locals_controller.rb:22
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/locals_controller.rb:23
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/locals_controller.rb:23
+Redirected to http://localhost:3000/locals/new
+Completed 200 OK in 8ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/locals/new" for ::1 at 2020-06-05 21:38:58 -0400
+Processing by LocalsController#new as HTML
+  Rendering locals/new.html.erb within layouts/application
+  [1m[36mDuenoUser Load (0.2ms)[0m  [1m[34mSELECT  "dueno_users".* FROM "dueno_users" WHERE "dueno_users"."id" = $1 ORDER BY "dueno_users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/locals/new.html.erb:23
+  Rendered locals/new.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 45ms (Views: 43.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/locals/new" for ::1 at 2020-06-05 21:40:01 -0400
+Processing by LocalsController#new as HTML
+  Rendering locals/new.html.erb within layouts/application
+  [1m[36mDuenoUser Load (0.3ms)[0m  [1m[34mSELECT  "dueno_users".* FROM "dueno_users" WHERE "dueno_users"."id" = $1 ORDER BY "dueno_users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/locals/new.html.erb:23
+  Rendered locals/new.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 43ms (Views: 41.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/locals" for ::1 at 2020-06-05 21:40:06 -0400
+Processing by LocalsController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"frXijOb9YNs6SZ5hPtwexsCFS/KNzRgjdjvTkH5LKwOhxKxD4Wm4nu5/zva4+dDeJTurlf3foddNYUiZyHA0/w==", "local"=>{"nombre"=>"qweqwe", "tipo"=>"restaurante", "direccion"=>"qweqwe", "dueno_user_id"=>""}, "3"=>"", "commit"=>"Create Local"}
+  [1m[36mDuenoUser Load (0.2ms)[0m  [1m[34mSELECT  "dueno_users".* FROM "dueno_users" WHERE "dueno_users"."id" = $1 ORDER BY "dueno_users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/locals_controller.rb:17
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/locals_controller.rb:22
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/locals_controller.rb:22
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/locals_controller.rb:23
+  [1m[35m (1.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/locals_controller.rb:23
+Redirected to http://localhost:3000/locals/new
+Completed 200 OK in 7ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/locals/new" for ::1 at 2020-06-05 21:40:06 -0400
+Processing by LocalsController#new as HTML
+  Rendering locals/new.html.erb within layouts/application
+  [1m[36mDuenoUser Load (3.2ms)[0m  [1m[34mSELECT  "dueno_users".* FROM "dueno_users" WHERE "dueno_users"."id" = $1 ORDER BY "dueno_users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/locals/new.html.erb:23
+  Rendered locals/new.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 47ms (Views: 43.1ms | ActiveRecord: 3.2ms)
+
+
+Started POST "/locals" for ::1 at 2020-06-05 21:40:31 -0400
+Processing by LocalsController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"czs10xgso/przMO1Vo5mjbZQR96QDQ40oBGMHUgefnTaKA+LndJ6aHlLPFXBjFKnXZHtQxLGP0XOMslayzGdSQ==", "local"=>{"nombre"=>"dasd", "tipo"=>"restaurante", "direccion"=>"asdasd", "dueno_user_id"=>""}, "3"=>"", "commit"=>"Create Local"}
+  [1m[36mDuenoUser Load (0.2ms)[0m  [1m[34mSELECT  "dueno_users".* FROM "dueno_users" WHERE "dueno_users"."id" = $1 ORDER BY "dueno_users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/locals_controller.rb:17
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/locals_controller.rb:22
+  [1m[35m (0.9ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/locals_controller.rb:22
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/locals_controller.rb:23
+  [1m[35m (0.9ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/locals_controller.rb:23
+Redirected to http://localhost:3000/locals/new
+Completed 200 OK in 11ms (ActiveRecord: 3.3ms)
+
+
+Started GET "/locals/new" for ::1 at 2020-06-05 21:40:31 -0400
+Processing by LocalsController#new as HTML
+  Rendering locals/new.html.erb within layouts/application
+  Rendered locals/new.html.erb within layouts/application (1.2ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/lukas/Documentos/grupo39-proyecto/app/views/locals/new.html.erb:22: syntax error, unexpected tIDENTIFIER, expecting ')'
+...ueno_user_id current_dueno_user.id);@output_buffer.safe_appe...
+...             ^~~~~~~~~~~~~~~~~~):
+  
+app/views/locals/new.html.erb:22: syntax error, unexpected tIDENTIFIER, expecting ')'
+Started GET "/locals/new" for ::1 at 2020-06-05 21:40:33 -0400
+Processing by LocalsController#new as HTML
+  Rendering locals/new.html.erb within layouts/application
+  Rendered locals/new.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/lukas/Documentos/grupo39-proyecto/app/views/locals/new.html.erb:22: syntax error, unexpected tIDENTIFIER, expecting ')'
+...ueno_user_id current_dueno_user.id);@output_buffer.safe_appe...
+...             ^~~~~~~~~~~~~~~~~~):
+  
+app/views/locals/new.html.erb:22: syntax error, unexpected tIDENTIFIER, expecting ')'
+Started GET "/locals/new" for ::1 at 2020-06-05 21:41:04 -0400
+Processing by LocalsController#new as HTML
+  Rendering locals/new.html.erb within layouts/application
+  Rendered locals/new.html.erb within layouts/application (2.7ms)
+  [1m[36mDuenoUser Load (6.0ms)[0m  [1m[34mSELECT  "dueno_users".* FROM "dueno_users" WHERE "dueno_users"."id" = $1 ORDER BY "dueno_users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 43ms (Views: 36.1ms | ActiveRecord: 6.0ms)
+
+
+Started POST "/locals" for ::1 at 2020-06-05 21:41:09 -0400
+Processing by LocalsController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"G9KtKNadl7GTgn8MtY75m+1ygT/xYNxHr7fx2EZgSkrEo+Pn0QlP9Ee0L5szqzeDCMxhWIFyZbOU7WrR8FtVtg==", "local"=>{"nombre"=>"dasd", "tipo"=>"restaurante", "direccion"=>"asdas"}, "commit"=>"Create Local"}
+  [1m[36mDuenoUser Load (0.2ms)[0m  [1m[34mSELECT  "dueno_users".* FROM "dueno_users" WHERE "dueno_users"."id" = $1 ORDER BY "dueno_users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/locals_controller.rb:17
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/locals_controller.rb:22
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/locals_controller.rb:22
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/locals_controller.rb:23
+  [1m[35m (2.7ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/locals_controller.rb:23
+Redirected to http://localhost:3000/locals/new
+Completed 200 OK in 8ms (ActiveRecord: 3.1ms)
+
+
+Started GET "/locals/new" for ::1 at 2020-06-05 21:41:09 -0400
+Processing by LocalsController#new as HTML
+  Rendering locals/new.html.erb within layouts/application
+  Rendered locals/new.html.erb within layouts/application (2.6ms)
+  [1m[36mDuenoUser Load (0.4ms)[0m  [1m[34mSELECT  "dueno_users".* FROM "dueno_users" WHERE "dueno_users"."id" = $1 ORDER BY "dueno_users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 45ms (Views: 43.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/locals/new" for ::1 at 2020-06-05 21:42:02 -0400
+Processing by LocalsController#new as HTML
+  Rendering locals/new.html.erb within layouts/application
+  Rendered locals/new.html.erb within layouts/application (3.3ms)
+  [1m[36mDuenoUser Load (0.4ms)[0m  [1m[34mSELECT  "dueno_users".* FROM "dueno_users" WHERE "dueno_users"."id" = $1 ORDER BY "dueno_users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 100ms (Views: 75.9ms | ActiveRecord: 7.9ms)
+
+
+Started POST "/locals" for ::1 at 2020-06-05 21:42:05 -0400
+Processing by LocalsController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2wRPf+ANC9kPlmyjJck1TscdvCGI2scpaqIll6sy9UsEdQGw55nTnNugPDSj7PtWIqNcRvjIft1R+L6eHQnqtw==", "local"=>{"nombre"=>"asdas", "tipo"=>"restaurante", "direccion"=>"asdasd"}, "commit"=>"Create Local"}
+Completed 500 Internal Server Error in 344ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `dueno_user_id' for #<LocalsController:0x00007f20054cdf48>
+Did you mean?  dueno_user_url
+               dueno_users_url
+               dueno_user_path):
+  
+app/controllers/locals_controller.rb:17:in `create'
+Started POST "/locals" for ::1 at 2020-06-05 21:43:10 -0400
+Processing by LocalsController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2wRPf+ANC9kPlmyjJck1TscdvCGI2scpaqIll6sy9UsEdQGw55nTnNugPDSj7PtWIqNcRvjIft1R+L6eHQnqtw==", "local"=>{"nombre"=>"asdas", "tipo"=>"restaurante", "direccion"=>"asdasd"}, "commit"=>"Create Local"}
+Completed 500 Internal Server Error in 326ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `dueno_user_id' for #<LocalsController:0x00005611e4c167d0>
+Did you mean?  dueno_user_url
+               dueno_users_url
+               dueno_user_path):
+  
+app/controllers/locals_controller.rb:17:in `create'
+Started POST "/locals" for ::1 at 2020-06-05 21:43:22 -0400
+Processing by LocalsController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2wRPf+ANC9kPlmyjJck1TscdvCGI2scpaqIll6sy9UsEdQGw55nTnNugPDSj7PtWIqNcRvjIft1R+L6eHQnqtw==", "local"=>{"nombre"=>"asdas", "tipo"=>"restaurante", "direccion"=>"asdasd"}, "commit"=>"Create Local"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/locals_controller.rb:21
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/locals_controller.rb:21
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/locals_controller.rb:22
+  [1m[35m (3.6ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/locals_controller.rb:22
+Redirected to http://localhost:3000/locals/new
+Completed 200 OK in 55ms (ActiveRecord: 7.8ms)
+
+
+Started GET "/locals/new" for ::1 at 2020-06-05 21:43:22 -0400
+Processing by LocalsController#new as HTML
+  Rendering locals/new.html.erb within layouts/application
+  Rendered locals/new.html.erb within layouts/application (3.1ms)
+  [1m[36mDuenoUser Load (1.5ms)[0m  [1m[34mSELECT  "dueno_users".* FROM "dueno_users" WHERE "dueno_users"."id" = $1 ORDER BY "dueno_users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 62ms (Views: 53.4ms | ActiveRecord: 7.4ms)
+
+
+Started POST "/locals" for ::1 at 2020-06-05 21:44:51 -0400
+Processing by LocalsController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4KS8jDwkipwBEokizsSbEyxqrOs0g4dgZdBff5wEIrZJt4bUudpTDhOVdsJZxq85x6sGdrZIthEL8xo4HyvBiw==", "local"=>{"nombre"=>"asdas", "tipo"=>"restaurante", "direccion"=>"asdasd"}, "commit"=>"Create Local"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/locals_controller.rb:21
+  [1m[35m (5.0ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/locals_controller.rb:21
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/locals_controller.rb:22
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/locals_controller.rb:22
+Redirected to http://localhost:3000/locals/new
+Completed 200 OK in 34ms (ActiveRecord: 9.5ms)
+
+
+Started GET "/locals/new" for ::1 at 2020-06-05 21:44:51 -0400
+Processing by LocalsController#new as HTML
+  Rendering locals/new.html.erb within layouts/application
+  Rendered locals/new.html.erb within layouts/application (3.0ms)
+  [1m[36mDuenoUser Load (0.2ms)[0m  [1m[34mSELECT  "dueno_users".* FROM "dueno_users" WHERE "dueno_users"."id" = $1 ORDER BY "dueno_users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 56ms (Views: 48.3ms | ActiveRecord: 6.2ms)
+
+
+Started POST "/locals" for ::1 at 2020-06-05 21:45:13 -0400
+Processing by LocalsController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tH75LlKyXjkkt1i0NNWgbOtaI99ahGot7TGy222926MdbcN210yHqzYwp1Sj15RGAJuJQthPW1yDEvec7pI4ng==", "local"=>{"nombre"=>"asdasd", "tipo"=>"restaurante", "direccion"=>"asdas"}, "commit"=>"Create Local"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/locals_controller.rb:21
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/locals_controller.rb:21
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/locals_controller.rb:22
+  [1m[35m (1.7ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/locals_controller.rb:22
+Redirected to http://localhost:3000/locals/new
+Completed 200 OK in 28ms (ActiveRecord: 5.9ms)
+
+
+Started GET "/locals/new" for ::1 at 2020-06-05 21:45:13 -0400
+Processing by LocalsController#new as HTML
+  Rendering locals/new.html.erb within layouts/application
+  Rendered locals/new.html.erb within layouts/application (5.0ms)
+  [1m[36mDuenoUser Load (0.2ms)[0m  [1m[34mSELECT  "dueno_users".* FROM "dueno_users" WHERE "dueno_users"."id" = $1 ORDER BY "dueno_users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 72ms (Views: 66.5ms | ActiveRecord: 3.9ms)
+
+
+Started POST "/locals" for ::1 at 2020-06-05 21:45:38 -0400
+Processing by LocalsController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HJSpvfh7zC+SHG3Cd9eD6wmXrBiEiRZYzQY1Qihzj+S1h5PlfYUVvYCbkiLg1bfB4lYGhQZCJymjJXAFq1xs2Q==", "local"=>{"nombre"=>"asdads", "tipo"=>"restaurante", "direccion"=>"asdads"}, "commit"=>"Create Local"}
+  [1m[35m (5.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/locals_controller.rb:21
+  [1m[35m (1.0ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/locals_controller.rb:21
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/locals_controller.rb:22
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/locals_controller.rb:22
+Redirected to http://localhost:3000/locals/new
+Completed 200 OK in 31ms (ActiveRecord: 11.1ms)
+
+
+Started GET "/locals/new" for ::1 at 2020-06-05 21:45:38 -0400
+Processing by LocalsController#new as HTML
+  Rendering locals/new.html.erb within layouts/application
+  Rendered locals/new.html.erb within layouts/application (7.9ms)
+  [1m[36mDuenoUser Load (0.2ms)[0m  [1m[34mSELECT  "dueno_users".* FROM "dueno_users" WHERE "dueno_users"."id" = $1 ORDER BY "dueno_users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 86ms (Views: 77.7ms | ActiveRecord: 6.8ms)
+
+
+Started POST "/locals" for ::1 at 2020-06-05 21:45:42 -0400
+Processing by LocalsController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"C4Q4iREz1iI7NsPhRJ3/4rsGEiOZk6FYdVSMGt17ki+ilwLRlM0PsCmxPAHTn8vIUMe4vhtYkCkbd8ldXlRxEg==", "local"=>{"nombre"=>"sada", "tipo"=>"restaurante", "direccion"=>"asdas"}, "commit"=>"Create Local"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/locals_controller.rb:21
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/locals_controller.rb:21
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/locals_controller.rb:22
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/locals_controller.rb:22
+Redirected to http://localhost:3000/locals/new
+Completed 200 OK in 6ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/locals/new" for ::1 at 2020-06-05 21:45:42 -0400
+Processing by LocalsController#new as HTML
+  Rendering locals/new.html.erb within layouts/application
+  Rendered locals/new.html.erb within layouts/application (2.9ms)
+  [1m[36mDuenoUser Load (0.6ms)[0m  [1m[34mSELECT  "dueno_users".* FROM "dueno_users" WHERE "dueno_users"."id" = $1 ORDER BY "dueno_users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 48ms (Views: 46.5ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/locals" for ::1 at 2020-06-05 21:46:25 -0400
+Processing by LocalsController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ybZ4VNrZC/SkfMoRFjfzqje7ZEV8b9mWDm8nfXjWkktgpUIMXyfSZrb7NfGBNceA3HrO2P6k6OdgTGI6+/lxdg==", "local"=>{"nombre"=>"dasd", "tipo"=>"restaurante", "direccion"=>"asdasd"}, "commit"=>"Create Local"}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `a=' for #<ActionController::Parameters:0x00007f1ffc2a9cc0>):
+  
+app/controllers/locals_controller.rb:19:in `create'
+Started POST "/locals" for ::1 at 2020-06-05 21:46:59 -0400
+Processing by LocalsController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ybZ4VNrZC/SkfMoRFjfzqje7ZEV8b9mWDm8nfXjWkktgpUIMXyfSZrb7NfGBNceA3HrO2P6k6OdgTGI6+/lxdg==", "local"=>{"nombre"=>"dasd", "tipo"=>"restaurante", "direccion"=>"asdasd"}, "commit"=>"Create Local"}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `a=' for #<ActionController::Parameters:0x00007f20083a57f8>):
+  
+app/controllers/locals_controller.rb:19:in `create'
+Started GET "/locals/new" for ::1 at 2020-06-05 21:47:03 -0400
+Processing by LocalsController#new as HTML
+  Rendering locals/new.html.erb within layouts/application
+  Rendered locals/new.html.erb within layouts/application (3.0ms)
+  [1m[36mDuenoUser Load (8.4ms)[0m  [1m[34mSELECT  "dueno_users".* FROM "dueno_users" WHERE "dueno_users"."id" = $1 ORDER BY "dueno_users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 146ms (Views: 107.9ms | ActiveRecord: 20.0ms)
+
+
+Started POST "/locals" for ::1 at 2020-06-05 21:47:05 -0400
+Processing by LocalsController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yd1wbgSQ2okMSsybq3Ay1Hkl3JbMsJieBeH0sLH5GVYWrD6hAwQCzNh8nAwtVfzMnJs88byiIWo+u2+5B8IGqg==", "local"=>{"nombre"=>"asdas", "tipo"=>"restaurante", "direccion"=>"asdas"}, "commit"=>"Create Local"}
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `a=' for #<ActionController::Parameters:0x00007f2004b28d30>):
+  
+app/controllers/locals_controller.rb:19:in `create'
+Started POST "/locals" for ::1 at 2020-06-05 21:47:18 -0400
+Processing by LocalsController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yd1wbgSQ2okMSsybq3Ay1Hkl3JbMsJieBeH0sLH5GVYWrD6hAwQCzNh8nAwtVfzMnJs88byiIWo+u2+5B8IGqg==", "local"=>{"nombre"=>"asdas", "tipo"=>"restaurante", "direccion"=>"asdas"}, "commit"=>"Create Local"}
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 3.6ms)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'a' for Local.):
+  
+app/controllers/locals_controller.rb:22:in `create'
+Started POST "/locals" for ::1 at 2020-06-05 21:47:59 -0400
+Processing by LocalsController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yd1wbgSQ2okMSsybq3Ay1Hkl3JbMsJieBeH0sLH5GVYWrD6hAwQCzNh8nAwtVfzMnJs88byiIWo+u2+5B8IGqg==", "local"=>{"nombre"=>"asdasasdas", "tipo"=>"restaurante", "direccion"=>"asdasasd"}, "commit"=>"Create Local"}
+  [1m[36mDuenoUser Load (0.2ms)[0m  [1m[34mSELECT  "dueno_users".* FROM "dueno_users" WHERE "dueno_users"."id" = $1 ORDER BY "dueno_users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/locals_controller.rb:19
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/locals_controller.rb:22
+  [1m[36mDuenoUser Load (0.2ms)[0m  [1m[34mSELECT  "dueno_users".* FROM "dueno_users" WHERE "dueno_users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/locals_controller.rb:22
+  [1m[36mLocal Create (0.7ms)[0m  [1m[32mINSERT INTO "locals" ("nombre", "direccion", "tipo", "created_at", "updated_at", "dueno_user_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["nombre", "asdasasdas"], ["direccion", "asdasasd"], ["tipo", 0], ["created_at", "2020-06-06 01:47:59.857697"], ["updated_at", "2020-06-06 01:47:59.857697"], ["dueno_user_id", 3]]
+  ↳ app/controllers/locals_controller.rb:22
+  [1m[35m (3.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/locals_controller.rb:22
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/locals_controller.rb:23
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/locals_controller.rb:23
+Redirected to http://localhost:3000/locals/new
+Completed 200 OK in 50ms (ActiveRecord: 12.4ms)
+
+
+Started GET "/locals/new" for ::1 at 2020-06-05 21:47:59 -0400
+Processing by LocalsController#new as HTML
+  Rendering locals/new.html.erb within layouts/application
+  Rendered locals/new.html.erb within layouts/application (3.8ms)
+  [1m[36mDuenoUser Load (0.4ms)[0m  [1m[34mSELECT  "dueno_users".* FROM "dueno_users" WHERE "dueno_users"."id" = $1 ORDER BY "dueno_users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 41ms (Views: 39.7ms | ActiveRecord: 0.4ms)
+
+
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:11
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:11
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:11
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:11
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:11
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:11
+  [1m[35m (108.8ms)[0m  [1m[35mDROP DATABASE IF EXISTS "myapp_development"[0m
+  ↳ bin/rails:11
+  [1m[35m (108.0ms)[0m  [1m[35mDROP DATABASE IF EXISTS "myapp_test"[0m
+  ↳ bin/rails:11
+  [1m[35m (468.5ms)[0m  [1m[35mCREATE DATABASE "myapp_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:11
+  [1m[35m (399.1ms)[0m  [1m[35mCREATE DATABASE "myapp_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:11
+  [1m[35m (9.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:11
+  [1m[35m (6.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ bin/rails:11
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7864839756650184315)[0m
+  ↳ bin/rails:11
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:11
+Migrating to DeviseCreateUsers (20200425170949)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:11
+  [1m[35m (8.9ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "rut" character varying, "name" character varying, "gender" integer, "region" integer, "birthday" character varying, "number" integer, "description" text, "sexual_orientation" integer, "interests" integer, "photos" character varying, "admin" boolean DEFAULT FALSE NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20200425170949_devise_create_users.rb:5
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  ↳ db/migrate/20200425170949_devise_create_users.rb:52
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  ↳ db/migrate/20200425170949_devise_create_users.rb:53
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200425170949"]]
+  ↳ bin/rails:11
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:11
+Migrating to CreateLocals (20200426223137)
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:11
+  [1m[35m (5.9ms)[0m  [1m[35mCREATE TABLE "locals" ("id" bigserial primary key, "nombre" character varying, "direccion" character varying, "tipo" integer, "n_citas" integer DEFAULT 0, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20200426223137_create_locals.rb:5
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200426223137"]]
+  ↳ bin/rails:11
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:11
+Migrating to DeviseCreateDuenoUsers (20200426231717)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:11
+  [1m[35m (5.8ms)[0m  [1m[35mCREATE TABLE "dueno_users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "name" character varying, "rut" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20200426231717_devise_create_dueno_users.rb:5
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_dueno_users_on_email" ON "dueno_users"  ("email")[0m
+  ↳ db/migrate/20200426231717_devise_create_dueno_users.rb:43
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_dueno_users_on_reset_password_token" ON "dueno_users"  ("reset_password_token")[0m
+  ↳ db/migrate/20200426231717_devise_create_dueno_users.rb:44
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200426231717"]]
+  ↳ bin/rails:11
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:11
+Migrating to CreateReviews (20200427003212)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:11
+  [1m[35m (5.3ms)[0m  [1m[35mCREATE TABLE "reviews" ("id" bigserial primary key, "id_local" integer, "review" text, "rating" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20200427003212_create_reviews.rb:5
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200427003212"]]
+  ↳ bin/rails:11
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:11
+Migrating to CreateLikes (20200605035108)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:11
+  [1m[35m (3.4ms)[0m  [1m[35mCREATE TABLE "likes" ("id" bigserial primary key, "sender_user" integer, "receiver_user" integer, "match" boolean, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20200605035108_create_likes.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200605035108"]]
+  ↳ bin/rails:11
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:11
+Migrating to AddDuenoUserToLocals (20200605054621)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:11
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "locals" ADD "dueno_user_id" bigint[0m
+  ↳ db/migrate/20200605054621_add_dueno_user_to_locals.rb:3
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE  INDEX  "index_locals_on_dueno_user_id" ON "locals"  ("dueno_user_id")[0m
+  ↳ db/migrate/20200605054621_add_dueno_user_to_locals.rb:3
+  [1m[35m (1.4ms)[0m  [1m[35mALTER TABLE "locals" ADD CONSTRAINT "fk_rails_55b832814f"
+FOREIGN KEY ("dueno_user_id")
+  REFERENCES "dueno_users" ("id")
+[0m
+  ↳ db/migrate/20200605054621_add_dueno_user_to_locals.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200605054621"]]
+  ↳ bin/rails:11
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:11
+Migrating to AddUserToReviews (20200605061158)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:11
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "reviews" ADD "user_id" bigint[0m
+  ↳ db/migrate/20200605061158_add_user_to_reviews.rb:3
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE  INDEX  "index_reviews_on_user_id" ON "reviews"  ("user_id")[0m
+  ↳ db/migrate/20200605061158_add_user_to_reviews.rb:3
+  [1m[35m (1.1ms)[0m  [1m[35mALTER TABLE "reviews" ADD CONSTRAINT "fk_rails_74a66bd6c5"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  ↳ db/migrate/20200605061158_add_user_to_reviews.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200605061158"]]
+  ↳ bin/rails:11
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:11
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:11
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:11
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-06-06 01:48:46.926890"], ["updated_at", "2020-06-06 01:48:46.926890"]]
+  ↳ bin/rails:11
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:11
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(7864839756650184315)[0m
+  ↳ bin/rails:11
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:11
