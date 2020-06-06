@@ -42,6 +42,20 @@ User.create(
     sexual_orientation:"female",
     region: "III")
 
+User.create(
+    email: "example4@dccitas.cl",
+    password: "123456",
+    rut:"5836091-0",
+    name:"Marta Brunet",
+    birthday:"10/05/1995",
+    description:"Yo soy mas alegre",
+    number: 36332576,
+    photos:"none",
+    gender:"female",
+    interests:"teatro",
+    sexual_orientation:"male",
+    region: "IV")
+
 DuenoUser.create(
     email: "duenoexample2@dccitas.cl",
     password: "123456",
@@ -63,22 +77,26 @@ DuenoUser.create(
 Local.create(
     nombre: "Pizza Dil Bambino",
     tipo: "restaurante",
-    direccion: "Av Italia 2014")
+    direccion: "Av Italia 2014",
+    dueno_user_id: 1)
 
 Local.create(
     nombre: "Cine Hoytz",
     tipo: "cine",
-    direccion: "Av avenida los trapenses")
+    direccion: "Av avenida los trapenses",
+    dueno_user_id: 3)
 
 Local.create(
     nombre: "Bar Ianza",
     tipo: "bar",
-    direccion: "Andres Bello 1313")
+    direccion: "Andres Bello 1313",
+    dueno_user_id: 2)
 
 Local.create(
     nombre: "Motel Piramide",
     tipo: "motel",
-    direccion: "Av Panamericana Km 21")
+    direccion: "Av Panamericana Km 21",
+    dueno_user_id: 1)
 
 Review.create(
     id_local: 1,
