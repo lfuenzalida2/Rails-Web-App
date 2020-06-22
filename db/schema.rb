@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_05_061158) do
+ActiveRecord::Schema.define(version: 2020_06_05_035108) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,9 +42,9 @@ ActiveRecord::Schema.define(version: 2020_06_05_061158) do
     t.string "direccion"
     t.integer "tipo"
     t.integer "n_citas", default: 0
+    t.bigint "dueno_user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "dueno_user_id"
     t.index ["dueno_user_id"], name: "index_locals_on_dueno_user_id"
   end
 
@@ -52,9 +52,11 @@ ActiveRecord::Schema.define(version: 2020_06_05_061158) do
     t.integer "id_local"
     t.text "review"
     t.integer "rating"
+    t.bigint "user_id"
+    t.bigint "local_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "user_id"
+    t.index ["local_id"], name: "index_reviews_on_local_id"
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
@@ -82,5 +84,6 @@ ActiveRecord::Schema.define(version: 2020_06_05_061158) do
   end
 
   add_foreign_key "locals", "dueno_users"
+  add_foreign_key "reviews", "locals"
   add_foreign_key "reviews", "users"
 end

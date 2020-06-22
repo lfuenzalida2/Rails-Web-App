@@ -7,6 +7,7 @@ class CreateLocals < ActiveRecord::Migration[5.2]
       t.string  :direccion
       t.integer :tipo
       t.integer :n_citas, default: 0
+      t.references :dueno_user, foreign_key: true
 
       t.timestamps
     end

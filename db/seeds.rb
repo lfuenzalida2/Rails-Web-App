@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+require 'faker'
 
 User.create(
     email: "example1@dccitas.cl",
@@ -60,56 +61,30 @@ DuenoUser.create(
     rut:"15427936-9",
     name:"Hillary Clinton")
 
-Local.create(
-    nombre: "Pizza Dil Bambino",
-    tipo: "restaurante",
-    direccion: "Av Italia 2014",
-    dueno_user_id: 1)
+region = ['I', 'I', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X', 'XI', 'XII', 'Metropolitana', 'XIV', 'XV', 'XVI']
+interests = ['deporte', 'musica', 'arte', 'ciencias', 'comer', 'literatura', 'teatro']
 
-Local.create(
-    nombre: "Cine Hoytz",
-    tipo: "cine",
-    direccion: "Av avenida los trapenses",
-    dueno_user_id: 2)
+30.times do |i|
+    User.create(
+        email: Faker::Internet.unique.email,
+        password: "123456",
+        rut: Faker::ChileRut.unique.full_rut,
+        name: Faker::Name.unique.name,
+        birthday: Faker::Date.unique.birthday(min_age: 18, max_age: 65),
+        description: "I love to #{Faker::Verb.base}",
+        number: Faker::Number.unique.number(digits: 8),
+        photos:"none",
+        gender: Faker::Gender.binary_type.downcase,
+        interests: interests[rand(interests.length)],
+        sexual_orientation: Faker::Gender.binary_type.downcase,
+        region: region[rand(region.length)])
+end
 
-Local.create(
-    nombre: "Bar Ianza",
-    tipo: "bar",
-    direccion: "Andres Bello 1313",
-    dueno_user_id: 1)
+10.times do |i|
+    DuenoUser.create(
+        email: Faker::Internet.unique.email,
+        password: "123456",
+        rut: Faker::ChileRut.unique.full_rut,
+        name: Faker::Name.unique.name)
+end
 
-Local.create(
-    nombre: "Motel Piramide",
-    tipo: "motel",
-    direccion: "Av Panamericana Km 21",
-    dueno_user_id: 3)
-
-Review.create(
-    id_local: 1,
-    review: "Muy ricas las pizzas",
-    rating: 5,
-    user_id: 1)
-
-Review.create(
-    id_local: 2,
-    review: "Habia una pareja atras mio que no paraba de hacer cosas, deben mejorar la seguridad",
-    rating: 2,
-    user_id: 2)
-
-Review.create(
-    id_local: 3,
-    review: "Muy buen bar, los precios no varian mucho con respecto a otros bar",
-    rating: 4,
-    user_id: 3)
-
-Review.create(
-    id_local: 4,
-    review: "Pesimo servicio, deberían limpiar las piezas antes de volver a arrendarlas",
-    rating: 1,
-    user_id: 1)
-
-Review.create(
-    id_local: 4,
-    review: "Los precios muy buenos",
-    rating: 4,
-    user_id: 2)
