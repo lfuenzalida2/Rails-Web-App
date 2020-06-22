@@ -13,7 +13,7 @@ class User < ApplicationRecord
   validates :birthday, :presence => true
   validates :number, :presence => true, length: {is: 8}
   validates :description, :presence => true
-  validates :photos, :presence => true
+  
 
   enum gender: [:male, :female, :all], _prefix: 'gender'
   enum interests: [:deporte, :musica, :arte, :ciencias, :comer, :literatura, :teatro], _prefix: 'interests'

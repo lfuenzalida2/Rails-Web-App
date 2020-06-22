@@ -25,7 +25,6 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.text    :description
       t.integer :sexual_orientation
       t.integer :interests
-      t.string  :photos
       t.boolean :admin, null:false, default: false
 
       ## Trackable

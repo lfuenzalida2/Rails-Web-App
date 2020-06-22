@@ -74,7 +74,10 @@
     </div>
 
     <div class="field">
-      <%= f.label :photos %><br />
+      <%= f.label :photo %><br />
+      <%= if @user.avatar.attached? %>
+        <image src="<%=(url_for(@user.avatar))%>">
+      <% end %>
       <%= f.text_field :photos, autofocus: true, autocomplete: "photos" %>
     </div>
 

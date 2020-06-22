@@ -68,9 +68,9 @@
     </div>
 
     <div class="field">
-      <%= f.label :photos %><br />
-      <%= f.text_field :photos, autofocus: true, autocomplete: "photos" %>
-    </div>
+      <%= f.label :photo %><br />
+      <%= f.file_field :avatar %><br />
+    </div><br />
 
     <div class="actions">
       <%= f.submit "Sign up", class: "btn btn-primary" %>

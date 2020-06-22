@@ -36,11 +36,6 @@ ActiveRecord::Schema.define(version: 2020_06_20_201139) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
-  create_table "admins", force: :cascade do |t|
-    t.integer "rut"
-    t.boolean "admin"
-  end
-
   create_table "dueno_users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -55,14 +50,6 @@ ActiveRecord::Schema.define(version: 2020_06_20_201139) do
     t.index ["reset_password_token"], name: "index_dueno_users_on_reset_password_token", unique: true
   end
 
-  create_table "genders", force: :cascade do |t|
-    t.string "name"
-  end
-
-  create_table "interests", force: :cascade do |t|
-    t.string "name"
-  end
-
   create_table "likes", force: :cascade do |t|
     t.integer "sender_user"
     t.integer "receiver_user"
@@ -74,20 +61,12 @@ ActiveRecord::Schema.define(version: 2020_06_20_201139) do
   create_table "locals", force: :cascade do |t|
     t.string "nombre"
     t.string "direccion"
-    t.string "tipo"
-    t.integer "n_citas"
+    t.integer "tipo"
+    t.integer "n_citas", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "dueno_user_id"
     t.index ["dueno_user_id"], name: "index_locals_on_dueno_user_id"
-  end
-
-  create_table "orientations", force: :cascade do |t|
-    t.string "name"
-  end
-
-  create_table "regions", force: :cascade do |t|
-    t.string "name"
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -108,14 +87,14 @@ ActiveRecord::Schema.define(version: 2020_06_20_201139) do
     t.datetime "remember_created_at"
     t.string "rut"
     t.string "name"
-    t.string "gender"
-    t.string "region"
+    t.integer "gender"
+    t.integer "region"
     t.string "birthday"
     t.integer "number"
     t.text "description"
-    t.string "sexual_orientation"
-    t.string "interests"
-    t.string "photos"
+    t.integer "sexual_orientation"
+    t.integer "interests"
+    t.boolean "admin", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
