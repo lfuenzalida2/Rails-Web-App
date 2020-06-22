@@ -5,6 +5,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   has_many :locals
   has_one :review
+  has_one_attached :avatar
   validates :rut, :rut => true
   validates :name, :presence => true, :format => { :with => /\A[a-z A-Z]+\z/,
                                                 :message => "Only letters allowed"},

@@ -10,10 +10,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_05_061158) do
+ActiveRecord::Schema.define(version: 2020_06_20_201139) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "active_storage_attachments", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "record_type", null: false
+    t.bigint "record_id", null: false
+    t.bigint "blob_id", null: false
+    t.datetime "created_at", null: false
+    t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
+    t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
+  end
+
+  create_table "active_storage_blobs", force: :cascade do |t|
+    t.string "key", null: false
+    t.string "filename", null: false
+    t.string "content_type"
+    t.text "metadata"
+    t.bigint "byte_size", null: false
+    t.string "checksum", null: false
+    t.datetime "created_at", null: false
+    t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+  end
+
+  create_table "admins", force: :cascade do |t|
+    t.integer "rut"
+    t.boolean "admin"
+  end
 
   create_table "dueno_users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -29,6 +55,14 @@ ActiveRecord::Schema.define(version: 2020_06_05_061158) do
     t.index ["reset_password_token"], name: "index_dueno_users_on_reset_password_token", unique: true
   end
 
+  create_table "genders", force: :cascade do |t|
+    t.string "name"
+  end
+
+  create_table "interests", force: :cascade do |t|
+    t.string "name"
+  end
+
   create_table "likes", force: :cascade do |t|
     t.integer "sender_user"
     t.integer "receiver_user"
@@ -40,12 +74,20 @@ ActiveRecord::Schema.define(version: 2020_06_05_061158) do
   create_table "locals", force: :cascade do |t|
     t.string "nombre"
     t.string "direccion"
-    t.integer "tipo"
-    t.integer "n_citas", default: 0
+    t.string "tipo"
+    t.integer "n_citas"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "dueno_user_id"
     t.index ["dueno_user_id"], name: "index_locals_on_dueno_user_id"
+  end
+
+  create_table "orientations", force: :cascade do |t|
+    t.string "name"
+  end
+
+  create_table "regions", force: :cascade do |t|
+    t.string "name"
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -66,21 +108,21 @@ ActiveRecord::Schema.define(version: 2020_06_05_061158) do
     t.datetime "remember_created_at"
     t.string "rut"
     t.string "name"
-    t.integer "gender"
-    t.integer "region"
+    t.string "gender"
+    t.string "region"
     t.string "birthday"
     t.integer "number"
     t.text "description"
-    t.integer "sexual_orientation"
-    t.integer "interests"
+    t.string "sexual_orientation"
+    t.string "interests"
     t.string "photos"
-    t.boolean "admin", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "locals", "dueno_users"
   add_foreign_key "reviews", "users"
 end
