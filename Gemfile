@@ -45,6 +45,8 @@ gem 'carrierwave', '~> 2.0'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'bootstrap', '~> 4.5'
+gem 'validates_timeliness', '~> 4.1', '>= 4.1.1'
+gem 'faker', '~> 2.12'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

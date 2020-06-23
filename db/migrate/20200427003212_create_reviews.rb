@@ -6,6 +6,9 @@ class CreateReviews < ActiveRecord::Migration[5.2]
       t.integer :id_local
       t.text :review
       t.integer :rating
+      t.references :user, foreign_key: true
+      t.references :local, foreign_key: true
+
       t.timestamps
     end
   end

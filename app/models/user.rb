@@ -4,12 +4,13 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   has_many :locals
-  has_one :review
+  has_many :reviews, dependent: :destroy
+
   validates :rut, :rut => true
   validates :name, :presence => true, :format => { :with => /\A[a-z A-Z]+\z/,
                                                 :message => "Only letters allowed"},
                                     :length => { :in => 4..20 }
-  validates :birthday, :presence => true
+  validates_date :birthday, :presence => true, :before => lambda { 18.years.ago }, :after => lambda { 125.years.ago }
   validates :number, :presence => true, length: {is: 8}
   validates :description, :presence => true
   validates :photos, :presence => true
