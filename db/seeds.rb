@@ -101,24 +101,29 @@ Local.create(
 Review.create(
     id_local: 1,
     review: "Muy ricas las pizzas",
-    rating: 5)
+    rating: 5,
+    user_id: 1)
 
 Review.create(
     id_local: 2,
     review: "Habia una pareja atras mio que no paraba de hacer cosas, deben mejorar la seguridad",
-    rating: 2)
+    rating: 2,
+    user_id: 2)
 
 Review.create(
     id_local: 3,
     review: "Muy buen bar, los precios no varian mucho con respecto a otros bar",
-    rating: 4)
+    rating: 4,
+    user_id: 3)
 
 Review.create(
     id_local: 4,
     review: "Pesimo servicio, deberían limpiar las piezas antes de volver a arrendarlas",
-    rating: 1)
+    rating: 1,
+    user_id: 1)
 
 Review.create(
     id_local: 4,
     review: "Los precios muy buenos",
-    rating: 4)
+    rating: 4,
+    user_id: 2)
