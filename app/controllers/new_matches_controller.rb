@@ -1,0 +1,2 @@
+class NewMatchesController < ApplicationController
+end

@@ -1,8 +1,10 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
- 
+  resources :citas
+  
   get 'show_match/My_match'
+  get 'new_matches/new'
   
   # CRUD's Routes
   # CREATE
@@ -13,6 +15,12 @@ Rails.application.routes.draw do
   post 'likes/new', to: 'likes#create'
   patch 'likes/update', to: 'likes#update'
 
+  get 'citas/new', to: 'citas#new'
+  post 'citas/new', to: 'citas#new'
+  patch 'citas/new', to: 'citas#update'
+
+  post 'show_match/My_match', to: 'citas#new'
+
   # READ
   get 'locals',  to: 'locals#index'
   get 'locals/:id', to: 'locals#show', as: 'local'
@@ -20,9 +28,12 @@ Rails.application.routes.draw do
   get 'likes',  to: 'likes#index'
   get 'likes/:id', to: 'likes#show', as: 'like'
 
+  get 'citas/show',  to: 'citas#show'
+
   # UPDATE
   get 'locals/:id/edit', to: 'locals#edit', as: :local_edit
   patch 'locals/:id', to: 'locals#update'
+
 
   # DELETE
   delete 'locals/:id', to: 'locals#destroy', as: :local_delete
