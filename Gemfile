@@ -32,13 +32,16 @@ gem 'jbuilder', '~> 2.5'
 gem 'bcrypt', '~> 3.1.7'
 gem 'rut_validator'
 
-# New Gem
+# Cloudinary is a cloud service that offers a solution to a web application's entire image management pipeline.
+gem 'cloudinary'
 
-gem 'carrierwave', '~> 2.0'
+# This gem provides a simple and extremely flexible way to upload files from Ruby applications.
+#gem 'carrierwave', '~> 2.0'
 
 # Use ActiveStorage variant
-# gem 'mini_magick', '~> 4.8'
-
+gem 'mini_magick', '~> 4.8'
+gem 'rmagick'
+gem 'image_magick'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

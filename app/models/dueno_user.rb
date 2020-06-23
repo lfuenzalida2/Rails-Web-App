@@ -11,7 +11,6 @@ class DuenoUser < ApplicationRecord
                                                 :message => "Only letters allowed"},
                                     :length => { :in => 4..20 }
 
-
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 end
