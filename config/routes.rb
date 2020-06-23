@@ -26,7 +26,6 @@ Rails.application.routes.draw do
 
   # DELETE
   delete 'locals/:id', to: 'locals#destroy', as: :local_delete
-
   delete 'likes/:id', to: 'likes#destroy', as: :like_delete
 
   devise_for :dueno_users, controllers: { sessions: 'dueno_users/sessions', registrations: 'dueno_users/registrations' }
@@ -43,6 +42,7 @@ Rails.application.routes.draw do
   # Delete
   root 'posts#index'
   resources :users do
+    delete :delete_avatar_attachment
     resources :reviews
   end
   resources :dueno_users do  

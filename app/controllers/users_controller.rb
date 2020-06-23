@@ -10,8 +10,6 @@ class UsersController < ApplicationController
   end
 
   def post_params
-    p 'aaasdfasdfasaaasdfasdfasdaaasdfasdfasdaaasdfasdfasdaaasdfasdfasdaaasdfasdfasdd'
     params.require(:post).permit(:avatar)
   end
-
 end
