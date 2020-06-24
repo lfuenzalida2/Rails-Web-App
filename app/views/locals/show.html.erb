@@ -24,6 +24,14 @@
     0
   <% end %>
 </p>
+<p>
+  <strong>Photo</strong> 
+  <%if @local.avatar.attached?%>
+    <td><%=cl_image_tag(@local.avatar.key, width: 200, height: 250, crop: :scale)%></td>   
+  <%elsif @local.avatar.attached? == false%>
+    <td>Suba una imagen para que sea visualizada!</td>  
+  <%end%>
+</p>
 
 <%= link_to 'Locals list', locals_path, class: "btn, btn-primary" %>
 <%= link_to 'Edit Local', local_edit_path(@local.id), class: "btn, btn-primary" %>

@@ -12,10 +12,12 @@ class Local < ApplicationRecord
                                     :length => { :in => 4..30 }
     validates :direccion, :presence => true
     validate :avatar_missing
+
     private
     def avatar_missing
         if avatar.attached? == false
             errors.add(:avatar, 'or Image are missing!')
         end
     end
+
 end

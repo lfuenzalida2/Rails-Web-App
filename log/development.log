@@ -45681,3 +45681,366 @@ Processing by LocalsController#new as HTML
 Completed 200 OK in 121ms (Views: 117.3ms | ActiveRecord: 0.3ms)
 
 
+Started GET "/locals/new" for ::1 at 2020-06-23 21:40:21 -0400
+  [1m[35m (4.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/juanparamirez/.rvm/gems/ruby-2.6.5/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by LocalsController#new as HTML
+  Rendering locals/new.html.erb within layouts/application
+  Rendered locals/new.html.erb within layouts/application (618.5ms)
+  [1m[36mDuenoUser Load (1.4ms)[0m  [1m[34mSELECT  "dueno_users".* FROM "dueno_users" WHERE "dueno_users"."id" = $1 ORDER BY "dueno_users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 2050ms (Views: 1920.8ms | ActiveRecord: 44.3ms)
+
+
+Started POST "/locals" for ::1 at 2020-06-23 21:40:41 -0400
+Processing by LocalsController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Y512AYbk8vTYaylSBSTJqY5o3bvfmqn3Q0pl5zhTpiFaVsACMFaWkgoGJcB9FJ5VX8RwgVYA7K3vLG6YaS3MKw==", "local"=>{"nombre"=>"pppppp", "tipo"=>"restaurante", "direccion"=>"sdakjfkjasdjkf", "avatar"=>#<ActionDispatch::Http::UploadedFile:0x00007facacec1598 @tempfile=#<Tempfile:/var/folders/pf/hcsfkfxn175dqn8rlrfgbypc0000gn/T/RackMultipart20200623-34721-981rc9.jpg>, @original_filename="20200129_142244.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"local[avatar]\"; filename=\"20200129_142244.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Create Local"}
+Unpermitted parameter: :avatar
+  [1m[36mDuenoUser Load (0.5ms)[0m  [1m[34mSELECT  "dueno_users".* FROM "dueno_users" WHERE "dueno_users"."id" = $1 ORDER BY "dueno_users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/locals_controller.rb:18
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/locals_controller.rb:20
+  [1m[36mDuenoUser Load (0.7ms)[0m  [1m[34mSELECT  "dueno_users".* FROM "dueno_users" WHERE "dueno_users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/locals_controller.rb:20
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/locals_controller.rb:20
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/locals_controller.rb:21
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/locals_controller.rb:21
+Redirected to http://localhost:3000/locals/new
+Completed 200 OK in 37ms (ActiveRecord: 6.6ms)
+
+
+Started GET "/locals/new" for ::1 at 2020-06-23 21:40:41 -0400
+Processing by LocalsController#new as HTML
+  Rendering locals/new.html.erb within layouts/application
+  Rendered locals/new.html.erb within layouts/application (5.4ms)
+  [1m[36mDuenoUser Load (0.8ms)[0m  [1m[34mSELECT  "dueno_users".* FROM "dueno_users" WHERE "dueno_users"."id" = $1 ORDER BY "dueno_users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 157ms (Views: 151.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/locals/new" for ::1 at 2020-06-23 21:42:49 -0400
+Processing by LocalsController#new as HTML
+  Rendering locals/new.html.erb within layouts/application
+  Rendered locals/new.html.erb within layouts/application (3.9ms)
+  [1m[36mDuenoUser Load (0.7ms)[0m  [1m[34mSELECT  "dueno_users".* FROM "dueno_users" WHERE "dueno_users"."id" = $1 ORDER BY "dueno_users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 171ms (Views: 123.5ms | ActiveRecord: 20.7ms)
+
+
+Started POST "/locals" for ::1 at 2020-06-23 21:42:57 -0400
+Processing by LocalsController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sU53N4ZUnbUdOhrTNNqKRGigQFKQW6ucYwlg9jIwLkuIhcE0MOb5089XFkFM6t24uQztaBnB7sbPb2uJY05EQQ==", "local"=>{"nombre"=>"sdfasdfasdf", "tipo"=>"restaurante", "direccion"=>"asdfasdfasdf"}, "commit"=>"Create Local"}
+  [1m[36mDuenoUser Load (0.8ms)[0m  [1m[34mSELECT  "dueno_users".* FROM "dueno_users" WHERE "dueno_users"."id" = $1 ORDER BY "dueno_users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/locals_controller.rb:18
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/locals_controller.rb:20
+  [1m[36mDuenoUser Load (0.7ms)[0m  [1m[34mSELECT  "dueno_users".* FROM "dueno_users" WHERE "dueno_users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/locals_controller.rb:20
+  [1m[36mLocal Create (4.2ms)[0m  [1m[32mINSERT INTO "locals" ("nombre", "direccion", "tipo", "dueno_user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["nombre", "sdfasdfasdf"], ["direccion", "asdfasdfasdf"], ["tipo", 0], ["dueno_user_id", 2], ["created_at", "2020-06-24 01:42:57.256752"], ["updated_at", "2020-06-24 01:42:57.256752"]]
+  ↳ app/controllers/locals_controller.rb:20
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/locals_controller.rb:20
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/locals_controller.rb:21
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/locals_controller.rb:21
+Redirected to http://localhost:3000/locals/new
+Completed 200 OK in 42ms (ActiveRecord: 7.5ms)
+
+
+Started GET "/locals/new" for ::1 at 2020-06-23 21:42:57 -0400
+Processing by LocalsController#new as HTML
+  Rendering locals/new.html.erb within layouts/application
+  Rendered locals/new.html.erb within layouts/application (8.7ms)
+  [1m[36mDuenoUser Load (0.7ms)[0m  [1m[34mSELECT  "dueno_users".* FROM "dueno_users" WHERE "dueno_users"."id" = $1 ORDER BY "dueno_users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 205ms (Views: 200.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/locals/new" for ::1 at 2020-06-23 21:43:38 -0400
+Processing by LocalsController#new as HTML
+  Rendering locals/new.html.erb within layouts/application
+  Rendered locals/new.html.erb within layouts/application (5.2ms)
+  [1m[36mDuenoUser Load (0.4ms)[0m  [1m[34mSELECT  "dueno_users".* FROM "dueno_users" WHERE "dueno_users"."id" = $1 ORDER BY "dueno_users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 217ms (Views: 155.4ms | ActiveRecord: 26.6ms)
+
+
+Started POST "/locals" for ::1 at 2020-06-23 21:43:46 -0400
+Processing by LocalsController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yf+M4KV14MzgL+nkT6oUdSCKGCSrJDI5RqpSbHX82QjwNDrjE8eEqjJC5XY3mkOJ8Sa1HiK+d2PqzFkTJIKzAg==", "local"=>{"nombre"=>"kfkfkfk", "tipo"=>"restaurante", "direccion"=>"llvllflf", "avatar"=>#<ActionDispatch::Http::UploadedFile:0x00007facb3484ba0 @tempfile=#<Tempfile:/var/folders/pf/hcsfkfxn175dqn8rlrfgbypc0000gn/T/RackMultipart20200623-34721-vh05j1.jpg>, @original_filename="20200129_142244.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"local[avatar]\"; filename=\"20200129_142244.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Create Local"}
+  [1m[36mDuenoUser Load (0.4ms)[0m  [1m[34mSELECT  "dueno_users".* FROM "dueno_users" WHERE "dueno_users"."id" = $1 ORDER BY "dueno_users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/locals_controller.rb:18
+[36m  Cloudinary Storage (9882.9ms) [0m[32mUploaded file to key: 8DWq9RqNYjNwingHfjZF7BBK (checksum: 6Ncq3M0T7I7urc6znXBwhA==)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/locals_controller.rb:20
+  [1m[36mActiveStorage::Blob Create (3.7ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "8DWq9RqNYjNwingHfjZF7BBK"], ["filename", "20200129_142244.jpg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 4597040], ["checksum", "6Ncq3M0T7I7urc6znXBwhA=="], ["created_at", "2020-06-24 01:43:56.993956"]]
+  ↳ app/controllers/locals_controller.rb:20
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/locals_controller.rb:20
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/locals_controller.rb:20
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/locals_controller.rb:20
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/locals_controller.rb:20
+  [1m[36mDuenoUser Load (0.8ms)[0m  [1m[34mSELECT  "dueno_users".* FROM "dueno_users" WHERE "dueno_users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/locals_controller.rb:20
+  [1m[36mLocal Create (1.0ms)[0m  [1m[32mINSERT INTO "locals" ("nombre", "direccion", "tipo", "dueno_user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["nombre", "kfkfkfk"], ["direccion", "llvllflf"], ["tipo", 0], ["dueno_user_id", 2], ["created_at", "2020-06-24 01:43:57.043111"], ["updated_at", "2020-06-24 01:43:57.043111"]]
+  ↳ app/controllers/locals_controller.rb:20
+  [1m[36mActiveStorage::Attachment Create (6.4ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "avatar"], ["record_type", "Local"], ["record_id", 2], ["blob_id", 2], ["created_at", "2020-06-24 01:43:57.046695"]]
+  ↳ app/controllers/locals_controller.rb:20
+  [1m[36mLocal Update (1.8ms)[0m  [1m[33mUPDATE "locals" SET "updated_at" = $1 WHERE "locals"."id" = $2[0m  [["updated_at", "2020-06-24 01:43:57.057289"], ["id", 2]]
+  ↳ app/controllers/locals_controller.rb:20
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/locals_controller.rb:20
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 0df48892-e72c-414f-aead-f3004d787f2c) to Async(default) with arguments: #<GlobalID:0x00007facb26f81a8 @uri=#<URI::GID gid://myapp/ActiveStorage::Blob/2>>
+  [1m[35m (9.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/locals_controller.rb:21
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/locals_controller.rb:21
+Redirected to http://localhost:3000/locals/new
+Completed 200 OK in 10169ms (ActiveRecord: 44.7ms)
+
+
+  [1m[36mActiveStorage::Blob Load (1.8ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /Users/juanparamirez/.rvm/gems/ruby-2.6.5/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [0df48892-e72c-414f-aead-f3004d787f2c] Performing ActiveStorage::AnalyzeJob (Job ID: 0df48892-e72c-414f-aead-f3004d787f2c) from Async(default) with arguments: #<GlobalID:0x00007facb2711068 @uri=#<URI::GID gid://myapp/ActiveStorage::Blob/2>>
+Started GET "/locals/new" for ::1 at 2020-06-23 21:43:57 -0400
+Processing by LocalsController#new as HTML
+  Rendering locals/new.html.erb within layouts/application
+  Rendered locals/new.html.erb within layouts/application (23.3ms)
+  [1m[36mDuenoUser Load (0.9ms)[0m  [1m[34mSELECT  "dueno_users".* FROM "dueno_users" WHERE "dueno_users"."id" = $1 ORDER BY "dueno_users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 281ms (Views: 273.2ms | ActiveRecord: 0.9ms)
+
+
+[ActiveJob] [ActiveStorage::AnalyzeJob] [0df48892-e72c-414f-aead-f3004d787f2c] [36m  Cloudinary Storage (1484.7ms) [0m[34mDownloaded file from key: 8DWq9RqNYjNwingHfjZF7BBK[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [0df48892-e72c-414f-aead-f3004d787f2c]   [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [0df48892-e72c-414f-aead-f3004d787f2c]   ↳ /Users/juanparamirez/.rvm/gems/ruby-2.6.5/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [0df48892-e72c-414f-aead-f3004d787f2c]   [1m[36mActiveStorage::Blob Update (0.8ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"width\":3024,\"height\":4032,\"analyzed\":true}"], ["id", 2]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [0df48892-e72c-414f-aead-f3004d787f2c]   ↳ /Users/juanparamirez/.rvm/gems/ruby-2.6.5/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [0df48892-e72c-414f-aead-f3004d787f2c]   [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [0df48892-e72c-414f-aead-f3004d787f2c]   ↳ /Users/juanparamirez/.rvm/gems/ruby-2.6.5/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [0df48892-e72c-414f-aead-f3004d787f2c] Performed ActiveStorage::AnalyzeJob (Job ID: 0df48892-e72c-414f-aead-f3004d787f2c) from Async(default) in 2337.49ms
+Started GET "/locals" for ::1 at 2020-06-23 21:44:02 -0400
+Processing by LocalsController#index as HTML
+  Rendering locals/index.html.erb within layouts/application
+  [1m[36mLocal Load (2.9ms)[0m  [1m[34mSELECT "locals".* FROM "locals"[0m
+  ↳ app/views/locals/index.html.erb:18
+  [1m[36mDuenoUser Load (1.0ms)[0m  [1m[34mSELECT  "dueno_users".* FROM "dueno_users" WHERE "dueno_users"."id" = $1 ORDER BY "dueno_users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/locals/index.html.erb:23
+  Rendered locals/index.html.erb within layouts/application (14.1ms)
+Completed 200 OK in 120ms (Views: 110.2ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/locals/2" for ::1 at 2020-06-23 21:44:04 -0400
+Processing by LocalsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mLocal Load (0.9ms)[0m  [1m[34mSELECT  "locals".* FROM "locals" WHERE "locals"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/locals_controller.rb:9
+  Rendering locals/show.html.erb within layouts/application
+  Rendered locals/show.html.erb within layouts/application (2.0ms)
+  [1m[36mDuenoUser Load (1.9ms)[0m  [1m[34mSELECT  "dueno_users".* FROM "dueno_users" WHERE "dueno_users"."id" = $1 ORDER BY "dueno_users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 78ms (Views: 66.8ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/locals/1" for ::1 at 2020-06-23 21:44:07 -0400
+Processing by LocalsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mLocal Load (3.1ms)[0m  [1m[34mSELECT  "locals".* FROM "locals" WHERE "locals"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/locals_controller.rb:9
+  Rendering locals/show.html.erb within layouts/application
+  Rendered locals/show.html.erb within layouts/application (2.4ms)
+  [1m[36mDuenoUser Load (7.6ms)[0m  [1m[34mSELECT  "dueno_users".* FROM "dueno_users" WHERE "dueno_users"."id" = $1 ORDER BY "dueno_users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 113ms (Views: 91.5ms | ActiveRecord: 10.6ms)
+
+
+Started GET "/locals/2" for ::1 at 2020-06-23 21:44:38 -0400
+Processing by LocalsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mLocal Load (0.9ms)[0m  [1m[34mSELECT  "locals".* FROM "locals" WHERE "locals"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/locals_controller.rb:9
+  Rendering locals/show.html.erb within layouts/application
+  Rendered locals/show.html.erb within layouts/application (2.1ms)
+  [1m[36mDuenoUser Load (0.6ms)[0m  [1m[34mSELECT  "dueno_users".* FROM "dueno_users" WHERE "dueno_users"."id" = $1 ORDER BY "dueno_users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 194ms (Views: 188.7ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/locals/2" for ::1 at 2020-06-23 21:50:18 -0400
+Processing by LocalsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mLocal Load (1.1ms)[0m  [1m[34mSELECT  "locals".* FROM "locals" WHERE "locals"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/locals_controller.rb:9
+  Rendering locals/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (1.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Local"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/views/locals/show.html.erb:29
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/locals/show.html.erb:29
+  Rendered locals/show.html.erb within layouts/application (30.7ms)
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 3.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `avatar' for nil:NilClass):
+    27: <p>
+    28:   <strong>Photo</strong> 
+    29:   <%if @local.avatar.attached?%>
+    30:     <td><%=cl_image_tag(@user.avatar.key, width: 200, height: 250, crop: :scale)%></td>   
+    31:   <%elsif @local.avatar.attached? == false%>
+    32:     <td>Suba una imagen para que sea visualizada!</td>  
+    33:   <%end%>
+  
+app/views/locals/show.html.erb:30:in `_app_views_locals_show_html_erb__4351359283408197159_70189850292900'
+Started GET "/locals/2" for ::1 at 2020-06-23 21:50:25 -0400
+Processing by LocalsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mLocal Load (0.5ms)[0m  [1m[34mSELECT  "locals".* FROM "locals" WHERE "locals"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/locals_controller.rb:9
+  Rendering locals/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (3.2ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Local"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/views/locals/show.html.erb:29
+  [1m[36mActiveStorage::Blob Load (2.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/locals/show.html.erb:29
+  Rendered locals/show.html.erb within layouts/application (15.0ms)
+  [1m[36mDuenoUser Load (0.4ms)[0m  [1m[34mSELECT  "dueno_users".* FROM "dueno_users" WHERE "dueno_users"."id" = $1 ORDER BY "dueno_users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 61ms (Views: 51.4ms | ActiveRecord: 6.6ms)
+
+
+Started GET "/locals/2/edit" for ::1 at 2020-06-23 21:50:33 -0400
+Processing by LocalsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mLocal Load (2.0ms)[0m  [1m[34mSELECT  "locals".* FROM "locals" WHERE "locals"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/locals_controller.rb:29
+  Rendering locals/edit.html.erb within layouts/application
+  Rendered locals/edit.html.erb within layouts/application (5.1ms)
+  [1m[36mDuenoUser Load (1.6ms)[0m  [1m[34mSELECT  "dueno_users".* FROM "dueno_users" WHERE "dueno_users"."id" = $1 ORDER BY "dueno_users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 82ms (Views: 71.9ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/locals" for ::1 at 2020-06-23 21:50:36 -0400
+Processing by LocalsController#index as HTML
+  Rendering locals/index.html.erb within layouts/application
+  [1m[36mLocal Load (0.6ms)[0m  [1m[34mSELECT "locals".* FROM "locals"[0m
+  ↳ app/views/locals/index.html.erb:18
+  [1m[36mDuenoUser Load (0.4ms)[0m  [1m[34mSELECT  "dueno_users".* FROM "dueno_users" WHERE "dueno_users"."id" = $1 ORDER BY "dueno_users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/locals/index.html.erb:23
+  Rendered locals/index.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 70ms (Views: 65.9ms | ActiveRecord: 1.0ms)
+
+
+Started DELETE "/locals/2" for ::1 at 2020-06-23 21:50:41 -0400
+Processing by LocalsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"E515waKX2+31vtv+dHJHab47tfVvbpGcvjdKocU9IdsqVs/CFCW/iyfT12wMQhCVb5cYz+b01MYSUUHelENL0Q==", "id"=>"2"}
+  [1m[36mLocal Load (3.6ms)[0m  [1m[34mSELECT  "locals".* FROM "locals" WHERE "locals"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/locals_controller.rb:44
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/locals_controller.rb:45
+  [1m[36mReview Load (3.0ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."local_id" = $1[0m  [["local_id", 2]]
+  ↳ app/controllers/locals_controller.rb:45
+  [1m[36mLocal Destroy (2.0ms)[0m  [1m[31mDELETE FROM "locals" WHERE "locals"."id" = $1[0m  [["id", 2]]
+  ↳ app/controllers/locals_controller.rb:45
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/locals_controller.rb:45
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Local"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/controllers/locals_controller.rb:45
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/locals_controller.rb:45
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/locals_controller.rb:45
+  [1m[36mActiveStorage::Attachment Destroy (0.5ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = $1[0m  [["id", 1]]
+  ↳ app/controllers/locals_controller.rb:45
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/locals_controller.rb:45
+[ActiveJob] Enqueued ActiveStorage::PurgeJob (Job ID: 761c5a42-c22b-44e1-9b97-0ca80d8a6aee) to Async(default) with arguments: #<GlobalID:0x00007fac99863ec0 @uri=#<URI::GID gid://myapp/ActiveStorage::Blob/2>>
+Redirected to http://localhost:3000/locals
+Completed 302 Found in 59ms (ActiveRecord: 20.1ms)
+
+
+Started GET "/locals" for ::1 at 2020-06-23 21:50:41 -0400
+Processing by LocalsController#index as HTML
+  Rendering locals/index.html.erb within layouts/application
+  [1m[36mLocal Load (0.4ms)[0m  [1m[34mSELECT "locals".* FROM "locals"[0m
+  ↳ app/views/locals/index.html.erb:18
+  [1m[36mDuenoUser Load (0.3ms)[0m  [1m[34mSELECT  "dueno_users".* FROM "dueno_users" WHERE "dueno_users"."id" = $1 ORDER BY "dueno_users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/locals/index.html.erb:23
+  Rendered locals/index.html.erb within layouts/application (4.2ms)
+  [1m[36mActiveStorage::Blob Load (0.9ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /Users/juanparamirez/.rvm/gems/ruby-2.6.5/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::PurgeJob] [761c5a42-c22b-44e1-9b97-0ca80d8a6aee] Performing ActiveStorage::PurgeJob (Job ID: 761c5a42-c22b-44e1-9b97-0ca80d8a6aee) from Async(default) with arguments: #<GlobalID:0x00007fac98aaabd0 @uri=#<URI::GID gid://myapp/ActiveStorage::Blob/2>>
+[ActiveJob] [ActiveStorage::PurgeJob] [761c5a42-c22b-44e1-9b97-0ca80d8a6aee]   [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [761c5a42-c22b-44e1-9b97-0ca80d8a6aee]   ↳ /Users/juanparamirez/.rvm/gems/ruby-2.6.5/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::PurgeJob] [761c5a42-c22b-44e1-9b97-0ca80d8a6aee]   [1m[36mActiveStorage::Attachment Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = $1 LIMIT $2[0m  [["blob_id", 2], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [761c5a42-c22b-44e1-9b97-0ca80d8a6aee]   ↳ /Users/juanparamirez/.rvm/gems/ruby-2.6.5/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::PurgeJob] [761c5a42-c22b-44e1-9b97-0ca80d8a6aee]   [1m[36mActiveStorage::Blob Destroy (3.6ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1[0m  [["id", 2]]
+[ActiveJob] [ActiveStorage::PurgeJob] [761c5a42-c22b-44e1-9b97-0ca80d8a6aee]   ↳ /Users/juanparamirez/.rvm/gems/ruby-2.6.5/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::PurgeJob] [761c5a42-c22b-44e1-9b97-0ca80d8a6aee]   [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [761c5a42-c22b-44e1-9b97-0ca80d8a6aee]   ↳ /Users/juanparamirez/.rvm/gems/ruby-2.6.5/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::PurgeJob] [761c5a42-c22b-44e1-9b97-0ca80d8a6aee]   [1m[36mActiveStorage::Attachment Load (0.9ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "ActiveStorage::Blob"], ["name", "preview_image"], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [761c5a42-c22b-44e1-9b97-0ca80d8a6aee]   ↳ /Users/juanparamirez/.rvm/gems/ruby-2.6.5/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Completed 200 OK in 136ms (Views: 132.3ms | ActiveRecord: 0.7ms)
+
+
+[ActiveJob] [ActiveStorage::PurgeJob] [761c5a42-c22b-44e1-9b97-0ca80d8a6aee] [36m  Cloudinary Storage (1329.7ms) [0m[31mDeleted file from key: 8DWq9RqNYjNwingHfjZF7BBK[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [761c5a42-c22b-44e1-9b97-0ca80d8a6aee] Performed ActiveStorage::PurgeJob (Job ID: 761c5a42-c22b-44e1-9b97-0ca80d8a6aee) from Async(default) in 1388.71ms
+Started GET "/locals/1" for ::1 at 2020-06-23 21:50:43 -0400
+Processing by LocalsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mLocal Load (1.8ms)[0m  [1m[34mSELECT  "locals".* FROM "locals" WHERE "locals"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/locals_controller.rb:9
+  Rendering locals/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Local"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/views/locals/show.html.erb:29
+  Rendered locals/show.html.erb within layouts/application (6.5ms)
+  [1m[36mDuenoUser Load (1.4ms)[0m  [1m[34mSELECT  "dueno_users".* FROM "dueno_users" WHERE "dueno_users"."id" = $1 ORDER BY "dueno_users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 86ms (Views: 76.6ms | ActiveRecord: 3.7ms)
+
+
+Started DELETE "/locals/1" for ::1 at 2020-06-23 21:50:48 -0400
+Processing by LocalsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"v941RIOwhLaT79hzF86HBJ4rXgqmFjOZMVFSuX1SSKWGFYNHNQLg0EGC1OFv/tD4T4fzMC+MdsOdN1nGLCwirw==", "id"=>"1"}
+  [1m[36mLocal Load (1.7ms)[0m  [1m[34mSELECT  "locals".* FROM "locals" WHERE "locals"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/locals_controller.rb:44
+  [1m[35m (1.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/locals_controller.rb:45
+  [1m[36mReview Load (1.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."local_id" = $1[0m  [["local_id", 1]]
+  ↳ app/controllers/locals_controller.rb:45
+  [1m[36mLocal Destroy (1.2ms)[0m  [1m[31mDELETE FROM "locals" WHERE "locals"."id" = $1[0m  [["id", 1]]
+  ↳ app/controllers/locals_controller.rb:45
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/locals_controller.rb:45
+  [1m[36mActiveStorage::Attachment Load (1.2ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Local"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/controllers/locals_controller.rb:45
+Redirected to http://localhost:3000/locals
+Completed 302 Found in 24ms (ActiveRecord: 8.2ms)
+
+
+Started GET "/locals" for ::1 at 2020-06-23 21:50:48 -0400
+Processing by LocalsController#index as HTML
+  Rendering locals/index.html.erb within layouts/application
+  [1m[36mLocal Load (0.5ms)[0m  [1m[34mSELECT "locals".* FROM "locals"[0m
+  ↳ app/views/locals/index.html.erb:18
+  [1m[36mDuenoUser Load (0.5ms)[0m  [1m[34mSELECT  "dueno_users".* FROM "dueno_users" WHERE "dueno_users"."id" = $1 ORDER BY "dueno_users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/locals/index.html.erb:35
+  Rendered locals/index.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 53ms (Views: 49.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/locals/new" for ::1 at 2020-06-23 21:51:13 -0400
+Processing by LocalsController#new as HTML
+  Rendering locals/new.html.erb within layouts/application
+  Rendered locals/new.html.erb within layouts/application (5.1ms)
+  [1m[36mDuenoUser Load (0.5ms)[0m  [1m[34mSELECT  "dueno_users".* FROM "dueno_users" WHERE "dueno_users"."id" = $1 ORDER BY "dueno_users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 83ms (Views: 76.7ms | ActiveRecord: 0.5ms)
+
+

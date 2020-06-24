@@ -14,7 +14,7 @@ class LocalsController < ApplicationController
   end
 
   def create
-    local_params = params.require(:local).permit(:nombre, :direccion, :tipo, :dueno_user_id)
+    local_params = params.require(:local).permit(:nombre, :direccion, :tipo, :dueno_user_id, :avatar)
     local_params["dueno_user_id"] = current_dueno_user.id
     
     @local = Local.create(local_params)
