@@ -45,4 +45,9 @@ class LocalsController < ApplicationController
     @local.destroy
     redirect_to locals_path, notice: 'Local eliminado con éxito'
   end
+
+  def post_params
+    params.require(:post).permit(:avatar)
+  end
+
 end

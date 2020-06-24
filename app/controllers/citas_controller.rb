@@ -2,7 +2,6 @@ class CitasController < ApplicationController
     def new
         @cita = Cita.new
         @locals = Local.all
-        @locals = User.all
         if params.permit(:create)[:create] == 'false'
             @matched_user = params.permit(:matched_user)[:matched_user]
             @citas = Cita.all
@@ -19,6 +18,7 @@ class CitasController < ApplicationController
     def show
         @citas = Cita.all
         @users = User.all
+        @locals = Local.all
     end
 
     def update

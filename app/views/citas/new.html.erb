@@ -1,4 +1,5 @@
 <% if current_user %>
+    <center>
     <%@existing_cita = 0%>
     <%@cita_receiver = @citas.where(receiver_id: current_user.id, sender_id: @matched_user, accepted: true)%>
     <%@cita_sender = @citas.where(sender_id: current_user.id, receiver_id: @matched_user, accepted: true)%>
@@ -7,11 +8,11 @@
     <%@unaccepted_cita = @citas.where(sender_id: current_user.id, receiver_id: @matched_user, accepted: false)%>
     <%@invited_to_cita = @citas.where(receiver_id: current_user.id, sender_id: @matched_user, accepted: false)%>
     <% if @existing_cita != 0%>
-        <center>
+
         <h1>Your Date Status</h1>
         <table>
             <tr>
-            <td>Local: <%= @locals.find(@existing_cita.local_id).name %></td>
+            <td>Local: <%= @locals.find(@existing_cita.local_id).nombre %></td>
             </tr>
             <tr>
             <td>Date: <%= @existing_cita.fecha%></td>
@@ -20,14 +21,14 @@
             <td>Time: <%= @existing_cita.hora.strftime("%H:%M")%></td>
             </tr>
           </table>
-          <center>
+    
     <% elsif @invited_to_cita.length != 0%>
-        <center>
+
         <h1>Your Date Status</h1>
         <p>You've been invited to a date:</p>
         <table>
             <tr>
-            <td>Local: <%= @locals.find(@invited_to_cita[0].local_id).name %></td>
+            <td>Local: <%= @locals.find(@invited_to_cita[0].local_id).nombre %></td>
             </tr>
             <tr>
             <td>Date: <%= @invited_to_cita[0].fecha%></td>
@@ -38,14 +39,14 @@
         </table>
         <%= link_to "Accept", citas_new_path(cita_id: @invited_to_cita[0].id, accepted: true), :method => :patch %>
         <%= link_to "Refuse", citas_new_path(cita_id: @invited_to_cita[0].id, delete: true), :method => :patch %>
-        </center>
+
     <% elsif @unaccepted_cita.length != 0%>
-        <center>
+
         <h1>Your Date Status</h1>
         <p>Your date invitation is not yet received</p>
         <table>
             <tr>
-            <td>Local: <%= @locals.find(@unaccepted_cita[0].local_id).name %></td>
+            <td>Local: <%= @locals.find(@unaccepted_cita[0].local_id).nombre %></td>
             </tr>
             <tr>
             <td>Date: <%= @unaccepted_cita[0].fecha%></td>
@@ -54,11 +55,11 @@
             <td>Time: <%= @unaccepted_cita[0].hora.strftime("%H:%M")%></td>
             </tr>
         </table>
-        </center>
+
     <% else %>
         <% @locals_list = [] %>
         <% @locals.each do |local| %>
-            <% @locals_list.push([local.name, local.id]) %>
+            <% @locals_list.push([local.nombre, local.id]) %>
         <% end %>
         <h1>New Date</h1>
         <div class="jumbotron">
@@ -90,4 +91,5 @@
             <%= link_to 'Cancel', show_match_My_match_path, class: "btn btn-primary" %>
         </div>
     <% end %>
+    </center>
 <% end %>
