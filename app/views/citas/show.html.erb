@@ -38,13 +38,23 @@
                             <td><%= @to_date_user[0].name%></td>
                         </tr>
                         <tr>
-                            <td>Local: <%= date.local_id%></td>
+                            <td>Local: <%= @locals.where(id: date.local_id)[0].nombre%></td>
+                        </tr>
+                        <tr>
+                        <%if @locals.where(id: date.local_id)[0].avatar.attached?%>
+                            <td><%= cl_image_tag(@locals.where(id: date.local_id)[0].avatar.key, width: 200, height: 250, crop: :scale)%></td>
+                        <%elsif @locals.where(id: date.local_id)[0].avatar.attached? == false%>
+                            <td>Suba una imagen para que sea visualizada!</td>  
+                        <%end%>
                         </tr>
                         <tr>
                             <td>Date: <%= date.fecha%></td>
                         </tr>
                         <tr>
                             <td>Time: <%= date.hora.strftime("%H:%M")%></td>
+                        </tr>
+                        <tr>
+                        <td><%= link_to "Cancel Date", citas_new_path(cita_id: date.id, delete: true), :method => :patch %></td>
                         </tr>
                     </table>
                 <% end %>
@@ -68,11 +78,20 @@
                             <td>Local: <%= @locals.where(id: date.local_id)[0].nombre%></td>
                         </tr>
                         <tr>
-
+                        <%if @locals.where(id: date.local_id)[0].avatar.attached?%>
+                            <td><%= cl_image_tag(@locals.where(id: date.local_id)[0].avatar.key, width: 200, height: 250, crop: :scale)%></td>
+                        <%elsif @locals.where(id: date.local_id)[0].avatar.attached? == false%>
+                            <td>Suba una imagen para que sea visualizada!</td>  
+                        <%end%>
+                        </tr>
+                        <tr>
                             <td>Date: <%= date.fecha%></td>
                         </tr>
                         <tr>
                             <td>Time: <%= date.hora.strftime("%H:%M")%></td>
+                        </tr>
+                        <tr>
+                        <td><%= link_to "Cancel Date", citas_new_path(cita_id: date.id, delete: true), :method => :patch %></td>
                         </tr>
                     </table>
                 <% end %>

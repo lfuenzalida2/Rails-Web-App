@@ -25,7 +25,7 @@
   <% end %>
 </p>
 <p>
-  <strong>Photo</strong> 
+ 
   <%if @local.avatar.attached?%>
     <td><%=cl_image_tag(@local.avatar.key, width: 200, height: 250, crop: :scale)%></td>   
   <%elsif @local.avatar.attached? == false%>

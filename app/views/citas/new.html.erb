@@ -15,11 +15,19 @@
             <td>Local: <%= @locals.find(@existing_cita.local_id).nombre %></td>
             </tr>
             <tr>
+            <%if @locals.find(@existing_cita.local_id).avatar.attached?%>
+                <td><%= cl_image_tag(@locals.find(@existing_cita.local_id).avatar.key, width: 200, height: 250, crop: :scale)%></td>
+            <%elsif @locals.find(@existing_cita.local_id).avatar.attached? == false%>
+                <td>Suba una imagen para que sea visualizada!</td>  
+            <%end%>
+            </tr>
+            <tr>
             <td>Date: <%= @existing_cita.fecha%></td>
             </tr>
             <tr>
             <td>Time: <%= @existing_cita.hora.strftime("%H:%M")%></td>
             </tr>
+
           </table>
     
     <% elsif @invited_to_cita.length != 0%>
@@ -29,6 +37,13 @@
         <table>
             <tr>
             <td>Local: <%= @locals.find(@invited_to_cita[0].local_id).nombre %></td>
+            </tr>
+            <tr>
+            <%if @locals.find(@invited_to_cita[0].local_id).avatar.attached?%>
+                <td><%= cl_image_tag(@locals.find(@invited_to_cita[0].local_id).avatar.key, width: 200, height: 250, crop: :scale)%></td>
+            <%elsif @locals.find(@invited_to_cita[0].local_id).avatar.attached?%>
+                <td>Suba una imagen para que sea visualizada!</td>  
+            <%end%>
             </tr>
             <tr>
             <td>Date: <%= @invited_to_cita[0].fecha%></td>
@@ -47,6 +62,13 @@
         <table>
             <tr>
             <td>Local: <%= @locals.find(@unaccepted_cita[0].local_id).nombre %></td>
+            </tr>
+            <tr>
+            <%if @locals.find(@unaccepted_cita[0].local_id).avatar.attached?%>
+                <td><%= cl_image_tag(@locals.find(@unaccepted_cita[0].local_id).avatar.key, width: 200, height: 250, crop: :scale)%></td>
+            <%elsif @locals.find(@unaccepted_cita[0].local_id).avatar.attached? == false%>
+                <td>Suba una imagen para que sea visualizada!</td>  
+            <%end%>
             </tr>
             <tr>
             <td>Date: <%= @unaccepted_cita[0].fecha%></td>
