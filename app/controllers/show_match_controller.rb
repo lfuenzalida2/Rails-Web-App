@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ShowMatchController < ApplicationController
   def My_match
     @likes = Like.all

@@ -15,8 +15,8 @@ class LocalsController < ApplicationController
 
   def create
     local_params = params.require(:local).permit(:nombre, :direccion, :tipo, :dueno_user_id, :avatar)
-    local_params["dueno_user_id"] = current_dueno_user.id
-    
+    local_params['dueno_user_id'] = current_dueno_user.id
+
     @local = Local.create(local_params)
     if @local.save
       redirect_to locals_new_path, notice: 'El local ha sido creado exitosamente'
@@ -49,5 +49,4 @@ class LocalsController < ApplicationController
   def post_params
     params.require(:post).permit(:avatar)
   end
-
 end

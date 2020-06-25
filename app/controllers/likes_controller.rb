@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class LikesController < ApplicationController
   def index
     @like = Like.all
@@ -43,7 +45,6 @@ class LikesController < ApplicationController
       redirect_to likes_new_path
     end
   end
-
 
   def destroy
     @like = Like.find(params[:id])
