@@ -25,6 +25,8 @@ Rails.application.routes.draw do
   post 'show_match/My_match', to: 'citas#new'
 
   # READ
+  get 'locals/owner', to: 'locals#owner'
+
   get 'locals',  to: 'locals#index'
   get 'locals/:id', to: 'locals#show', as: 'local'
 

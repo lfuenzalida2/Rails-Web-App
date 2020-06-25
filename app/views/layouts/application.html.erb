@@ -24,9 +24,14 @@
           </li>
 
           <% if user_signed_in? || dueno_user_signed_in? %>
-          <li class="nav-item">
-            <%=link_to  "| Locals", locals_path, class: "nav-link" %>
-          </li>
+            <li class="nav-item">
+              <%=link_to  "| Locals", locals_path, class: "nav-link" %>
+            </li>
+          <% end %>
+          <% if dueno_user_signed_in? %>
+      |     <li class="nav-item">
+              <%=link_to  "| My locals", locals_owner_path, class: "nav-link" %>
+            </li>
           <% end %>
         </ul>
         

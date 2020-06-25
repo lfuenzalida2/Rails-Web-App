@@ -1,41 +1,42 @@
-<p id="notice"><%= notice %></p>
-
 <div class="jumbotron">
-<p>
-  <strong>Name:</strong>
-  <%= @local.nombre %>
-</p>
+  <h3> Local information </h3>
+  <p>
+    <strong>Name:</strong>
+    <%= @local.nombre %>
+  </p>
 
-<p>
-  <strong>Direction:</strong>
-  <%= @local.direccion %>
-</p>
+  <p>
+    <strong>Direction:</strong>
+    <%= @local.direccion %>
+  </p>
 
-<p>
-  <strong>Type:</strong>
-  <%= @local.tipo %>
-</p>
+  <p>
+    <strong>Type:</strong>
+    <%= @local.tipo %>
+  </p>
 
-<p>
-  <strong>Number of Dates:</strong>
-  <% if @local.n_citas %>
-    <%= @local.n_citas %>
-  <% else%>
-    0
+  <p>
+    <strong>Number of Dates:</strong>
+    <% if @local.n_citas %>
+      <%= @local.n_citas %>
+    <% else%>
+      0
+    <% end %>
+  </p>
+  <p>
+    <%if @local.avatar.attached?%>
+      <td><%=cl_image_tag(@local.avatar.key, width: 200, height: 250, crop: :scale)%></td>   
+    <%elsif @local.avatar.attached? == false%>
+      <td>Upload an image, so other people can see your local!</td>  
+    <%end%>
+  </p>
+
+  <%= link_to 'Locals list', locals_path, class: "btn btn-primary" %>
+  <% if current_dueno_user %>
+    <% if current_dueno_user.id == @local.dueno_user_id %>
+      <%= link_to 'Edit Local', local_edit_path(@local.id), class: "btn btn-primary" %>
+      <%= link_to 'Delete Local', local_delete_path(@local.id), method: :delete, class: "btn btn-primary",
+      data: { confirm: 'Are you sure?' } %>
+    <% end %>    
   <% end %>
-</p>
-<p>
- 
-  <%if @local.avatar.attached?%>
-    <td><%=cl_image_tag(@local.avatar.key, width: 200, height: 250, crop: :scale)%></td>   
-  <%elsif @local.avatar.attached? == false%>
-    <td>Upload an image, so other people can see you!</td>  
-  <%end%>
-</p>
-
-<%= link_to 'Locals list', locals_path, class: "btn, btn-primary" %>
-<%= link_to 'Edit Local', local_edit_path(@local.id), class: "btn, btn-primary" %>
-<%= link_to 'Delete Local', local_delete_path(@local.id), method: :delete, class: "btn, btn-primary",
- data: { confirm: 'Are you sure?' } %>
-
 </div>

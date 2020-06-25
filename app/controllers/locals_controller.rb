@@ -19,9 +19,9 @@ class LocalsController < ApplicationController
 
     @local = Local.create(local_params)
     if @local.save
-      redirect_to locals_new_path, notice: 'El local ha sido creado exitosamente'
+      redirect_to locals_new_path, notice: 'The local has been succesfully created!'
     else
-      redirect_to locals_new_path, notice: 'Ha ocurrido un error al crear el local'
+      redirect_to locals_new_path, notice: 'There has been an error while creating the local'
     end
   end
 
@@ -34,19 +34,25 @@ class LocalsController < ApplicationController
     @local = Local.find(params[:id])
 
     if @local.update(local_params)
-      redirect_to local_path(@local.id), notice: 'Local editado con éxito'
+      redirect_to local_path(@local.id), notice: 'The local has been succesfully edited!'
     else
-      redirect_to local_path(@local.id), notice: 'Ha ocurrido un error al editar el local'
+      redirect_to local_path(@local.id), notice: 'There has been an error while editing the local'
     end
   end
 
   def destroy
     @local = Local.find(params[:id])
     @local.destroy
-    redirect_to locals_path, notice: 'Local eliminado con éxito'
+    redirect_to locals_path, notice: 'The local has been deleted'
   end
 
   def post_params
     params.require(:post).permit(:avatar)
   end
+
+  def owner
+    p "asdasasdadsasdasdasddasdadsasadas"
+    @locals = Local.where("dueno_user_id": current_dueno_user.id)
+  end
+
 end

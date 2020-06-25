@@ -85,8 +85,10 @@ ActiveRecord::Schema.define(version: 2020_06_20_201139) do
     t.integer "rating"
     t.bigint "user_id"
     t.bigint "local_id"
+    t.bigint "cita_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["cita_id"], name: "index_reviews_on_cita_id"
     t.index ["local_id"], name: "index_reviews_on_local_id"
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end
@@ -115,6 +117,7 @@ ActiveRecord::Schema.define(version: 2020_06_20_201139) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "locals", "dueno_users"
+  add_foreign_key "reviews", "cita", column: "cita_id"
   add_foreign_key "reviews", "locals"
   add_foreign_key "reviews", "users"
 end

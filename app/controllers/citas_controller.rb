@@ -11,7 +11,7 @@ class CitasController < ApplicationController
       cita_params = params.permit(:sender_id, :receiver_id, :local_id, :fecha, :hora, :accepted)
       @cita = Cita.create(cita_params)
       @citas = Cita.all if @cita.save
-      redirect_to show_match_My_match_path, notice: 'La cita ha sido creada exitosamente'
+      redirect_to show_match_My_match_path, notice: "Congratulations! We've sent your request for the date"
     end
   end
 
@@ -31,6 +31,6 @@ class CitasController < ApplicationController
       if @cita.update(cita_params)
       end
     end
-    redirect_to show_match_My_match_path, notice: 'Cita declinada'
+    redirect_to show_match_My_match_path, notice: 'We are so sorry, but the date is cancelled'
   end
 end
