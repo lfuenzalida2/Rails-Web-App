@@ -11,6 +11,9 @@ Rails.application.routes.draw do
   get 'locals/new', to: 'locals#new'
   post 'locals', to: 'locals#create'
 
+  get 'reviews/new'
+  post 'reviews/new', to:'reviews#create'
+
   get 'likes/new', to: 'likes#new'
   post 'likes/new', to: 'likes#create'
   patch 'likes/update', to: 'likes#update'

@@ -1,134 +1,136 @@
-<% if current_user %>
-    <center>
-    <%@existing_cita = 0%>
-    <%@cita_receiver = @citas.where(receiver_id: current_user.id, sender_id: @matched_user, accepted: true)%>
-    <%@cita_sender = @citas.where(sender_id: current_user.id, receiver_id: @matched_user, accepted: true)%>
-    <%@existing_cita = @cita_sender[0] if @cita_sender.length() != 0%>
-    <%@existing_cita = @cita_receiver[0] if @cita_receiver.length() != 0%>
-    <%@unaccepted_cita = @citas.where(sender_id: current_user.id, receiver_id: @matched_user, accepted: false)%>
-    <%@invited_to_cita = @citas.where(receiver_id: current_user.id, sender_id: @matched_user, accepted: false)%>
-    <% if @existing_cita != 0%>
+<div class="jumbotron">
+    <% if current_user %>
+        <center>
+        <%@existing_cita = 0%>
+        <%@cita_receiver = @citas.where(receiver_id: current_user.id, sender_id: @matched_user, accepted: true)%>
+        <%@cita_sender = @citas.where(sender_id: current_user.id, receiver_id: @matched_user, accepted: true)%>
+        <%@existing_cita = @cita_sender[0] if @cita_sender.length() != 0%>
+        <%@existing_cita = @cita_receiver[0] if @cita_receiver.length() != 0%>
+        <%@unaccepted_cita = @citas.where(sender_id: current_user.id, receiver_id: @matched_user, accepted: false)%>
+        <%@invited_to_cita = @citas.where(receiver_id: current_user.id, sender_id: @matched_user, accepted: false)%>
+        <% if @existing_cita != 0 %>
 
-        <h1>Your Date Status</h1>
-        <table>
-            <tr>
-                <td>Local: <%= @locals.find(@existing_cita.local_id).nombre %></td>
-            </tr>
-            <tr>
-                <%if @locals.find(@existing_cita.local_id).avatar.attached?%>
-                    <td><%= cl_image_tag(@locals.find(@existing_cita.local_id).avatar.key, width: 200, height: 250, crop: :scale)%></td>
-                <%elsif @locals.find(@existing_cita.local_id).avatar.attached? == false%>
-                    <td>Upload an image, so other people can see you!</td>  
-                <%end%>
-            </tr>
-            <tr>
-                <td>Date: <%= @existing_cita.fecha%></td>
-            </tr>
-            <tr>
-                <td>Time: <%= @existing_cita.hora.strftime("%H:%M")%></td>
-            </tr>
-            
-            <tr>
-                <td>
-                    <span>How was the date? Want to leave a review to the place?</span>
-                    <br>
-                    <%= link_to "Click here!", citas_new_path(cita_id: @invited_to_cita[0], accepted: true), :method => :patch, class:'btn btn-primary' %>
-                </td>
-            </tr>
-
-            <!-- This part is if the date has already passed -->
-            <% if @existing_cita.fecha <= DateTime.current  %>
+            <h1>Your Date Status</h1>
+            <table>
                 <tr>
-                    <p>Hola </p>
-                    <br>
-                    <%= @existing_cita.fecha %>
+                    <td>Local: <%= @locals.find(@existing_cita.local_id).nombre %></td>
                 </tr>
+                <tr>
+                    <%if @locals.find(@existing_cita.local_id).avatar.attached?%>
+                        <td><%= cl_image_tag(@locals.find(@existing_cita.local_id).avatar.key, width: 200, height: 250, crop: :scale)%></td>
+                    <%elsif @locals.find(@existing_cita.local_id).avatar.attached? == false%>
+                        <td>Upload an image, so other people can see you!</td>  
+                    <%end%>
+                </tr>
+                <tr>
+                    <td>Date: <%= @existing_cita.fecha%></td>
+                </tr>
+                <tr>
+                    <td>Time: <%= @existing_cita.hora.strftime("%H:%M")%></td>
+                </tr>
+                
+                <tr>
+                    <td>
+                        <span>How was the date? Want to leave a review to the place?</span>
+                        <br>
+                        <%= link_to "Click here!", reviews_new_path(local_id: @existing_cita.local_id, date_id: @existing_cita.id ), :method => :get, class:'btn btn-primary' %>
+                    </td>
+                </tr>
+
+                <!-- This part is if the date has already passed -->
+                <% if @existing_cita.fecha <= DateTime.current  %>
+                    <tr>
+                        <p>Hola </p>
+                        <br>
+                        <%= @existing_cita.fecha %>
+                    </tr>
+                <% end %>
+
+            </table>
+        
+        <% elsif @invited_to_cita.length != 0%>
+
+            <h1>Your Date Status</h1>
+            <p>You've been invited to a date:</p>
+            <table>
+                <tr>
+                    <td>Local: <%= @locals.find(@invited_to_cita[0].local_id).nombre %></td>
+                </tr>
+                <tr>
+                    <%if @locals.find(@invited_to_cita[0].local_id).avatar.attached?%>
+                        <td><%= cl_image_tag(@locals.find(@invited_to_cita[0].local_id).avatar.key, width: 200, height: 250, crop: :scale)%></td>
+                    <%elsif @locals.find(@invited_to_cita[0].local_id).avatar.attached?%>
+                        <td>Upload an image, so other people can see you!</td>  
+                    <%end%>
+                </tr>
+                <tr>
+                    <td>Date: <%= @invited_to_cita[0].fecha%></td>
+                </tr>
+                <tr>
+                    <td>Time: <%= @invited_to_cita[0].hora.strftime("%H:%M")%></td>
+                </tr>
+            </table>
+            <%= link_to "Accept", citas_new_path(cita_id: @invited_to_cita[0].id, accepted: true), :method => :patch, class:'btn btn-primary' %>
+            <%= link_to "Refuse", citas_new_path(cita_id: @invited_to_cita[0].id, delete: true), :method => :patch, class:'btn btn-primary' %>
+
+        <% elsif @unaccepted_cita.length != 0%>
+
+            <h1>Your Date Status</h1>
+            <p>Your date invitation is not yet received</p>
+            <table>
+                <tr>
+                    <td>Local: <%= @locals.find(@unaccepted_cita[0].local_id).nombre %></td>
+                </tr>
+                <tr>
+                    <%if @locals.find(@unaccepted_cita[0].local_id).avatar.attached?%>
+                        <td><%= cl_image_tag(@locals.find(@unaccepted_cita[0].local_id).avatar.key, width: 200, height: 250, crop: :scale)%></td>
+                    <%elsif @locals.find(@unaccepted_cita[0].local_id).avatar.attached? == false%>
+                        <td>Upload an image, so other people can see you!</td>  
+                    <%end%>
+                </tr>
+                <tr>
+                    <td>Date: <%= @unaccepted_cita[0].fecha%></td>
+                </tr>
+                <tr>
+                    <td>Time: <%= @unaccepted_cita[0].hora.strftime("%H:%M")%></td>
+                </tr>
+            </table>
+
+        <% else %>
+            <% @locals_list = [] %>
+            <% @locals.each do |local| %>
+                <% @locals_list.push([local.nombre, local.id]) %>
             <% end %>
+            <h1>New Date</h1>
+            <div class="jumbotron">
+                <%= form_with(url: citas_new_path) do |form|%>
+                    <%= hidden_field_tag :receiver_id, @matched_user %>
+                    <%= hidden_field_tag :sender_id, current_user.id %>
+                    <%= hidden_field_tag :accepted, false %>
+                    <%= hidden_field_tag :create, true %>
+                    <div class='field'> 
+                        <%= form.label :Local %>
+                        <%= form.select :local_id, @locals_list %>
+                    </div>
 
-          </table>
-    
-    <% elsif @invited_to_cita.length != 0%>
+                    <div class='field'> 
+                        <%= form.label :Date %>
+                        <%= form.select :fecha, Array(0..14).map{|j| Date.tomorrow + j} %>
+                    </div>
 
-        <h1>Your Date Status</h1>
-        <p>You've been invited to a date:</p>
-        <table>
-            <tr>
-                <td>Local: <%= @locals.find(@invited_to_cita[0].local_id).nombre %></td>
-            </tr>
-            <tr>
-                <%if @locals.find(@invited_to_cita[0].local_id).avatar.attached?%>
-                    <td><%= cl_image_tag(@locals.find(@invited_to_cita[0].local_id).avatar.key, width: 200, height: 250, crop: :scale)%></td>
-                <%elsif @locals.find(@invited_to_cita[0].local_id).avatar.attached?%>
-                    <td>Upload an image, so other people can see you!</td>  
-                <%end%>
-            </tr>
-            <tr>
-                <td>Date: <%= @invited_to_cita[0].fecha%></td>
-            </tr>
-            <tr>
-                <td>Time: <%= @invited_to_cita[0].hora.strftime("%H:%M")%></td>
-            </tr>
-        </table>
-        <%= link_to "Accept", citas_new_path(cita_id: @invited_to_cita[0].id, accepted: true), :method => :patch, class:'btn btn-primary' %>
-        <%= link_to "Refuse", citas_new_path(cita_id: @invited_to_cita[0].id, delete: true), :method => :patch, class:'btn btn-primary' %>
+                    <div class='field'> 
+                        <%= form.label :Time %>
+                        <%= form.select :hora, ["13:00","13:30","14:00","14:30","20:30","21:00"] %>
+                    </div>
 
-    <% elsif @unaccepted_cita.length != 0%>
-
-        <h1>Your Date Status</h1>
-        <p>Your date invitation is not yet received</p>
-        <table>
-            <tr>
-                <td>Local: <%= @locals.find(@unaccepted_cita[0].local_id).nombre %></td>
-            </tr>
-            <tr>
-                <%if @locals.find(@unaccepted_cita[0].local_id).avatar.attached?%>
-                    <td><%= cl_image_tag(@locals.find(@unaccepted_cita[0].local_id).avatar.key, width: 200, height: 250, crop: :scale)%></td>
-                <%elsif @locals.find(@unaccepted_cita[0].local_id).avatar.attached? == false%>
-                    <td>Upload an image, so other people can see you!</td>  
-                <%end%>
-            </tr>
-            <tr>
-                <td>Date: <%= @unaccepted_cita[0].fecha%></td>
-            </tr>
-            <tr>
-                <td>Time: <%= @unaccepted_cita[0].hora.strftime("%H:%M")%></td>
-            </tr>
-        </table>
-
-    <% else %>
-        <% @locals_list = [] %>
-        <% @locals.each do |local| %>
-            <% @locals_list.push([local.nombre, local.id]) %>
+                    <div class="actions">
+                        <%= form.submit "Send Invitation", class: "btn btn-primary" %>
+                    </div>
+                <% end %>
+                <br>
+                <%= link_to 'Cancel', show_match_My_match_path, class: "btn btn-primary" %>
+            </div>
         <% end %>
-        <h1>New Date</h1>
-        <div class="jumbotron">
-            <%= form_with(url: citas_new_path) do |form|%>
-                <%= hidden_field_tag :receiver_id, @matched_user %>
-                <%= hidden_field_tag :sender_id, current_user.id %>
-                <%= hidden_field_tag :accepted, false %>
-                <%= hidden_field_tag :create, true %>
-                <div class='field'> 
-                    <%= form.label :Local %>
-                    <%= form.select :local_id, @locals_list %>
-                </div>
-
-                <div class='field'> 
-                    <%= form.label :Date %>
-                    <%= form.select :fecha, Array(0..14).map{|j| Date.tomorrow + j} %>
-                </div>
-
-                <div class='field'> 
-                    <%= form.label :Time %>
-                    <%= form.select :hora, ["13:00","13:30","14:00","14:30","20:30","21:00"] %>
-                </div>
-
-                <div class="actions">
-                    <%= form.submit "Send Invitation", class: "btn btn-primary" %>
-                </div>
-            <% end %>
-            <br>
-            <%= link_to 'Cancel', show_match_My_match_path, class: "btn btn-primary" %>
-        </div>
+        </center>
     <% end %>
-    </center>
-<% end %>
+</div>

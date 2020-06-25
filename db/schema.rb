@@ -81,7 +81,6 @@ ActiveRecord::Schema.define(version: 2020_06_20_201139) do
   end
 
   create_table "reviews", force: :cascade do |t|
-    t.integer "id_local"
     t.text "review"
     t.integer "rating"
     t.bigint "user_id"
