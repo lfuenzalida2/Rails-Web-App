@@ -31,7 +31,6 @@ class User < ApplicationRecord
 
   private
   def avatar_missing
-    p "asdasdas"
     if avatar.attached? == false
       errors.add(:avatar, 'or Image are missing!')
     end

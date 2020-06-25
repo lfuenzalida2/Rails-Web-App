@@ -12,7 +12,7 @@ User.create(
     gender:"male",
     interests:"musica",
     sexual_orientation:"female",
-    region: "I")
+    region: "I").save(validate: false)
 
 User.create(
     email: "example2@dccitas.cl",
@@ -25,7 +25,7 @@ User.create(
     gender:"male",
     interests:"teatro",
     sexual_orientation:"female",
-    region: "X")     
+    region: "X").save(validate: false)  
 
 User.create(
     email: "example3@dccitas.cl",
@@ -38,7 +38,7 @@ User.create(
     gender:"female",
     interests:"teatro",
     sexual_orientation:"female",
-    region: "III")
+    region: "III").save(validate: false)
 
 User.create(
     email: "example4@dccitas.cl",
@@ -51,7 +51,7 @@ User.create(
     gender:"female",
     interests:"teatro",
     sexual_orientation:"male",
-    region: "IV")
+    region: "IV").save(validate: false)
 
 DuenoUser.create(
     email: "duenoexample2@dccitas.cl",

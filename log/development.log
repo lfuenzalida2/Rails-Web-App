@@ -52437,3 +52437,691 @@ FOREIGN KEY ("blob_id")
   ↳ db/seeds.rb:93
   [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
   ↳ db/seeds.rb:93
+Started DELETE "/users/sign_out" for ::1 at 2020-06-25 14:22:00 -0400
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/lukas/.rvm/gems/ruby-2.6.5/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by Users::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"WoyyKH9XagZ2942y7BhRVw3edWQ8hnQLqrg9BXXCJdyiC3br8OyDXIHvWwXpH3h4TZiAiJTqt4GB/z61zC79QQ=="}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/lukas/.rvm/gems/ruby-2.6.5/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Filter chain halted as :verify_signed_out_user rendered or redirected
+Completed 302 Found in 264ms (ActiveRecord: 5.7ms)
+
+
+Started GET "/" for ::1 at 2020-06-25 14:22:00 -0400
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (212.2ms)
+Completed 200 OK in 291ms (Views: 289.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-06-25 14:22:03 -0400
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (1.4ms)
+  Rendered users/sessions/new.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 45ms (Views: 43.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2020-06-25 14:22:06 -0400
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Yzm1GACJyMvRDYJ9IdXX4ub00cfyLKWn7Yl0FZJDoOcg27taNgFILQNSSNupM7pPl03GofJBeY0im+Q9NyNycA==", "user"=>{"email"=>"example1@dccitas.cl", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "example1@dccitas.cl"], ["LIMIT", 1]]
+  ↳ /home/lukas/.rvm/gems/ruby-2.6.5/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.4ms)
+
+
+Processing by Users::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Yzm1GACJyMvRDYJ9IdXX4ub00cfyLKWn7Yl0FZJDoOcg27taNgFILQNSSNupM7pPl03GofJBeY0im+Q9NyNycA==", "user"=>{"email"=>"example1@dccitas.cl", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (1.1ms)
+  Rendered users/sessions/new.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 167ms (Views: 44.2ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:11
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:11
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:11
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:11
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:11
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:11
+  [1m[35m (122.8ms)[0m  [1m[35mDROP DATABASE IF EXISTS "myapp_development"[0m
+  ↳ bin/rails:11
+  [1m[35m (127.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "myapp_test"[0m
+  ↳ bin/rails:11
+  [1m[35m (480.7ms)[0m  [1m[35mCREATE DATABASE "myapp_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:11
+  [1m[35m (413.2ms)[0m  [1m[35mCREATE DATABASE "myapp_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:11
+  [1m[35m (7.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:11
+  [1m[35m (6.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ bin/rails:11
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7864839756650184315)[0m
+  ↳ bin/rails:11
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:11
+Migrating to DeviseCreateUsers (20200425170949)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:11
+  [1m[35m (22.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "rut" character varying, "name" character varying, "gender" integer, "region" integer, "birthday" character varying, "number" integer, "description" text, "sexual_orientation" integer, "interests" integer, "admin" boolean DEFAULT FALSE NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20200425170949_devise_create_users.rb:5
+  [1m[35m (2.8ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  ↳ db/migrate/20200425170949_devise_create_users.rb:51
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  ↳ db/migrate/20200425170949_devise_create_users.rb:52
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200425170949"]]
+  ↳ bin/rails:11
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:11
+Migrating to DeviseCreateDuenoUsers (20200426223137)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:11
+  [1m[35m (5.5ms)[0m  [1m[35mCREATE TABLE "dueno_users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "name" character varying, "rut" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20200426223137_devise_create_dueno_users.rb:5
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_dueno_users_on_email" ON "dueno_users"  ("email")[0m
+  ↳ db/migrate/20200426223137_devise_create_dueno_users.rb:43
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_dueno_users_on_reset_password_token" ON "dueno_users"  ("reset_password_token")[0m
+  ↳ db/migrate/20200426223137_devise_create_dueno_users.rb:44
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200426223137"]]
+  ↳ bin/rails:11
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:11
+Migrating to CreateLocals (20200426231717)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:11
+  [1m[35m (6.4ms)[0m  [1m[35mCREATE TABLE "locals" ("id" bigserial primary key, "nombre" character varying, "direccion" character varying, "tipo" integer, "n_citas" integer DEFAULT 0, "dueno_user_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_55b832814f"
+FOREIGN KEY ("dueno_user_id")
+  REFERENCES "dueno_users" ("id")
+)[0m
+  ↳ db/migrate/20200426231717_create_locals.rb:5
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE  INDEX  "index_locals_on_dueno_user_id" ON "locals"  ("dueno_user_id")[0m
+  ↳ db/migrate/20200426231717_create_locals.rb:5
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200426231717"]]
+  ↳ bin/rails:11
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:11
+Migrating to CreateReviews (20200427003212)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:11
+  [1m[35m (6.4ms)[0m  [1m[35mCREATE TABLE "reviews" ("id" bigserial primary key, "id_local" integer, "review" text, "rating" integer, "user_id" bigint, "local_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_74a66bd6c5"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_3f7ab0b088"
+FOREIGN KEY ("local_id")
+  REFERENCES "locals" ("id")
+)[0m
+  ↳ db/migrate/20200427003212_create_reviews.rb:5
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE  INDEX  "index_reviews_on_user_id" ON "reviews"  ("user_id")[0m
+  ↳ db/migrate/20200427003212_create_reviews.rb:5
+  [1m[35m (3.7ms)[0m  [1m[35mCREATE  INDEX  "index_reviews_on_local_id" ON "reviews"  ("local_id")[0m
+  ↳ db/migrate/20200427003212_create_reviews.rb:5
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200427003212"]]
+  ↳ bin/rails:11
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:11
+Migrating to CreateLikes (20200605035108)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:11
+  [1m[35m (5.9ms)[0m  [1m[35mCREATE TABLE "likes" ("id" bigserial primary key, "sender_user" integer, "receiver_user" integer, "match" boolean, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20200605035108_create_likes.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200605035108"]]
+  ↳ bin/rails:11
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:11
+Migrating to CreateCita (20200619173243)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:11
+  [1m[35m (3.5ms)[0m  [1m[35mCREATE TABLE "cita" ("id" bigserial primary key, "sender_id" integer, "receiver_id" integer, "local_id" integer, "fecha" date, "hora" time, "accepted" boolean, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20200619173243_create_cita.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200619173243"]]
+  ↳ bin/rails:11
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:11
+Migrating to CreateActiveStorageTables (20200620201139)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:11
+  [1m[35m (5.7ms)[0m  [1m[35mCREATE TABLE "active_storage_blobs" ("id" bigserial primary key, "key" character varying NOT NULL, "filename" character varying NOT NULL, "content_type" character varying, "metadata" text, "byte_size" bigint NOT NULL, "checksum" character varying NOT NULL, "created_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20200620201139_create_active_storage_tables.active_storage.rb:4
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_active_storage_blobs_on_key" ON "active_storage_blobs"  ("key")[0m
+  ↳ db/migrate/20200620201139_create_active_storage_tables.active_storage.rb:4
+  [1m[35m (6.5ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" bigserial primary key, "name" character varying NOT NULL, "record_type" character varying NOT NULL, "record_id" bigint NOT NULL, "blob_id" bigint NOT NULL, "created_at" timestamp NOT NULL, CONSTRAINT "fk_rails_c3b3935057"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+)[0m
+  ↳ db/migrate/20200620201139_create_active_storage_tables.active_storage.rb:16
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE  INDEX  "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments"  ("blob_id")[0m
+  ↳ db/migrate/20200620201139_create_active_storage_tables.active_storage.rb:16
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_active_storage_attachments_uniqueness" ON "active_storage_attachments"  ("record_type", "record_id", "name", "blob_id")[0m
+  ↳ db/migrate/20200620201139_create_active_storage_tables.active_storage.rb:16
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200620201139"]]
+  ↳ bin/rails:11
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:11
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:11
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:11
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-06-25 18:22:45.988538"], ["updated_at", "2020-06-25 18:22:45.988538"]]
+  ↳ bin/rails:11
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:11
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(7864839756650184315)[0m
+  ↳ bin/rails:11
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:11
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:4
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "example1@dccitas.cl"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:4
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:4
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "rut", "name", "gender", "region", "birthday", "number", "description", "sexual_orientation", "interests", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["email", "example1@dccitas.cl"], ["encrypted_password", "$2a$11$ivsxZxuiCPtjPDPiMM7QYu8UARMY/.//SrW1keACgHB3LrXp0O2PC"], ["rut", "12312312-3"], ["name", "Pedro Piedra"], ["gender", 0], ["region", 0], ["birthday", "02/05/1997"], ["number", 99058260], ["description", "Un chico alegre"], ["sexual_orientation", 1], ["interests", 1], ["created_at", "2020-06-25 18:22:48.369179"], ["updated_at", "2020-06-25 18:22:48.369179"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (3.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:17
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "example2@dccitas.cl"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:28
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "rut", "name", "gender", "region", "birthday", "number", "description", "sexual_orientation", "interests", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["email", "example2@dccitas.cl"], ["encrypted_password", "$2a$11$N68yfgx9NpEFGfu23KYbVO7Y6Lhq0i02wucnQtMYR.2txZ328moC2"], ["rut", "14589717-3"], ["name", "Manuel Alberto"], ["gender", 0], ["region", 9], ["birthday", "02/10/1995"], ["number", 52487860], ["description", "Un chico mas alegre"], ["sexual_orientation", 1], ["interests", 6], ["created_at", "2020-06-25 18:22:48.496561"], ["updated_at", "2020-06-25 18:22:48.496561"]]
+  ↳ db/seeds.rb:28
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:28
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "example3@dccitas.cl"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:41
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "rut", "name", "gender", "region", "birthday", "number", "description", "sexual_orientation", "interests", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["email", "example3@dccitas.cl"], ["encrypted_password", "$2a$11$ucCcg43hCvGcm.EKcJN9lunaTHA1IYhfjYMxHnyNI7rBmIw7sg2FK"], ["rut", "5836091-0"], ["name", "Luisa Martines"], ["gender", 1], ["region", 2], ["birthday", "10/05/1998"], ["number", 36332576], ["description", "Un chica muy alegre"], ["sexual_orientation", 1], ["interests", 6], ["created_at", "2020-06-25 18:22:48.619754"], ["updated_at", "2020-06-25 18:22:48.619754"]]
+  ↳ db/seeds.rb:41
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:41
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:43
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "example4@dccitas.cl"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:43
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:43
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:54
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "rut", "name", "gender", "region", "birthday", "number", "description", "sexual_orientation", "interests", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["email", "example4@dccitas.cl"], ["encrypted_password", "$2a$11$PRe9oaToamRxEsdLhap9uO/4kQiaT4KQ0CCxPw2PZ2eRtMnRRBXg6"], ["rut", "5836091-0"], ["name", "Marta Brunet"], ["gender", 1], ["region", 3], ["birthday", "10/05/1995"], ["number", 36332576], ["description", "Yo soy mas alegre"], ["sexual_orientation", 0], ["interests", 6], ["created_at", "2020-06-25 18:22:48.738134"], ["updated_at", "2020-06-25 18:22:48.738134"]]
+  ↳ db/seeds.rb:54
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:54
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:56
+  [1m[36mDuenoUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "dueno_users" WHERE "dueno_users"."email" = $1 LIMIT $2[0m  [["email", "duenoexample2@dccitas.cl"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:56
+  [1m[36mDuenoUser Create (0.4ms)[0m  [1m[32mINSERT INTO "dueno_users" ("email", "encrypted_password", "name", "rut", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "duenoexample2@dccitas.cl"], ["encrypted_password", "$2a$11$8SW7JlgRZ6kAru5EIbLgruj0IX1cKDIeQj9c9SukSSVYhtm3zN2EG"], ["name", "Gloria Carmina"], ["rut", "6645166-6"], ["created_at", "2020-06-25 18:22:48.872667"], ["updated_at", "2020-06-25 18:22:48.872667"]]
+  ↳ db/seeds.rb:56
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:56
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:62
+  [1m[36mDuenoUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "dueno_users" WHERE "dueno_users"."email" = $1 LIMIT $2[0m  [["email", "duenoexample3@dccitas.cl"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:62
+  [1m[36mDuenoUser Create (0.3ms)[0m  [1m[32mINSERT INTO "dueno_users" ("email", "encrypted_password", "name", "rut", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "duenoexample3@dccitas.cl"], ["encrypted_password", "$2a$11$bhKBPgn/klGhzcf7BsjtIOI76XrNYzPGCrZUAoMXXpjbE.ASKAnHS"], ["name", "Magnus Midtbo"], ["rut", "6717405-4"], ["created_at", "2020-06-25 18:22:48.991649"], ["updated_at", "2020-06-25 18:22:48.991649"]]
+  ↳ db/seeds.rb:62
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:62
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:68
+  [1m[36mDuenoUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "dueno_users" WHERE "dueno_users"."email" = $1 LIMIT $2[0m  [["email", "duenoexample1@dccitas.cl"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:68
+  [1m[36mDuenoUser Create (0.3ms)[0m  [1m[32mINSERT INTO "dueno_users" ("email", "encrypted_password", "name", "rut", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "duenoexample1@dccitas.cl"], ["encrypted_password", "$2a$11$NlMBzI8Dp0ymbIZlJYaS8eKOdb3.aDdNqPL4Jpj00.pzjjmjBr8b2"], ["name", "Hillary Clinton"], ["rut", "15427936-9"], ["created_at", "2020-06-25 18:22:49.104175"], ["updated_at", "2020-06-25 18:22:49.104175"]]
+  ↳ db/seeds.rb:68
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:68
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:78
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "garland@predovic.biz"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:78
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:78
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:89
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "rut", "name", "gender", "region", "birthday", "number", "description", "sexual_orientation", "interests", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["email", "garland@predovic.biz"], ["encrypted_password", "$2a$11$.95KmaUAANz9VKCgPsRkYerbb4aU8gII5xGqtMlgrP3zEbZEBKbuO"], ["rut", "74379141-k"], ["name", "Jerica Gusikowski"], ["gender", 0], ["region", 4], ["birthday", "1969-03-26"], ["number", 58396640], ["description", "I love to confess"], ["sexual_orientation", 0], ["interests", 1], ["created_at", "2020-06-25 18:22:49.428905"], ["updated_at", "2020-06-25 18:22:49.428905"]]
+  ↳ db/seeds.rb:89
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:89
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:78
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hang.boyer@deckow.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:78
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:78
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:89
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "rut", "name", "gender", "region", "birthday", "number", "description", "sexual_orientation", "interests", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["email", "hang.boyer@deckow.com"], ["encrypted_password", "$2a$11$dNIlGgoW65oYldXGiqlBEu2l4pXsfLXQxRnLBMzmWSBfRDY0yO6mO"], ["rut", "17447210-6"], ["name", "Hobert Boyle"], ["gender", 0], ["region", 3], ["birthday", "1955-10-10"], ["number", 66601669], ["description", "I love to forget"], ["sexual_orientation", 1], ["interests", 2], ["created_at", "2020-06-25 18:22:49.549197"], ["updated_at", "2020-06-25 18:22:49.549197"]]
+  ↳ db/seeds.rb:89
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:89
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:78
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "cletus_rolfson@marquardt.org"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:78
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:78
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:89
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "rut", "name", "gender", "region", "birthday", "number", "description", "sexual_orientation", "interests", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["email", "cletus_rolfson@marquardt.org"], ["encrypted_password", "$2a$11$KtvDVPa6XWWCLbxwynkX3.pXXz8a0KEEQ.iJVD1m7VmlEvaI9WG32"], ["rut", "89607763-5"], ["name", "Tyson Kiehn"], ["gender", 1], ["region", 12], ["birthday", "1966-01-18"], ["number", 56424592], ["description", "I love to soar"], ["sexual_orientation", 1], ["interests", 1], ["created_at", "2020-06-25 18:22:49.678683"], ["updated_at", "2020-06-25 18:22:49.678683"]]
+  ↳ db/seeds.rb:89
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:89
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:78
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "dakota@lakin-becker.net"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:78
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:78
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:89
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "rut", "name", "gender", "region", "birthday", "number", "description", "sexual_orientation", "interests", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["email", "dakota@lakin-becker.net"], ["encrypted_password", "$2a$11$Rl6DiAeNduOTnjm4AIyeG.cKYMV4WEDqAbjG2oeDxJaHYNAJoEAfe"], ["rut", "45658987-1"], ["name", "Una Stark"], ["gender", 1], ["region", 12], ["birthday", "1963-12-06"], ["number", 20926335], ["description", "I love to forlese"], ["sexual_orientation", 0], ["interests", 2], ["created_at", "2020-06-25 18:22:49.800822"], ["updated_at", "2020-06-25 18:22:49.800822"]]
+  ↳ db/seeds.rb:89
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:89
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:78
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hester@jacobs-botsford.biz"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:78
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:78
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:89
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "rut", "name", "gender", "region", "birthday", "number", "description", "sexual_orientation", "interests", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["email", "hester@jacobs-botsford.biz"], ["encrypted_password", "$2a$11$JJ/Ognpxr7rKRUEG6Impi.DUb9IZcCbz6qnH0jgBHgEB2X3IBu0ei"], ["rut", "4011970-1"], ["name", "Mr. Dorian Reynolds"], ["gender", 0], ["region", 8], ["birthday", "1956-03-04"], ["number", 63905392], ["description", "I love to shave"], ["sexual_orientation", 1], ["interests", 1], ["created_at", "2020-06-25 18:22:49.922953"], ["updated_at", "2020-06-25 18:22:49.922953"]]
+  ↳ db/seeds.rb:89
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:89
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:78
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "clifford@oreilly.co"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:78
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:78
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:89
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "rut", "name", "gender", "region", "birthday", "number", "description", "sexual_orientation", "interests", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["email", "clifford@oreilly.co"], ["encrypted_password", "$2a$11$Wfgi.gHG8FPeu.M7kZYj8urtpkbGd1S.zs/1EbhXo5Q9z6WL4O2KS"], ["rut", "2888361-7"], ["name", "Mr. Clarita Hilll"], ["gender", 0], ["region", 0], ["birthday", "1969-09-02"], ["number", 19916139], ["description", "I love to contemn"], ["sexual_orientation", 1], ["interests", 0], ["created_at", "2020-06-25 18:22:50.039932"], ["updated_at", "2020-06-25 18:22:50.039932"]]
+  ↳ db/seeds.rb:89
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:89
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:78
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "elois.mccullough@lind.info"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:78
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:78
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:89
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "rut", "name", "gender", "region", "birthday", "number", "description", "sexual_orientation", "interests", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["email", "elois.mccullough@lind.info"], ["encrypted_password", "$2a$11$Km4OXzrAIIbdPgS1430nF..3deUyiRcnPf6k0xGFoYJm1hWIggqQi"], ["rut", "88264826-5"], ["name", "Miss Irvin Bartell"], ["gender", 0], ["region", 0], ["birthday", "1991-02-12"], ["number", 54409940], ["description", "I love to worry"], ["sexual_orientation", 0], ["interests", 1], ["created_at", "2020-06-25 18:22:50.155817"], ["updated_at", "2020-06-25 18:22:50.155817"]]
+  ↳ db/seeds.rb:89
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:89
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:78
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "neville@monahan.org"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:78
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:78
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:89
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "rut", "name", "gender", "region", "birthday", "number", "description", "sexual_orientation", "interests", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["email", "neville@monahan.org"], ["encrypted_password", "$2a$11$Jse9VblB.OoFMxqiQIcknuVR8PM16RLgDCqVjk3Dudqa/MjoP4/SG"], ["rut", "29497177-7"], ["name", "Hui Grady"], ["gender", 0], ["region", 6], ["birthday", "2000-05-25"], ["number", 65843926], ["description", "I love to latch"], ["sexual_orientation", 1], ["interests", 4], ["created_at", "2020-06-25 18:22:50.274099"], ["updated_at", "2020-06-25 18:22:50.274099"]]
+  ↳ db/seeds.rb:89
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:89
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:78
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "andres.bernhard@williamson.co"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:78
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:78
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:89
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "rut", "name", "gender", "region", "birthday", "number", "description", "sexual_orientation", "interests", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["email", "andres.bernhard@williamson.co"], ["encrypted_password", "$2a$11$oNtDc815FGafRPJdl7L/keGfgLzyBlErfymWyArzqSwGV9uHWglVK"], ["rut", "83415462-5"], ["name", "Dr. Daphne Hegmann"], ["gender", 1], ["region", 0], ["birthday", "1963-11-27"], ["number", 96912885], ["description", "I love to scatter"], ["sexual_orientation", 0], ["interests", 3], ["created_at", "2020-06-25 18:22:50.390523"], ["updated_at", "2020-06-25 18:22:50.390523"]]
+  ↳ db/seeds.rb:89
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:89
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:78
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "kip@pfannerstill-baumbach.net"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:78
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:78
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:89
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "rut", "name", "gender", "region", "birthday", "number", "description", "sexual_orientation", "interests", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["email", "kip@pfannerstill-baumbach.net"], ["encrypted_password", "$2a$11$aJpU/OV1NTPSr3YxfKVvcOvhA4FlypDZsDneTaS/KNpISKpQjaY3u"], ["rut", "8402023-0"], ["name", "Maryellen Murphy"], ["gender", 1], ["region", 3], ["birthday", "1973-12-06"], ["number", 50522769], ["description", "I love to polish"], ["sexual_orientation", 0], ["interests", 5], ["created_at", "2020-06-25 18:22:50.513608"], ["updated_at", "2020-06-25 18:22:50.513608"]]
+  ↳ db/seeds.rb:89
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:89
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:78
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "stephen_schultz@herzog.co"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:78
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:78
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:89
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "rut", "name", "gender", "region", "birthday", "number", "description", "sexual_orientation", "interests", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["email", "stephen_schultz@herzog.co"], ["encrypted_password", "$2a$11$aVB/UhzNhMDmapesIKpWPOSKzhkf1ZeOXgGFMkSziKWnS6CvBlZkG"], ["rut", "57707678-2"], ["name", "Tanner Hegmann"], ["gender", 1], ["region", 2], ["birthday", "1963-01-02"], ["number", 26463534], ["description", "I love to operate"], ["sexual_orientation", 1], ["interests", 4], ["created_at", "2020-06-25 18:22:50.630029"], ["updated_at", "2020-06-25 18:22:50.630029"]]
+  ↳ db/seeds.rb:89
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:89
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:78
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "tracey@turcotte.net"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:78
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:78
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:89
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "rut", "name", "gender", "region", "birthday", "number", "description", "sexual_orientation", "interests", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["email", "tracey@turcotte.net"], ["encrypted_password", "$2a$11$DQvr/7UjwcM8Bx1l1u3HLeriG2KHwfo26xeStHueVZCqP00SR.tyu"], ["rut", "92401746-5"], ["name", "Bryant Bins"], ["gender", 0], ["region", 7], ["birthday", "1959-12-14"], ["number", 54598745], ["description", "I love to spend"], ["sexual_orientation", 0], ["interests", 4], ["created_at", "2020-06-25 18:22:50.752435"], ["updated_at", "2020-06-25 18:22:50.752435"]]
+  ↳ db/seeds.rb:89
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:89
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:78
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "carlo_hahn@nicolas-franecki.io"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:78
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:78
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:89
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "rut", "name", "gender", "region", "birthday", "number", "description", "sexual_orientation", "interests", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["email", "carlo_hahn@nicolas-franecki.io"], ["encrypted_password", "$2a$11$nb8Pckh/C2xpTKrgTV942.2EPgdzevV5Apvwck2F8i50vx46DVv/m"], ["rut", "81052291-7"], ["name", "Carlita Yost PhD"], ["gender", 0], ["region", 0], ["birthday", "1962-07-01"], ["number", 98899599], ["description", "I love to kid"], ["sexual_orientation", 1], ["interests", 5], ["created_at", "2020-06-25 18:22:50.873636"], ["updated_at", "2020-06-25 18:22:50.873636"]]
+  ↳ db/seeds.rb:89
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:89
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:78
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "charles_rosenbaum@wiza.net"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:78
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:78
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:89
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "rut", "name", "gender", "region", "birthday", "number", "description", "sexual_orientation", "interests", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["email", "charles_rosenbaum@wiza.net"], ["encrypted_password", "$2a$11$VmftzKXc9BWkr7B3aznviO0aLSi1MpjpTAetOfqYI88wIYdd3iBIy"], ["rut", "88701817-0"], ["name", "Aldo Mertz IV"], ["gender", 1], ["region", 4], ["birthday", "1973-09-23"], ["number", 68964646], ["description", "I love to sip"], ["sexual_orientation", 1], ["interests", 5], ["created_at", "2020-06-25 18:22:50.997458"], ["updated_at", "2020-06-25 18:22:50.997458"]]
+  ↳ db/seeds.rb:89
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:89
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:78
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "robbie@abernathy-kessler.info"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:78
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:78
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:89
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "rut", "name", "gender", "region", "birthday", "number", "description", "sexual_orientation", "interests", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["email", "robbie@abernathy-kessler.info"], ["encrypted_password", "$2a$11$8zXWhjWUhxPTDHEpTyckPuYF02LBHglhRI8p74vr3E0i0gRfCnGX6"], ["rut", "83808615-2"], ["name", "Mr. Josiah Zulauf"], ["gender", 1], ["region", 7], ["birthday", "2000-09-17"], ["number", 90661438], ["description", "I love to operate"], ["sexual_orientation", 1], ["interests", 5], ["created_at", "2020-06-25 18:22:51.130637"], ["updated_at", "2020-06-25 18:22:51.130637"]]
+  ↳ db/seeds.rb:89
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:89
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:78
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "kristine_cummings@spinka-friesen.org"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:78
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:78
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:89
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "rut", "name", "gender", "region", "birthday", "number", "description", "sexual_orientation", "interests", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["email", "kristine_cummings@spinka-friesen.org"], ["encrypted_password", "$2a$11$uVBi.i.qJGqiItX4q1nG3ugkF8Zd0yHE48WoExw3z/.Rl4jvEvD4C"], ["rut", "34617595-8"], ["name", "Jina O'Kon"], ["gender", 0], ["region", 5], ["birthday", "1967-10-03"], ["number", 28919928], ["description", "I love to belong"], ["sexual_orientation", 1], ["interests", 3], ["created_at", "2020-06-25 18:22:51.249567"], ["updated_at", "2020-06-25 18:22:51.249567"]]
+  ↳ db/seeds.rb:89
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:89
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:78
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "deetta@grady.name"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:78
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:78
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:89
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "rut", "name", "gender", "region", "birthday", "number", "description", "sexual_orientation", "interests", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["email", "deetta@grady.name"], ["encrypted_password", "$2a$11$j0xXFrqT9M9NfFUbrcrOHejmEDNBeQB/y/DtDcYXDnG4rHJzQ7r6C"], ["rut", "12686327-6"], ["name", "Mireya Bashirian"], ["gender", 0], ["region", 13], ["birthday", "1964-10-30"], ["number", 93447710], ["description", "I love to dash"], ["sexual_orientation", 1], ["interests", 6], ["created_at", "2020-06-25 18:22:51.375624"], ["updated_at", "2020-06-25 18:22:51.375624"]]
+  ↳ db/seeds.rb:89
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:89
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:78
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "in@schroeder-gleason.org"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:78
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:78
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:89
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "rut", "name", "gender", "region", "birthday", "number", "description", "sexual_orientation", "interests", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["email", "in@schroeder-gleason.org"], ["encrypted_password", "$2a$11$Or0iqRUuAe9Ixnxk1fqZmOITU5w4h9WI.G/C8CosTVDthRAK6YFiK"], ["rut", "17613932-3"], ["name", "Francisca Beahan"], ["gender", 1], ["region", 13], ["birthday", "1961-04-28"], ["number", 70035366], ["description", "I love to impend"], ["sexual_orientation", 0], ["interests", 6], ["created_at", "2020-06-25 18:22:51.492226"], ["updated_at", "2020-06-25 18:22:51.492226"]]
+  ↳ db/seeds.rb:89
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:89
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:78
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "rudy_conn@cartwright-osinski.name"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:78
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:78
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:89
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "rut", "name", "gender", "region", "birthday", "number", "description", "sexual_orientation", "interests", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["email", "rudy_conn@cartwright-osinski.name"], ["encrypted_password", "$2a$11$/ldR5sySc.8Is5X1uHyLJ.AVpFcoPThDeqL/DMGWxlntsVYg6kNt."], ["rut", "47223717-9"], ["name", "Azucena White"], ["gender", 0], ["region", 0], ["birthday", "1973-11-18"], ["number", 66009300], ["description", "I love to scabble"], ["sexual_orientation", 1], ["interests", 5], ["created_at", "2020-06-25 18:22:51.616684"], ["updated_at", "2020-06-25 18:22:51.616684"]]
+  ↳ db/seeds.rb:89
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:89
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:78
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "elias_towne@runolfsson-howell.co"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:78
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:78
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:89
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "rut", "name", "gender", "region", "birthday", "number", "description", "sexual_orientation", "interests", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["email", "elias_towne@runolfsson-howell.co"], ["encrypted_password", "$2a$11$ZEhC6gGFnkVJlrrwCZLprODmtZKMVECd8Yq1AKLCldN1TOQbBd7A2"], ["rut", "90006548-5"], ["name", "Darline Paucek I"], ["gender", 1], ["region", 15], ["birthday", "1997-03-08"], ["number", 64841294], ["description", "I love to look"], ["sexual_orientation", 0], ["interests", 3], ["created_at", "2020-06-25 18:22:51.738442"], ["updated_at", "2020-06-25 18:22:51.738442"]]
+  ↳ db/seeds.rb:89
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:89
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:78
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "dia@gibson.org"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:78
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:78
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:89
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "rut", "name", "gender", "region", "birthday", "number", "description", "sexual_orientation", "interests", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["email", "dia@gibson.org"], ["encrypted_password", "$2a$11$wwHCgjSZZ6bSEubsFgAlaemW5rwWjsiiWmUNuNq3Pa6dbxF9cZu0."], ["rut", "48854309-1"], ["name", "Sandy Schuppe PhD"], ["gender", 1], ["region", 15], ["birthday", "1960-07-23"], ["number", 11824145], ["description", "I love to whip"], ["sexual_orientation", 0], ["interests", 3], ["created_at", "2020-06-25 18:22:51.873914"], ["updated_at", "2020-06-25 18:22:51.873914"]]
+  ↳ db/seeds.rb:89
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:89
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:78
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "fausto.kling@brekke.info"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:78
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:78
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:89
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "rut", "name", "gender", "region", "birthday", "number", "description", "sexual_orientation", "interests", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["email", "fausto.kling@brekke.info"], ["encrypted_password", "$2a$11$q.wmi9LqsN3/kmP8wGmXzuWMda0KnA0NGY2k5J6IWcx.G1/pFYi0K"], ["rut", "23992178-7"], ["name", "Kristin Lueilwitz"], ["gender", 0], ["region", 13], ["birthday", "1976-06-01"], ["number", 32323649], ["description", "I love to output"], ["sexual_orientation", 0], ["interests", 1], ["created_at", "2020-06-25 18:22:51.998084"], ["updated_at", "2020-06-25 18:22:51.998084"]]
+  ↳ db/seeds.rb:89
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:89
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:78
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "alphonso.wisozk@swaniawski-witting.io"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:78
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:78
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:89
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "rut", "name", "gender", "region", "birthday", "number", "description", "sexual_orientation", "interests", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["email", "alphonso.wisozk@swaniawski-witting.io"], ["encrypted_password", "$2a$11$kMxPPMn.gQpa.vDGG6Qjhu4E6j1c0wuL3fIfBjSWHlHFHeUBrxk9e"], ["rut", "35960512-9"], ["name", "Mrs. Cordell Hayes"], ["gender", 1], ["region", 6], ["birthday", "1957-07-30"], ["number", 36826169], ["description", "I love to fill"], ["sexual_orientation", 1], ["interests", 0], ["created_at", "2020-06-25 18:22:52.131742"], ["updated_at", "2020-06-25 18:22:52.131742"]]
+  ↳ db/seeds.rb:89
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:89
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:78
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "rosanne_cremin@gislason.net"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:78
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:78
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:89
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "rut", "name", "gender", "region", "birthday", "number", "description", "sexual_orientation", "interests", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["email", "rosanne_cremin@gislason.net"], ["encrypted_password", "$2a$11$S9K9K3co5hi6/rQzRZpjmuKyCFaGnrC4e4Ed2z5uaaqW8kjgr4Imi"], ["rut", "13393339-5"], ["name", "Bill Lindgren"], ["gender", 0], ["region", 3], ["birthday", "1990-02-28"], ["number", 36280336], ["description", "I love to hurry"], ["sexual_orientation", 1], ["interests", 4], ["created_at", "2020-06-25 18:22:52.247134"], ["updated_at", "2020-06-25 18:22:52.247134"]]
+  ↳ db/seeds.rb:89
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:89
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:78
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "quintin@metz.org"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:78
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:78
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:89
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "rut", "name", "gender", "region", "birthday", "number", "description", "sexual_orientation", "interests", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["email", "quintin@metz.org"], ["encrypted_password", "$2a$11$SPmg9vMQ.YaAmMcTOsiEhOcRlcSKziFtI3pffXbchfmyBLaP.eB9."], ["rut", "59874525-0"], ["name", "Lesa Padberg"], ["gender", 1], ["region", 7], ["birthday", "1962-09-03"], ["number", 68189831], ["description", "I love to win"], ["sexual_orientation", 1], ["interests", 5], ["created_at", "2020-06-25 18:22:52.368910"], ["updated_at", "2020-06-25 18:22:52.368910"]]
+  ↳ db/seeds.rb:89
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:89
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:78
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "chun_moen@jones.io"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:78
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:78
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:89
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "rut", "name", "gender", "region", "birthday", "number", "description", "sexual_orientation", "interests", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["email", "chun_moen@jones.io"], ["encrypted_password", "$2a$11$x0xvcjXL6pof26zUEzGakey6DIJWE9i1FmFQoCXZrG25MBsu56cJ."], ["rut", "67076932-1"], ["name", "Ms. Rogelio Crist"], ["gender", 0], ["region", 11], ["birthday", "1978-02-23"], ["number", 99846403], ["description", "I love to finish"], ["sexual_orientation", 0], ["interests", 4], ["created_at", "2020-06-25 18:22:52.487364"], ["updated_at", "2020-06-25 18:22:52.487364"]]
+  ↳ db/seeds.rb:89
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:89
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:78
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "krysten.boehm@jast-kunde.io"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:78
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:78
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:89
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "rut", "name", "gender", "region", "birthday", "number", "description", "sexual_orientation", "interests", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["email", "krysten.boehm@jast-kunde.io"], ["encrypted_password", "$2a$11$TxjuCZJfjcW0979pssvMpe9YXHHlErNVMFklcmVtp.F5ATAJ/RuKa"], ["rut", "47893543-9"], ["name", "Kerry Connelly III"], ["gender", 1], ["region", 0], ["birthday", "1994-02-25"], ["number", 35223150], ["description", "I love to zinc"], ["sexual_orientation", 1], ["interests", 1], ["created_at", "2020-06-25 18:22:52.608846"], ["updated_at", "2020-06-25 18:22:52.608846"]]
+  ↳ db/seeds.rb:89
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:89
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:78
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "blaine.olson@dare.net"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:78
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:78
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:89
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "rut", "name", "gender", "region", "birthday", "number", "description", "sexual_orientation", "interests", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["email", "blaine.olson@dare.net"], ["encrypted_password", "$2a$11$h5H7oIXz9JzgCA2EZYqGE.FMJr2BLSo3j9v2s6uapLZrkmBwyVomS"], ["rut", "81561271-k"], ["name", "Karin Herzog"], ["gender", 0], ["region", 11], ["birthday", "1998-08-24"], ["number", 40541778], ["description", "I love to submit"], ["sexual_orientation", 0], ["interests", 4], ["created_at", "2020-06-25 18:22:52.738206"], ["updated_at", "2020-06-25 18:22:52.738206"]]
+  ↳ db/seeds.rb:89
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:89
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:78
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "nicolas@dickens-stanton.org"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:78
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:78
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:89
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "rut", "name", "gender", "region", "birthday", "number", "description", "sexual_orientation", "interests", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["email", "nicolas@dickens-stanton.org"], ["encrypted_password", "$2a$11$O/KlJDjy/nI58PBAkUk3Z.Aq7j012jclJctVMCAKrqri9UBoNoHPC"], ["rut", "89297866-2"], ["name", "Miss Maryanna Cummings"], ["gender", 0], ["region", 9], ["birthday", "1990-07-23"], ["number", 21859749], ["description", "I love to impend"], ["sexual_orientation", 1], ["interests", 5], ["created_at", "2020-06-25 18:22:52.857030"], ["updated_at", "2020-06-25 18:22:52.857030"]]
+  ↳ db/seeds.rb:89
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:89
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:78
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "kenton@buckridge-weissnat.org"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:78
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:78
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:89
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "rut", "name", "gender", "region", "birthday", "number", "description", "sexual_orientation", "interests", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["email", "kenton@buckridge-weissnat.org"], ["encrypted_password", "$2a$11$oxeMBf6IorqfdEvUpUgfW.BIuCedTY99PqEMutyIQFHkBi34q0Cka"], ["rut", "23821206-5"], ["name", "Alan Daniel"], ["gender", 0], ["region", 15], ["birthday", "1971-09-15"], ["number", 24822407], ["description", "I love to drill"], ["sexual_orientation", 0], ["interests", 6], ["created_at", "2020-06-25 18:22:52.981296"], ["updated_at", "2020-06-25 18:22:52.981296"]]
+  ↳ db/seeds.rb:89
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:89
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:93
+  [1m[36mDuenoUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "dueno_users" WHERE "dueno_users"."email" = $1 LIMIT $2[0m  [["email", "brigette_koss@sporer.io"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:93
+  [1m[36mDuenoUser Create (0.3ms)[0m  [1m[32mINSERT INTO "dueno_users" ("email", "encrypted_password", "name", "rut", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "brigette_koss@sporer.io"], ["encrypted_password", "$2a$11$d1PSF9K6JUgdUITmtlV83OIYDym6evhirwkHJXZnKz5Hx9/imGcFa"], ["name", "Kristyn Ebert"], ["rut", "1616493-3"], ["created_at", "2020-06-25 18:22:53.095245"], ["updated_at", "2020-06-25 18:22:53.095245"]]
+  ↳ db/seeds.rb:93
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:93
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:93
+  [1m[36mDuenoUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "dueno_users" WHERE "dueno_users"."email" = $1 LIMIT $2[0m  [["email", "terrance.miller@larkin-mills.net"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:93
+  [1m[36mDuenoUser Create (0.2ms)[0m  [1m[32mINSERT INTO "dueno_users" ("email", "encrypted_password", "name", "rut", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "terrance.miller@larkin-mills.net"], ["encrypted_password", "$2a$11$lJZ71klbVnK9RWzxPRZxuu1G9G6VXGzV7UH7YSGBucG9hXhXYCq.2"], ["name", "Ophelia Botsford"], ["rut", "26672600-7"], ["created_at", "2020-06-25 18:22:53.214893"], ["updated_at", "2020-06-25 18:22:53.214893"]]
+  ↳ db/seeds.rb:93
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:93
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:93
+  [1m[36mDuenoUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "dueno_users" WHERE "dueno_users"."email" = $1 LIMIT $2[0m  [["email", "fatima@wilkinson-glover.biz"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:93
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:93
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:93
+  [1m[36mDuenoUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "dueno_users" WHERE "dueno_users"."email" = $1 LIMIT $2[0m  [["email", "brain.ziemann@yundt-stroman.org"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:93
+  [1m[36mDuenoUser Create (0.3ms)[0m  [1m[32mINSERT INTO "dueno_users" ("email", "encrypted_password", "name", "rut", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "brain.ziemann@yundt-stroman.org"], ["encrypted_password", "$2a$11$P0JQfGMk2bULN8OGgyDyouRs2kXtlYKVfuOfL922i0r3D3kg2v9LK"], ["name", "Lawrence Lehner"], ["rut", "15532189-k"], ["created_at", "2020-06-25 18:22:53.446900"], ["updated_at", "2020-06-25 18:22:53.446900"]]
+  ↳ db/seeds.rb:93
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:93
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:93
+  [1m[36mDuenoUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "dueno_users" WHERE "dueno_users"."email" = $1 LIMIT $2[0m  [["email", "kamala@upton.io"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:93
+  [1m[36mDuenoUser Create (0.2ms)[0m  [1m[32mINSERT INTO "dueno_users" ("email", "encrypted_password", "name", "rut", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "kamala@upton.io"], ["encrypted_password", "$2a$11$cgECs9Fzv0DQLokkLG3ZCOEZlfMT27urJdIzbt5wPHB2hpuTXoaau"], ["name", "Cherlyn Durgan"], ["rut", "14318983-k"], ["created_at", "2020-06-25 18:22:53.563807"], ["updated_at", "2020-06-25 18:22:53.563807"]]
+  ↳ db/seeds.rb:93
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:93
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:93
+  [1m[36mDuenoUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "dueno_users" WHERE "dueno_users"."email" = $1 LIMIT $2[0m  [["email", "otha@rath.io"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:93
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:93
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:93
+  [1m[36mDuenoUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "dueno_users" WHERE "dueno_users"."email" = $1 LIMIT $2[0m  [["email", "colton.cruickshank@lynch.net"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:93
+  [1m[36mDuenoUser Create (0.2ms)[0m  [1m[32mINSERT INTO "dueno_users" ("email", "encrypted_password", "name", "rut", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "colton.cruickshank@lynch.net"], ["encrypted_password", "$2a$11$wFL1Rtbx5j4uToGbFTatDOEIObLUMAlnMhcRVFOtrsqYU2mdk5Tka"], ["name", "Jan Veum"], ["rut", "64491836-k"], ["created_at", "2020-06-25 18:22:53.796216"], ["updated_at", "2020-06-25 18:22:53.796216"]]
+  ↳ db/seeds.rb:93
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:93
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:93
+  [1m[36mDuenoUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "dueno_users" WHERE "dueno_users"."email" = $1 LIMIT $2[0m  [["email", "mohammed_langosh@hickle.org"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:93
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:93
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:93
+  [1m[36mDuenoUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "dueno_users" WHERE "dueno_users"."email" = $1 LIMIT $2[0m  [["email", "vivienne_gislason@kohler.io"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:93
+  [1m[36mDuenoUser Create (0.4ms)[0m  [1m[32mINSERT INTO "dueno_users" ("email", "encrypted_password", "name", "rut", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "vivienne_gislason@kohler.io"], ["encrypted_password", "$2a$11$N9jZZNH6OrjpIBsP3b3eXOMBEcf8Pxuz2zevdHWSqqTFtsD15kGPG"], ["name", "Royal Kutch I"], ["rut", "70702556-5"], ["created_at", "2020-06-25 18:22:54.045302"], ["updated_at", "2020-06-25 18:22:54.045302"]]
+  ↳ db/seeds.rb:93
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:93
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:93
+  [1m[36mDuenoUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "dueno_users" WHERE "dueno_users"."email" = $1 LIMIT $2[0m  [["email", "rodrick@schaefer-ziemann.biz"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:93
+  [1m[36mDuenoUser Create (0.3ms)[0m  [1m[32mINSERT INTO "dueno_users" ("email", "encrypted_password", "name", "rut", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "rodrick@schaefer-ziemann.biz"], ["encrypted_password", "$2a$11$LrGLWGLHWAR90MT.hRIFfu72oO2VHYlHNDyKZE3Gyy8RxrNDIJMWG"], ["name", "Boris Grant II"], ["rut", "47201697-0"], ["created_at", "2020-06-25 18:22:54.166947"], ["updated_at", "2020-06-25 18:22:54.166947"]]
+  ↳ db/seeds.rb:93
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:93
