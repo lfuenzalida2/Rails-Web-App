@@ -6,6 +6,7 @@ class User < ApplicationRecord
   has_many :locals
   has_many :reviews, dependent: :destroy
   has_one_attached :avatar
+
   validates :rut, :rut => true
   validates :name, :presence => true, :format => { :with => /\A[a-z A-Z]+\z/,
                                                 :message => "Only letters allowed"},
@@ -30,6 +31,7 @@ class User < ApplicationRecord
 
   private
   def avatar_missing
+    p "asdasdas"
     if avatar.attached? == false
       errors.add(:avatar, 'or Image are missing!')
     end

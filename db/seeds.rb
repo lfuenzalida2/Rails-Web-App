@@ -48,7 +48,6 @@ User.create(
     birthday:"10/05/1995",
     description:"Yo soy mas alegre",
     number: 36332576,
-    photos:"none",
     gender:"female",
     interests:"teatro",
     sexual_orientation:"male",
@@ -84,11 +83,10 @@ interests = ['deporte', 'musica', 'arte', 'ciencias', 'comer', 'literatura', 'te
         birthday: Faker::Date.unique.birthday(min_age: 18, max_age: 65),
         description: "I love to #{Faker::Verb.base}",
         number: Faker::Number.unique.number(digits: 8),
-        photos:"none",
         gender: Faker::Gender.binary_type.downcase,
         interests: interests[rand(interests.length)],
         sexual_orientation: Faker::Gender.binary_type.downcase,
-        region: region[rand(region.length)])
+        region: region[rand(region.length)]).save(validate: false)
 end
 
 10.times do |i|
