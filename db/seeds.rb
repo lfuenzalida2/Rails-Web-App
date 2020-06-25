@@ -1,6 +1,10 @@
 # frozen_string_literal: true
 require 'faker'
 
+region = ['I', 'I', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X', 'XI', 'XII', 'Metropolitana', 'XIV', 'XV', 'XVI']
+interests = ['deporte', 'musica', 'arte', 'ciencias', 'comer', 'literatura', 'teatro']
+tipo = ['restaurante', 'cine', 'bar', 'motel']
+
 User.create(
     email: "example1@dccitas.cl",
     password: "123456",
@@ -71,8 +75,31 @@ DuenoUser.create(
     rut:"15427936-9",
     name:"Hillary Clinton")
 
-region = ['I', 'I', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X', 'XI', 'XII', 'Metropolitana', 'XIV', 'XV', 'XVI']
-interests = ['deporte', 'musica', 'arte', 'ciencias', 'comer', 'literatura', 'teatro']
+Local.create(
+    nombre: Faker::Restaurant.unique.name,
+    direccion: "#{Faker::Address.city}, #{Faker::Address.unique.street_address}",
+    tipo: tipo[rand(tipo.length)],
+    dueno_user_id: 1).save(validate: false)
+
+
+Local.create(
+    nombre: Faker::Restaurant.unique.name,
+    direccion: "#{Faker::Address.city}, #{Faker::Address.unique.street_address}",
+    tipo: tipo[rand(tipo.length)],
+    dueno_user_id: 2).save(validate: false)
+
+
+Local.create(
+    nombre: Faker::Restaurant.unique.name,
+    direccion: "#{Faker::Address.city}, #{Faker::Address.unique.street_address}",
+    tipo: tipo[rand(tipo.length)],
+    dueno_user_id: 2).save(validate: false)
+
+Local.create(
+    nombre: Faker::Restaurant.unique.name,
+    direccion: "#{Faker::Address.city}, #{Faker::Address.unique.street_address}",
+    tipo: tipo[rand(tipo.length)],
+    dueno_user_id: 1).save(validate: false)
 
 30.times do |i|
     User.create(
@@ -97,3 +124,10 @@ end
         name: Faker::Name.unique.name)
 end
 
+10.times do |i|
+    Local.create(
+        nombre: Faker::Restaurant.unique.name,
+        direccion: "#{Faker::Address.city}, #{Faker::Address.unique.street_address}",
+        tipo: tipo[rand(tipo.length)],
+        dueno_user_id: rand(1..10)).save(validate: false)
+end

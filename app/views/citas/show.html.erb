@@ -31,7 +31,7 @@
                         <%if @to_date_user[0].avatar.attached?%>
                             <td><%=cl_image_tag(@to_date_user[0].avatar.key, width: 200, height: 250, crop: :scale)%></td>   
                         <%elsif @to_date_user[0].avatar.attached? == false%>
-                            <td>Suba una imagen para que sea visualizada!</td>  
+                            <td>Upload an image, so other people can see you!</td>  
                         <%end%>
                         </tr>
                         <tr>
@@ -44,7 +44,7 @@
                         <%if @locals.where(id: date.local_id)[0].avatar.attached?%>
                             <td><%= cl_image_tag(@locals.where(id: date.local_id)[0].avatar.key, width: 200, height: 250, crop: :scale)%></td>
                         <%elsif @locals.where(id: date.local_id)[0].avatar.attached? == false%>
-                            <td>Suba una imagen para que sea visualizada!</td>  
+                            <td>Upload an image, so other people can see you!</td>  
                         <%end%>
                         </tr>
                         <tr>
@@ -68,7 +68,7 @@
                         <%if @to_date_user[0].avatar.attached?%>
                             <td><%=cl_image_tag(@to_date_user[0].avatar.key, width: 200, height: 250, crop: :scale)%></td>   
                         <%elsif @to_date_user[0].avatar.attached? == false%>
-                            <td>Suba una imagen para que sea visualizada!</td>  
+                            <td>Upload an image, so other people can see you!</td>  
                         <%end%>
                         </tr>
                         <tr>
@@ -81,7 +81,7 @@
                         <%if @locals.where(id: date.local_id)[0].avatar.attached?%>
                             <td><%= cl_image_tag(@locals.where(id: date.local_id)[0].avatar.key, width: 200, height: 250, crop: :scale)%></td>
                         <%elsif @locals.where(id: date.local_id)[0].avatar.attached? == false%>
-                            <td>Suba una imagen para que sea visualizada!</td>  
+                            <td>Upload an image, so other people can see you!</td>  
                         <%end%>
                         </tr>
                         <tr>
@@ -91,7 +91,7 @@
                             <td>Time: <%= date.hora.strftime("%H:%M")%></td>
                         </tr>
                         <tr>
-                        <td><%= link_to "Cancel Date", citas_new_path(cita_id: date.id, delete: true), :method => :patch %></td>
+                            <td><%= link_to "Cancel Date", citas_new_path(cita_id: date.id, delete: true), :method => :patch %></td>
                         </tr>
                     </table>
                 <% end %>
