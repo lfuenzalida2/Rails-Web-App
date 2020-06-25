@@ -69,8 +69,8 @@
                 <td>Time: <%= @invited_to_cita[0].hora.strftime("%H:%M")%></td>
             </tr>
         </table>
-        <%= link_to "Accept", citas_new_path(cita_id: @invited_to_cita[0].id, accepted: true), :method => :patch %>
-        <%= link_to "Refuse", citas_new_path(cita_id: @invited_to_cita[0].id, delete: true), :method => :patch %>
+        <%= link_to "Accept", citas_new_path(cita_id: @invited_to_cita[0].id, accepted: true), :method => :patch, class:'btn btn-primary' %>
+        <%= link_to "Refuse", citas_new_path(cita_id: @invited_to_cita[0].id, delete: true), :method => :patch, class:'btn btn-primary' %>
 
     <% elsif @unaccepted_cita.length != 0%>
 

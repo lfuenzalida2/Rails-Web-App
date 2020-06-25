@@ -54,7 +54,7 @@
                             <td>Time: <%= date.hora.strftime("%H:%M")%></td>
                         </tr>
                         <tr>
-                        <td><%= link_to "Cancel Date", citas_new_path(cita_id: date.id, delete: true), :method => :patch %></td>
+                        <td><%= link_to "Cancel Date", citas_new_path(cita_id: date.id, delete: true), :method => :patch, class:'btn btn-primary' %></td>
                         </tr>
                     </table>
                 <% end %>
@@ -91,7 +91,7 @@
                             <td>Time: <%= date.hora.strftime("%H:%M")%></td>
                         </tr>
                         <tr>
-                            <td><%= link_to "Cancel Date", citas_new_path(cita_id: date.id, delete: true), :method => :patch %></td>
+                            <td><%= link_to "Cancel Date", citas_new_path(cita_id: date.id, delete: true), :method => :patch, class:'btn btn-primary' %></td>
                         </tr>
                     </table>
                 <% end %>

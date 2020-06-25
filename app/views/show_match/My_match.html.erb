@@ -39,7 +39,7 @@
             <tr>
             <td><%= user.description%></td>
             </tr>
-            <td><%= link_to "View Date Status", citas_new_path(matched_user: user.id, create: false), :method => :post%></td>
+            <td><%= link_to "View Date Status", citas_new_path(matched_user: user.id, create: false), :method => :post, class:'btn btn-primary'%></td>
             </tr>
             </table>
             <br>
