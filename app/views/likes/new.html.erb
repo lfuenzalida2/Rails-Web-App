@@ -37,8 +37,11 @@
                     <% if user.id != current_user.id && @liked_users.exclude?(user.id) && @posible_partners.include?(user.id)%>
                         <table>
                             <tr>
-                                <td><%= user.photos%></td>
-                                <td><%=  @liked_users%></td>
+                            <%if user.avatar.attached?%>
+                                <td><%=cl_image_tag(user.avatar.key, width: 200, height: 250, crop: :scale)%></td>   
+                            <%elsif user.avatar.attached? == false%>
+                                <td>Upload an image, so other people can see you!</td>  
+                            <%end%>
                             </tr>
                             <tr>
                                 <td><%= user.name%></td>
@@ -48,11 +51,11 @@
                             </tr>
                         </table>
                         <% if @likers_users.key? user.id%>
-                            <%= link_to "Like", likes_update_path(id: @likers_users[user.id], match: true), :method => :patch %>
-                            <%= link_to "Dislike", likes_update_path(id: @likers_users[user.id], match: false), :method => :patch %>    
+                            <%= link_to "Like", likes_update_path(id: @likers_users[user.id], match: true), :method => :patch, class:'btn btn-primary' %>
+                            <%= link_to "Dislike", likes_update_path(id: @likers_users[user.id], match: false), :method => :patch, class:'btn btn-primary' %>    
                         <% else %>
-                            <%= link_to "Like", likes_new_path(sender_user: current_user.id, receiver_user: user.id), :method => :post %>
-                            <%= link_to "Disike", likes_new_path(sender_user: current_user.id, receiver_user: user.id, match: false), :method => :post %>
+                            <%= link_to "Like", likes_new_path(sender_user: current_user.id, receiver_user: user.id), :method => :post, class:'btn btn-primary' %>
+                            <%= link_to "Disike", likes_new_path(sender_user: current_user.id, receiver_user: user.id, match: false), :method => :post, class:'btn btn-primary' %>
                         <% end %>
                         <br>
                     <% end %>

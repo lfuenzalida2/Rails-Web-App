@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class LikesController < ApplicationController
   def index
     @like = Like.all
@@ -34,7 +36,11 @@ class LikesController < ApplicationController
     like_params = params.permit(:match)
     @like = Like.find(params[:id])
     if @like.update(like_params)
-      redirect_to likes_new_path
+      if like_params[:match] == 'true'
+        redirect_to new_matches_new_path
+      else
+        redirect_to likes_new_path
+      end
     else
       redirect_to likes_new_path
     end

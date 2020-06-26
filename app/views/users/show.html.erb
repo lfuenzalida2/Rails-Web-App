@@ -20,7 +20,6 @@
         </thead>
         <tbody>
             <tr>
-            <%= p @user %>
                 <td><%= @user.id %></td>
                 <td><%= @user.name %></td>
                 <td><%= @user.rut %></td>
@@ -32,7 +31,12 @@
                 <td><%= @user.description %></td>
                 <td><%= @user.sexual_orientation %></td>
                 <td><%= @user.interests %></td>
-                <td><%= @user.photos %></td>
+                <%if @user.avatar.attached?%>
+                    <td><%=cl_image_tag(@user.avatar.key, width: 200, height: 250, crop: :scale)%></td>   
+                <%else%>
+                    <td>Upload an image, so other people can see you!</td>  
+                <%end%>
+
             </tr>
         </tbody>
     </table>

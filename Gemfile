@@ -21,7 +21,8 @@ gem 'uglifier', '>= 1.3.0'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
-# Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
+# Turbolinks makes navigating your web application faster.
+# Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'devise', '~> 4.7', '>= 4.7.1'
@@ -32,19 +33,24 @@ gem 'jbuilder', '~> 2.5'
 gem 'bcrypt', '~> 3.1.7'
 gem 'rut_validator'
 
-# New Gem
+# Cloudinary is a cloud service that offers a solution to a web applications
+# entire image management pipeline.
+gem 'cloudinary'
 
-gem 'carrierwave', '~> 2.0'
+# This gem provides a simple and extremely flexible way to upload files from Ruby applications.
+# gem 'carrierwave', '~> 2.0'
 
 # Use ActiveStorage variant
-# gem 'mini_magick', '~> 4.8'
-
+gem 'image_magick'
+gem 'mini_magick', '~> 4.8'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'bootstrap', '~> 4.5'
+gem 'faker', '~> 2.12'
+gem 'validates_timeliness', '~> 4.1', '>= 4.1.1'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

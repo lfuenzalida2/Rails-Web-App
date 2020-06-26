@@ -1,0 +1,87 @@
+<div class="jumbotron">
+    <center>
+        <% if @done %>
+            <h4>You have already reviewed this local in the date</h4>
+            <h5>This is your review</h5>
+            <table class="card" style="width: 40%;">
+                <tr>
+                    <td>
+                        <span class="font-weight-bold">Rating: </span>
+                        <span><%= @review[0].rating %></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="font-weight-bold">Review: </span>
+                        <span><%= @review[0].review %></span>
+                    </td>
+                </tr>
+            </table>
+        <% end %>
+        <p id="notice"><%= notice %></p>
+        <div class="card" style="width: 40%;">
+            <div class="card-img-top">
+                <%if @local.avatar.attached?%>
+                    <td><%=cl_image_tag(@local.avatar.key, width: 200, height: 250, crop: :scale, class:"card-img-top")%></td>   
+                <%else%>
+                    <span>There is no image available</span> 
+                <%end%>
+            </div>
+            <div class="card-body">
+                <table>
+                    <tr>
+                        <td>
+                            <span class="font-weight-bold">Local Name: </span>
+                            <span><%= @local.nombre %></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="font-weight-bold">Direction: </span>
+                            <span><%= @local.direccion %></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="font-weight-bold">Type: </span>
+                            <span class="text-right"><%= @local.tipo %></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="font-weight-bold">Number of dates: </span>
+                            <span><%= @local.n_citas %></span>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <% if !@done %>
+            <%= form_with(method: :post) do |form|%>
+                <%= hidden_field_tag :local_id, @local.id %>
+                <%= hidden_field_tag :date_id, params[:date_id] %>
+                <div class='field'> 
+                    <span class="font-weight-bold">
+                        <%= form.label :Rating %>
+                    </span>
+                    <%= form.number_field :rating, max: 5, min: 1 %>
+                </div>
+
+                <div class='field'> 
+                    <span class="font-weight-bold">
+                        <%= form.label :Review %>
+                    </span>
+                    <%= form.text_area :review %>
+                </div>
+
+                <div class="actions">
+                    <%= form.submit 'Send Review!', :class => 'btn btn-primary' %>
+                </div>
+            <% end %>
+        <% else %>
+            <br>
+            <%= link_to "Go home", '/', class:'btn btn-primary' %>
+        <% end %>
+
+    </center>
+</div>

@@ -1,0 +1,106 @@
+<div class="jumbotron">
+    <center>
+    <h1>My Dates</h1>
+        <% if current_user %>
+            <% @invited_users = [] %>
+            <% @inviters_users = [] %>
+            <% @citas.each do |cita| %>
+                <% if cita.sender_id == current_user.id && cita.accepted == true %>
+                    <% @invited_users.push(cita.receiver_id) %>
+                <% end %>
+                <% if cita.receiver_id == current_user.id && cita.accepted == true %>
+                    <% @inviters_users.push(cita.sender_id) %>
+                <% end %>
+            <% end %>
+            <% if @invited_users.length() + @inviters_users.length() == 0 %>
+                <%= image_tag("brand/fire2.png", size: '200x200') %>
+                <p>
+                    You don't have dates yet. Come back later. 
+                </p>
+                <%= link_to "Find your ideal partner here", likes_new_path, class: "nav-link" %>
+            <% else %>
+                <% @invited_dates = [] %>
+                <% @inviter_dates = [] %>
+                <% @invited_users.each do |user| %>
+                    <% @invited_dates.push(@citas.where(sender_id: current_user.id, receiver_id: user)[0]) %>
+                <% end %>
+                 <% @invited_dates.each do |date| %>
+                    <% if date.fecha > DateTime.current %>
+                        <!-- Send controller -->
+                    <% end %>
+                    <% @to_date_user = @users.where(id: date.receiver_id) %>
+                    <table>
+                        <tr>
+                        <%if @to_date_user[0].avatar.attached?%>
+                            <td><%=cl_image_tag(@to_date_user[0].avatar.key, width: 200, height: 250, crop: :scale)%></td>   
+                        <%elsif @to_date_user[0].avatar.attached? == false%>
+                            <td>Upload an image, so other people can see you!</td>  
+                        <%end%>
+                        </tr>
+                        <tr>
+                            <td><%= @to_date_user[0].name%></td>
+                        </tr>
+                        <tr>
+                            <td>Local: <%= @locals.where(id: date.local_id)[0].nombre%></td>
+                        </tr>
+                        <tr>
+                        <%if @locals.where(id: date.local_id)[0].avatar.attached?%>
+                            <td><%= cl_image_tag(@locals.where(id: date.local_id)[0].avatar.key, width: 200, height: 250, crop: :scale)%></td>
+                        <%elsif @locals.where(id: date.local_id)[0].avatar.attached? == false%>
+                            <td>Upload an image, so other people can see you!</td>  
+                        <%end%>
+                        </tr>
+                        <tr>
+                            <td>Date: <%= date.fecha%></td>
+                        </tr>
+                        <tr>
+                            <td>Time: <%= date.hora.strftime("%H:%M")%></td>
+                        </tr>
+                        <tr>
+                        <td><%= link_to "Cancel Date", citas_new_path(cita_id: date.id, delete: true), :method => :patch, class:'btn btn-primary' %></td>
+                        </tr>
+                    </table>
+                <% end %>
+                <% @inviters_users.each do |user| %>
+                    <% @inviter_dates.push(@citas.where(sender_id: user, receiver_id: current_user.id)[0]) %>
+                <% end %>
+                <% @inviter_dates.each do |date| %>
+                    <% if date.fecha >= Date.today %>
+                        <% @to_date_user = @users.where(id: date.sender_id) %>
+                        <table>
+                            <tr>
+                            <%if @to_date_user[0].avatar.attached?%>
+                                <td><%=cl_image_tag(@to_date_user[0].avatar.key, width: 200, height: 250, crop: :scale)%></td>   
+                            <%elsif @to_date_user[0].avatar.attached? == false%>
+                                <td>Upload an image, so other people can see you!</td>  
+                            <%end%>
+                            </tr>
+                            <tr>
+                                <td><%= @to_date_user[0].name%></td>
+                            </tr>
+                            <tr>
+                                <td>Local: <%= @locals.where(id: date.local_id)[0].nombre%></td>
+                            </tr>
+                            <tr>
+                            <%if @locals.where(id: date.local_id)[0].avatar.attached?%>
+                                <td><%= cl_image_tag(@locals.where(id: date.local_id)[0].avatar.key, width: 200, height: 250, crop: :scale)%></td>
+                            <%elsif @locals.where(id: date.local_id)[0].avatar.attached? == false%>
+                                <td>Upload an image, so other people can see you!</td>  
+                            <%end%>
+                            </tr>
+                            <tr>
+                                <td>Date: <%= date.fecha%></td>
+                            </tr>
+                            <tr>
+                                <td>Time: <%= date.hora.strftime("%H:%M")%></td>
+                            </tr>
+                            <tr>
+                                <td><%= link_to "Cancel Date", citas_new_path(cita_id: date.id, delete: true), :method => :patch, class:'btn btn-primary' %></td>
+                            </tr>
+                        </table>
+                    <% end %>
+                <% end %>
+            <% end %>
+        <% end %> 
+    </center>
+</div>

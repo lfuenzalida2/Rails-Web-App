@@ -1,27 +1,33 @@
-<p id="notice"><%= notice %></p>
-<h1>New Local</h1>
+<center>
+    <div class="jumbotron">
+    <h1>New Local</h1>
+    <p id="notice"><%= notice %></p>
+    <%= form_with(model: @local, method: :post) do |form|%>
+        <div class='field'> 
+            <%= form.label :Name %>
+            <%= form.text_field :nombre %>
+        </div>
+        <br>
+        <div class='field'> 
+            <%= form.label :Type %>
+            <%= form.select :tipo, Local.tipos.keys.to_a %>
+        </div>
+        <br>
+        <div class='field'> 
+            <%= form.label :Direction %>
+            <%= form.text_field :direccion %>
+        </div>
+        <br>
+        <div class="field">
+        <%= form.label :Photo %><br />
+        <%= form.file_field :avatar %><br />
+        </div><br />
 
-<div class="jumbotron">
-<%= form_with(model: @local, method: :post) do |form|%>
-    <div class='field'> 
-        <%= form.label :Name %>
-        <%= form.text_field :nombre %>
+        <div class="actions">
+            <%= form.submit %>
+        </div>
+    <% end %>
+    <br>
+    <%= link_to 'Locals Lists', locals_path, class: "btn btn-primary" %>
     </div>
-
-    <div class='field'> 
-        <%= form.label :Type %>
-        <%= form.select :tipo, Local.tipos.keys.to_a %>
-    </div>
-
-    <div class='field'> 
-        <%= form.label :Direction %>
-        <%= form.text_field :direccion %>
-    </div>
-
-    <div class="actions">
-        <%= form.submit %>
-    </div>
-<% end %>
-<br>
-<%= link_to 'Locals Lists', locals_path, class: "btn btn-primary" %>
-</div>
+</center>
