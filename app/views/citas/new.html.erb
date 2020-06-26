@@ -1,24 +1,31 @@
 <div class="jumbotron">
     <% if current_user %>
         <center>
-        <%@existing_cita = 0%>
+        <%@existing_cita = []%>
         <%@cita_receiver = @citas.where(receiver_id: current_user.id, sender_id: @matched_user, accepted: true)%>
         <%@cita_sender = @citas.where(sender_id: current_user.id, receiver_id: @matched_user, accepted: true)%>
-        <%@existing_cita = @cita_sender[0] if @cita_sender.length() != 0%>
-        <%@existing_cita = @cita_receiver[0] if @cita_receiver.length() != 0%>
+        <%@existing_cita = @cita_sender if @cita_sender.length() != 0%>
+        <%@existing_cita = @cita_receiver if @cita_receiver.length() != 0%>
         <%@unaccepted_cita = @citas.where(sender_id: current_user.id, receiver_id: @matched_user, accepted: false)%>
         <%@invited_to_cita = @citas.where(receiver_id: current_user.id, sender_id: @matched_user, accepted: false)%>
-        <% if @existing_cita != 0 %>
+        
+        <% @existing_cita.each do |cita| %>
+            <% if cita.fecha < Date.today %>
+                <% @existing_cita.delete(cita) %>
+            <% end %>
+        <% end %>
 
+        <% if @existing_cita.length() != 0 %>
+            <% @existing_cita = @existing_cita[0] %>
             <h1>Your Date Status</h1>
             <table>
                 <tr>
                     <td>Local: <%= @locals.find(@existing_cita.local_id).nombre %></td>
                 </tr>
                 <tr>
-                    <%if @locals.find(@existing_cita.local_id).avatar.attached?%>
+                    <%if @locals.find(@existing_cita.local_id).avatar.attached? %>
                         <td><%= cl_image_tag(@locals.find(@existing_cita.local_id).avatar.key, width: 200, height: 250, crop: :scale)%></td>
-                    <%elsif @locals.find(@existing_cita.local_id).avatar.attached? == false%>
+                    <%else %>
                         <td>Upload an image, so other people can see you!</td>  
                     <%end%>
                 </tr>
@@ -29,6 +36,7 @@
                     <td>Time: <%= @existing_cita.hora.strftime("%H:%M")%></td>
                 </tr>
                 
+                <!-- This is a  -->
                 <tr>
                     <td>
                         <span>How was the date? Want to leave a review to the place?</span>
@@ -38,11 +46,13 @@
                 </tr>
 
                 <!-- This part is if the date has already passed -->
-                <% if @existing_cita.fecha <= DateTime.current  %>
+                <% if @existing_cita.fecha <= Date.today %>
                     <tr>
-                        <p>Hola </p>
-                        <br>
-                        <%= @existing_cita.fecha %>
+                        <td>
+                            <span>How was the date? Want to leave a review to the place?</span>
+                            <br>
+                            <%= link_to "Click here!", reviews_new_path(local_id: @existing_cita.local_id, date_id: @existing_cita.id ), :method => :get, class:'btn btn-primary' %>
+                        </td>
                     </tr>
                 <% end %>
 
@@ -59,7 +69,7 @@
                 <tr>
                     <%if @locals.find(@invited_to_cita[0].local_id).avatar.attached?%>
                         <td><%= cl_image_tag(@locals.find(@invited_to_cita[0].local_id).avatar.key, width: 200, height: 250, crop: :scale)%></td>
-                    <%elsif @locals.find(@invited_to_cita[0].local_id).avatar.attached?%>
+                    <%else %>
                         <td>Upload an image, so other people can see you!</td>  
                     <%end%>
                 </tr>
@@ -84,7 +94,7 @@
                 <tr>
                     <%if @locals.find(@unaccepted_cita[0].local_id).avatar.attached?%>
                         <td><%= cl_image_tag(@locals.find(@unaccepted_cita[0].local_id).avatar.key, width: 200, height: 250, crop: :scale)%></td>
-                    <%elsif @locals.find(@unaccepted_cita[0].local_id).avatar.attached? == false%>
+                    <%else %>
                         <td>Upload an image, so other people can see you!</td>  
                     <%end%>
                 </tr>
@@ -115,7 +125,7 @@
 
                     <div class='field'> 
                         <%= form.label :Date %>
-                        <%= form.select :fecha, Array(0..14).map{|j| Date.tomorrow + j} %>
+                        <%= form.select :fecha, Array(0..14).map{|j| Date.yesterday + j - 1 } %>
                     </div>
 
                     <div class='field'> 

@@ -60,26 +60,11 @@
     
             <% else %>
             <ul class="navbar-nav">
-              <span class="navbar-text">
-                User:
-              </span>
               <li class="nav-item">
                 <%= link_to "Log In", new_user_session_path, class: "nav-link" %>
               </li>
               <li class="nav-item">
                 <%= link_to "Register", new_user_registration_path, class: "nav-link" %>
-              </li>
-            </ul>
-    
-            <ul class="navbar-nav">
-              <span class="navbar-text">
-                | Local Owner:
-              </span>
-              <li class="nav-item">
-                <%= link_to "Log In", new_dueno_user_session_path, class: "nav-link" %> 
-              </li>
-              <li class="nav-item">
-                <%= link_to "Register", new_dueno_user_registration_path, class: "nav-link" %>
               </li>
             </ul>
             

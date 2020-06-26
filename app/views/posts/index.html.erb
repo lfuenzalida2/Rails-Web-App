@@ -7,8 +7,7 @@
     </p>
 </div>
 
-<div class="container">
-    <%= link_to  "Show Registered Users", users_path, class: "btn btn-primary" %>
-
-    <%= link_to  "Show Registered Owner Users", dueno_users_path, class: "btn btn-primary" %>
+<div class="nav float-r">
+    <%= link_to "Log In", new_dueno_user_session_path, class: "btn btn-primary" %>
+    <%= link_to "Register", new_dueno_user_registration_path, class: "btn btn-primary" %>
 </div>
