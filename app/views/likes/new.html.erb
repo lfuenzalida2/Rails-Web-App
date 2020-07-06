@@ -49,6 +49,9 @@
                             <tr>
                                 <td><%= user.description%></td>
                             </tr>
+                            <tr>
+                                <td><strong>Interests:</strong> <%= user.interests %></td>
+                            </tr>
                         </table>
                         <% if @likers_users.key? user.id%>
                             <%= link_to "Like", likes_update_path(id: @likers_users[user.id], match: true), :method => :patch, class:'btn btn-primary' %>

@@ -31,13 +31,13 @@
             <%end%>
             </tr>
             <tr>
-            <td><%= user.name%></td>
+              <td><%= user.name%></td>
             </tr>
             <tr>
-            <td><%= user.interests%></td>
+              <td><%= user.interests%></td>
             </tr>
             <tr>
-            <td><%= user.description%></td>
+              <td><%= user.description%></td>
             </tr>
             <td><%= link_to "View Date Status", citas_new_path(matched_user: user.id, create: false), :method => :post, class:'btn btn-primary'%></td>
             </tr>
