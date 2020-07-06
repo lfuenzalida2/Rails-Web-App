@@ -34,7 +34,7 @@
                         <%if @to_date_user[0].avatar.attached?%>
                             <td><%=cl_image_tag(@to_date_user[0].avatar.key, width: 200, height: 250, crop: :scale)%></td>   
                         <%elsif @to_date_user[0].avatar.attached? == false%>
-                            <td>Upload an image, so other people can see you!</td>  
+                            <td><%= cl_image_tag('no_disponible_tbpojy.jpg', width: 200, height: 200, crop: :scale)%></td>  
                         <%end%>
                         </tr>
                         <tr>
@@ -47,8 +47,6 @@
                         <%if @locals.where(id: date.local_id)[0].avatar.attached?%>
                             <td><%= cl_image_tag(@locals.where(id: date.local_id)[0].avatar.key, width: 200, height: 250, crop: :scale)%></td>
                         <%elsif @locals.where(id: date.local_id)[0].avatar.attached? == false%>
-                            <td>Upload an image, so other people can see you!</td>  
-                        <%end%>
                         </tr>
                         <tr>
                             <td>Date: <%= date.fecha%></td>
@@ -72,7 +70,7 @@
                             <%if @to_date_user[0].avatar.attached?%>
                                 <td><%=cl_image_tag(@to_date_user[0].avatar.key, width: 200, height: 250, crop: :scale)%></td>   
                             <%elsif @to_date_user[0].avatar.attached? == false%>
-                                <td>Upload an image, so other people can see you!</td>  
+                                <td><%= cl_image_tag('no_disponible_tbpojy.jpg', width: 200, height: 200, crop: :scale)%></td>  
                             <%end%>
                             </tr>
                             <tr>
@@ -85,7 +83,7 @@
                             <%if @locals.where(id: date.local_id)[0].avatar.attached?%>
                                 <td><%= cl_image_tag(@locals.where(id: date.local_id)[0].avatar.key, width: 200, height: 250, crop: :scale)%></td>
                             <%elsif @locals.where(id: date.local_id)[0].avatar.attached? == false%>
-                                <td>Upload an image, so other people can see you!</td>  
+                                <td><%= cl_image_tag('no_disponible_tbpojy.jpg', width: 200, height: 200, crop: :scale)%></td>  
                             <%end%>
                             </tr>
                             <tr>

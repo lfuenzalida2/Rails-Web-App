@@ -24,7 +24,7 @@
                 <%if @local.avatar.attached?%>
                     <td><%=cl_image_tag(@local.avatar.key, width: 200, height: 250, crop: :scale, class:"card-img-top")%></td>   
                 <%else%>
-                    <span>There is no image available</span> 
+                    <span><%= cl_image_tag('alquiler_ofej9u.png', width: 250, height: 200, crop: :scale)%></span> 
                 <%end%>
             </div>
             <div class="card-body">

@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
 class CitasController < ApplicationController
-  def new
+    def new
     @cita = Cita.new
-    @locals = Local.all
+    @locals = Local.all.includes(:reviews)
     if params.permit(:create)[:create] == 'false'
       @matched_user = params.permit(:matched_user)[:matched_user]
       @citas = Cita.all

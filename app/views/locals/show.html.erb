@@ -31,6 +31,17 @@
     <%end%>
   </p>
 
+  <div class="jumbotron">
+    <h3><strong>Review</strong></h3>
+    <p>
+      <% @local.reviews.each do |review| %>
+        <p><strong>Rating: </strong><%= review.rating %></p>
+        <p><strong>Description: </strong><%= review.review %></p>
+        <hr>
+      <% end %>
+    </p>
+  </div>
+
   <%= link_to 'Locals list', locals_path, class: "btn btn-primary" %>
   <% if current_dueno_user %>
     <% if current_dueno_user.id == @local.dueno_user_id %>

@@ -27,7 +27,7 @@
             <%if user.avatar.attached?%>
               <td><%=cl_image_tag(user.avatar.key, width: 200, height: 250, crop: :scale)%></td>   
             <%elsif user.avatar.attached? == false%>
-                <td>Upload an image, so other people can see you!</td>  
+                <td><%= cl_image_tag('no_disponible_tbpojy.jpg', width: 200, height: 200, crop: :scale)%></td>  
             <%end%>
             </tr>
             <tr>
