@@ -47,7 +47,7 @@
                         <%if @locals.where(id: date.local_id)[0].avatar.attached?%>
                             <td><%= cl_image_tag(@locals.where(id: date.local_id)[0].avatar.key, width: 200, height: 250, crop: :scale)%></td>
                         <%elsif @locals.where(id: date.local_id)[0].avatar.attached? == false%>
-                            <td><%= cl_image_tag('alquiler_ofej9u.png', width: 200, height: 200, crop: :scale)%></td>  
+                            <td><%= cl_image_tag('alquiler_ofej9u.png', width: 250, height: 200, crop: :scale)%></td>  
                         <%end%>
                         </tr>
                         <tr>
