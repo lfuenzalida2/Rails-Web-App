@@ -118,7 +118,31 @@
                     <%= hidden_field_tag :sender_id, current_user.id %>
                     <%= hidden_field_tag :accepted, false %>
                     <%= hidden_field_tag :create, true %>
-                    <div class='field'> 
+                    <div class='field locals overflow-auto'>
+                        <% @locals.each do |local| %>
+                            <div>
+                                <% if local.avatar.attached? %>
+                                    <%= local.avatar.key %>
+                                    <%= cl_image_tag(local.avatar.key, width: 200, height: 250, crop: :scale)%>
+                                <% else %>
+                                    <%= cl_image_tag('no_disponible_tbpojy.jpg', width: 200, height: 200, crop: :scale)%>
+                                <% end %>
+
+                                <p>Name: <%= local.nombre %></p>
+                                <p>Direction: <%= local.direccion %></p>
+                                <p>Type: <%= local.tipo %></p>
+                                <% if local.reviews.size > 0 %>
+                                    <p>Rating: <%= local.reviews.average(:rating) %></p>
+                                <% else %>
+                                    <p>Rating: 0</p>
+                                <% end %>
+                                
+                                
+                            </div>
+                        <% end %>
+                    </div>
+
+                    <div class='field'>
                         <%= form.label :Local %>
                         <%= form.select :local_id, @locals_list %>
                     </div>
