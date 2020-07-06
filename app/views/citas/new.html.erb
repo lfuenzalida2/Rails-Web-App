@@ -122,7 +122,6 @@
                         <% @locals.each do |local| %>
                             <div>
                                 <% if local.avatar.attached? %>
-                                    <%= local.avatar.key %>
                                     <%= cl_image_tag(local.avatar.key, width: 200, height: 250, crop: :scale)%>
                                 <% else %>
                                     <%= cl_image_tag('alquiler_ofej9u.png', width: 250, height: 200, crop: :scale)%>
