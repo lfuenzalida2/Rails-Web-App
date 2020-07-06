@@ -18,9 +18,9 @@
         <% if @existing_cita.length() != 0 %>
             <% @existing_cita = @existing_cita[0] %>
             <h1>Your Date Status</h1>
-            <table>
+            <table class="center">
                 <tr>
-                    <td>Local: <%= @locals.find(@existing_cita.local_id).nombre %></td>
+                    <td><strong>Local: </strong><%= @locals.find(@existing_cita.local_id).nombre %></td>
                 </tr>
                 <tr>
                     <%if @locals.find(@existing_cita.local_id).avatar.attached? %>
@@ -30,10 +30,10 @@
                     <%end%>
                 </tr>
                 <tr>
-                    <td>Date: <%= @existing_cita.fecha%></td>
+                    <td><strong>Date: </strong><%= @existing_cita.fecha%></td>
                 </tr>
                 <tr>
-                    <td>Time: <%= @existing_cita.hora.strftime("%H:%M")%></td>
+                    <td><strong>Time: </strong><%= @existing_cita.hora.strftime("%H:%M")%></td>
                 </tr>
                 
                 <!-- This is a  -->
@@ -125,7 +125,6 @@
                                     <%= local.avatar.key %>
                                     <%= cl_image_tag(local.avatar.key, width: 200, height: 250, crop: :scale)%>
                                 <% else %>
-                                    <%= cl_image_tag('no_disponible_tbpojy.jpg', width: 200, height: 200, crop: :scale)%>
                                     <%= cl_image_tag('alquiler_ofej9u.png', width: 200, height: 200, crop: :scale)%>
                                 <% end %>
 
@@ -148,7 +147,7 @@
 
                     <div class='field'> 
                         <%= form.label :Date %>
-                        <%= form.select :fecha, Array(0..14).map{|j| Date.yesterday + j - 1 } %>
+                        <%= form.select :fecha, Array(0..14).map{|j| Date.tomorrow + j } %>
                     </div>
 
                     <div class='field'> 
