@@ -46,7 +46,7 @@
                         <tr>
                         <%if @locals.where(id: date.local_id)[0].avatar.attached?%>
                             <td><%= cl_image_tag(@locals.where(id: date.local_id)[0].avatar.key, width: 200, height: 250, crop: :scale)%></td>
-                        <%elsif @locals.where(id: date.local_id)[0].avatar.attached? == false%>
+                        <% elsif @locals.where(id: date.local_id)[0].avatar.attached? == false%>
                         </tr>
                         <tr>
                             <td>Date: <%= date.fecha%></td>
@@ -57,6 +57,7 @@
                         <tr>
                         <td><%= link_to "Cancel Date", citas_new_path(cita_id: date.id, delete: true), :method => :patch, class:'btn btn-primary' %></td>
                         </tr>
+                        <% end %>
                     </table>
                 <% end %>
                 <% @inviters_users.each do |user| %>
