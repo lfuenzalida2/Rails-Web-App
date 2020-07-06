@@ -7,7 +7,7 @@ class Local < ApplicationRecord
   has_one_attached :avatar
 
   enum tipo: %i[restaurante cine bar motel], _prefix: 'tipo'
-  validates :nombre, presence: true, format: { with: /\A[a-zA-Z]+\z/,
+  validates :nombre, presence: true, format: { with: /\A[a-z A-Z]+\z/,
                                                message: 'Only letters allowed' },
                      length: { in: 4..30 }
   validates :direccion, presence: true
